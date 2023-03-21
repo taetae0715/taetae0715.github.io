@@ -36,21 +36,29 @@
         3차 폰트는 기본 폰트: 브라우저에서 기본적으로 제공하는 폰트를 적용함*/
         /*밑에 5가지는 기본 설정*/
         * {margin: 0; padding: 0;}
+
          body {width: 100%; font-family: 'Noto Sans KR', sans-serif;}
          ul {list-style: none;}
          a {text-decoration: none;}
          img {border: none;}
 
-         .box{margin: 10px; margin-top: 30px;}
          .np {font-family: 'Nanum Pen Script', cursive;}
+
          .container{ clear: both; width: 100%;  }
          .hd{ clear: both; width: 100%; }
-         .tnb{ clear: both; width: 100%; height: 100px; background-color: yellow;}
-         .tnb wrap {clear: both; width: 1400px; margin: 0 auto; height: 20px;}
-         .center_tnb {float: none;}
-         .center_tnb li {float: none; line-height: 100px; }
-         .right_tnb {float: left;}
-         .right_tnb li {float: left; line-height: 100px; }
+         .tnb{ clear: both; width: 100%; height: 140px; background-color:#fef100;}
+         .tnb_wrap {clear: both; width: 1500px; margin: 0 auto; height: 20px;}
+         .center_tnb {float:left;}
+         .center_tnb li {clear: both; line-height: 140px; margin-left: 680px; }
+         .center_tnb li a {text-indent:9999px; overflow: hidden; margin-top: 20px; display:block; width:101px; height:98px; background-image: url("./images/logo.png"); background-size:auto; background-position:center center; }
+         .right_tnb {float: right; margin-right: 140px;}
+         .right_tnb li {float: left; line-height: 140px; }
+         .right_tnb li a { text-indent:9999px; overflow: hidden; margin-top: 40px; margin-left: 17px; display:block; width:22px; height:23px; background-size:auto; background-position:center center;}
+         .right_tnb li a.icon1 { background-image: url("./images/icon_lang.png"); }
+         .right_tnb li a.icon2 { background-image: url("./images/top_chat.png"); }
+  
+        .gnb { clear:both; width: 100%; height:80px; background-color: #fef100; 
+        border:1px solid #333; }
 
 
 
@@ -66,8 +74,8 @@
                         <li><a href="">logo</a></li>
                     </ul>  
                      <ul class="right_tnb">
-                        <li><a href="">lang</a></li>
-                        <li><a href="">chat</a></li>
+                        <li><a href="" class="icon1">lang</a></li>
+                        <li><a href="" class="icon2">chat</a></li>
                     </ul>  
                 </div>
             </nav>
@@ -76,9 +84,16 @@
 
                 </div>
             </nav>  
-
         </header>
+        <div class="content">
+
+        </div>
+        <footer class="ft">
+
+        </footer>
     </div>
-</div>
+    <div class="fix_area">
+
+    </div>
 </body>
 </html>
