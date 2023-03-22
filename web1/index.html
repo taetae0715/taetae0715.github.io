@@ -44,24 +44,32 @@
 
          .np {font-family: 'Nanum Pen Script', cursive;}
 
-         .container{ clear: both; width: 100%;  }
+         .container{ clear: both; width: 100%; }
          .hd{ clear: both; width: 100%; }
-         .tnb{ clear: both; width: 100%; height: 140px; background-color:#fef100;}
-         .tnb_wrap {clear: both; width: 1500px; margin: 0 auto; height: 20px;}
-         .center_tnb {float:left;}
-         .center_tnb li {clear: both; line-height: 140px; margin-left: 680px; }
-         .center_tnb li a {text-indent:9999px; overflow: hidden; margin-top: 20px; display:block; width:101px; height:98px; background-image: url("./images/logo.png"); background-size:auto; background-position:center center; }
-         .right_tnb {float: right; margin-right: 140px;}
-         .right_tnb li {float: left; line-height: 140px; }
-         .right_tnb li a { text-indent:9999px; overflow: hidden; margin-top: 40px; margin-left: 17px; display:block; width:22px; height:23px; background-size:auto; background-position:center center;}
-         .right_tnb li a.icon1 { background-image: url("./images/icon_lang.png"); }
-         .right_tnb li a.icon2 { background-image: url("./images/top_chat.png"); }
+         .tnb{ clear: both; width: 100%; height: 120px; background-color:#fef100;}
+         .tnb_wrap {clear: both; width: 1400px; margin: 0 auto; height: 110px;}
+
+         .left_tnb { float:left; line-height: 130px; margin: 0 auto; }
+         .left_tnb li a {text-indent:9999px; overflow: hidden; margin-top: 35px; display:block; width:22px; height:22px; background-image: url("./images/icon_all_M.gif"); background-size:auto; background-position:center center; }
+         .center_tnb {position: absolute; left: 700px; line-height: 120px;}
+         .center_tnb li a {text-indent:9999px; overflow: hidden; margin-top: 15px; display:block; width:101px; height:98px; background-image: url("./images/logo.png"); background-size:auto; background-position:center center; }
+         .right_tnb {float: right; margin: 0 auto;}
+         .right_tnb li {float: left; line-height: 130px; }
+         .right_tnb li a { text-indent:9999px; overflow: hidden; background-size:auto; background-position:center center; margin-top: 35px; margin-left: 17px; display:block;}
+         .right_tnb li a.icon2 { width:22px; height:23px; background-image: url("./images/icon_lang.png"); }
+         .right_tnb li a.icon3 { width:28px; height:25px; background-image: url("./images/top_chat.png"); }
   
          .gnb { clear: both; width: 100%; height:80px; background-color: #fef100; border:1px solid #333;}
-         .gnb_wrab { width: 1500px; margin: 0 auto; position:relative; }
+         .gnb_wrab { width: 1400px; margin: 0 auto;}
 
-         .menu_gnb { position: relative; clear: both; width: 1500px; margin: 0 auto; height: 20px;}
-         .menu_gnb li {text-align: center; float: left; line-height: 80px; margin-left: 50px; margin-right: 20px; }
+         .menu_gnb {margin-left: 200px; font-size: 18px; text-align: center; color:#082841;}
+         .menu_gnb li {float: left; line-height: 80px; margin: 0 auto; width: 150px;}
+         .menu_gnb li a:hover { color:red; }
+         .menu_gnb li:nth-child(2) ::before { content:"|"; color:#082841; margin-right: 50px; }
+         .menu_gnb li:nth-child(3) ::before { content:"|"; color:#082841; margin-right: 50px; }
+         .menu_gnb li:nth-child(4) ::before { content:"|"; color:#082841; margin-right: 50px; }
+         .menu_gnb li:nth-child(5) ::before { content:"|"; color:#082841; margin-right: 50px; }
+         .menu_gnb li:nth-child(6) ::before { content:"|"; color:#082841; margin-right: 50px; }
 
 
 
@@ -73,24 +81,27 @@
         <header class="hd">
             <nav class="tnb">
                 <div class="tnb_wrap">
+                    <ul class="left_tnb">
+                        <li><a href="" class="icon1">menu</a></li>
+                    </ul>
                     <ul class="center_tnb">
                         <li><a href="">logo</a></li>
                     </ul>  
                      <ul class="right_tnb">
-                        <li><a href="" class="icon1">lang</a></li>
-                        <li><a href="" class="icon2">chat</a></li>
+                        <li><a href="" class="icon2">lang</a></li>
+                        <li><a href="" class="icon3">chat</a></li>
                     </ul>  
                 </div>
             </nav>
             <nav class="gnb">
                 <div class="gnb_wrab">
                     <ul class="menu_gnb">
-                        <li><a href="">회사소개</a></li>
-                        <li><a href="">ESG경영</a></li>
-                        <li><a href="">제품정보</a></li>
-                        <li><a href="">O'Kitchen</a></li>
-                        <li><a href="">홍보센터</a></li>
-                        <li><a href="">고객서비스</a></li>
+                        <li><a href="" class="m1">회사소개</a></li>
+                        <li><a href="" class="m2">ESG경영</a></li>
+                        <li><a href="" class="m3">제품정보</a></li>
+                        <li><a href="" class="m4">O'Kitchen</a></li>
+                        <li><a href="" class="m5">홍보센터</a></li>
+                        <li><a href="" class="m6">고객서비스</a></li>
                     </ul> 
                 </div>
             </nav>  
