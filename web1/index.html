@@ -54,7 +54,7 @@
          #sitemap_ck:checked ~ .sitemap { display:block; }    
          #sitemap_ck { display:none; }
 
-         .center_tnb {position: absolute; top:0px; left: 750px; line-height: 120px;}
+         .center_tnb {position: absolute; top:0px; left: 850px; line-height: 120px;}
          .center_tnb li a {text-indent:9999px; overflow: hidden; margin-top: 15px; display:block; width:101px; height:98px; background-image: url("./images/logo.png"); background-size:auto; background-position:center center; }
          
          .right_tnb {float: right; margin: 0 auto;}
@@ -70,10 +70,20 @@
          .menu_gnb li {float: left; line-height: 80px; width: 16.66%; color:#082841;}
          .menu_gnb li a:visited { color: #082841;; text-decoration: none;}
          .menu_gnb li a:hover {display: block; border-bottom: 3px solid red; color:red; font-weight: bold; }
-
-         .sub {display: none; padding-top: 20px;}
          .menu_gnbli a:hover > .sub {display: block;}
 
+         .sub { display:none; padding-top: 20px; width: 1000px; }
+         .sub.item2 { margin-left: -240px; }
+         .sub.item3 { margin-left: -320px; }
+         .sub.item4 { margin-left: -480px; }
+
+            .gnb > ul > li:hover > .sub { display:block; }
+            .sub > ul > li { float:left; width: 20%; }
+            .sub > ul > li > a { display:block; color:#075d46; font-size:1.1em; font-weight: 500; }
+         
+         .vs { clear:both; position:relative; width: 100vw; height:calc(100vh - 135px); overflow:hidden; }
+         .vs video {display: block; width: 100%;}
+         
          /*.menu_gnb li:nth-child(3) ::before { content:"|"; color:#082841;}
          .menu_gnb li:nth-child(4) ::before { content:"|"; color:#082841;}
          .menu_gnb li:nth-child(5) ::before { content:"|"; color:#082841;}
@@ -108,26 +118,60 @@
             <nav class="gnb">
                 <div class="gnb_wrab">
                     <ul class="menu_gnb">
-                        <li><a href="" class="m1">회사소개</a></li>
-                        <div class="sub">
-                            <ul class="dp2">
-                                <li>(주)오뚜기></li>
-                                <li>인재 채용></li>
-                                <li>사업장 소개></li>
-                                <li>찾아오시는 길</li>
-                            </ul>
-                        </div>
-                        <li><a href="" class="m2">ESG경영</a></li>
+                        <li><a href="" class="m1">회사소개</a>
+                           <div class="sub item1">
+                                <ul class="dp2">
+                                    <li><a href="">(주)오뚜기></a></li>
+                                    <li><a href="">인재 채용></a></li>
+                                    <li><a href="">사업장 소개></a></li>
+                                    <li><a href="">찾아오시는 길</a></li>
+                                 </ul>
+                             </div>
+                        </li>
+                        <li><a href="" class="m2">ESG경영</a>
+                            <div class="sub item2">
+                                <ul class="dp2">
+                                    <li><a href="">ESG경영소개</a></li>
+                                    <li><a href="">환경></a></li>
+                                    <li><a href="">사회></a></li>
+                                    <li><a href="">지배구조></a></li>
+                                    <li><a href="">지속가능경영 보고서</a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li><a href="" class="m3">제품정보</a></li>
                         <li><a href="" class="m4">O'Kitchen</a></li>
-                        <li><a href="" class="m5">홍보센터</a></li>
-                        <li><a href="" class="m6">고객서비스</a></li>
+                        <li><a href="" class="m5">홍보센터</a>
+                            <div class="sub item3">
+                                <ul class="dp2">
+                                    <li><a href="">오뚜기 뉴스></a></li>
+                                    <li><a href="">오뚜기 광고></a></li>
+                                    <li><a href="">즐거운 오뚜기></a></li>
+                                    <li><a href="">카레 및 향신료 국제 심포지엄</a></li>
+                                    <li><a href="">투자 정보></a></li>
+                                    <li><a href="">오뚜기 창립 50주년</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" class="m6">고객서비스</a>
+                            <div class="sub item4">
+                                <ul class="dp2">
+                                    <li><a href="">자주 묻는 질문</a></li>
+                                    <li><a href="">고객 한마디</a></li>
+                                    <li><a href="">공장 견학></a></li>
+                                </ul>
+                            </div> 
+                        </li>
                     </ul> 
                 </div>
             </nav>  
         </header>
-
         <div class="content">
+            <figure class="vs">
+                <div class="img_box">
+                    <video src="./movie/jin.mp4" muted autoplay loop></video>
+                </div>
+            </figure>
 
         </div>
         <footer class="ft">
