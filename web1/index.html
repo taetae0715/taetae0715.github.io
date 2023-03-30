@@ -24,19 +24,15 @@
     <mata name="og:url" content="https://taetae0715.github.io/web1">
     <mata name="og:image" content="./images/img_visual50.jpg">  
 
-     <!-- 스타일 초기화 reset.css나 normalize.css --> 
-     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">  
+    <!-- 스타일 초기화 reset.css나 normalize.css --> 
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">  
 
     <!-- 기본 폰트 및 초기화 로딩 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Noto+Sans+KR&family=Sono&display=swap" rel="stylesheet">
     <style>
-        /* {font-family: "1차폰트명", 2차폰트명, 3차폰트명;}
-        3차 폰트는 기본 폰트: 브라우저에서 기본적으로 제공하는 폰트를 적용함*/
-        /*밑에 5가지는 기본 설정*/
-        * {margin: 0; padding: 0; max-width: 1900px;}
-
+         * {margin: 0; padding: 0; max-width: 1900px;}
          body {width: 100%; font-family: 'Noto Sans KR', sans-serif;}
          ul {list-style: none;}
          a {text-decoration: none;}
@@ -63,27 +59,34 @@
          .right_tnb li a.icon2 { width:22px; height:23px; background-image: url("./images/icon_lang.png"); }
          .right_tnb li a.icon3 { width:28px; height:25px; background-image: url("./images/top_chat.png"); }
   
-         .gnb { clear: both; width: 100%; height:80px; background-color: #fef100;}
-         .gnb_wrab { width: 1400px; margin: 0 auto;}
-
          .menu_gnb {font-size: 18px; text-align: center; color:#082841; width: 1200px; margin: 0 auto;}
          .menu_gnb li {float: left; line-height: 80px; width: 16.66%; color:#082841;}
          .menu_gnb li a:visited { color: #082841;; text-decoration: none;}
          .menu_gnb li a:hover {display: block; border-bottom: 3px solid red; color:red; font-weight: bold; }
          .menu_gnbli a:hover > .sub {display: block;}
 
-         .sub { display:none; padding-top: 20px; width: 1000px; }
+         .gnb { clear: both; width: 100%; height:80px; background-color: #fef100;}
+         .gnb_wrab { width: 1400px; margin: 0 auto;}
+         .menu_gnb > li:hover > .sub { display:block; }
+         .sub > ul > li { float:left; width: 20%; }
+         .sub > ul > li > a { display:block; color:#075d46; font-size:1.1em; font-weight: 500; }
+         .sub > ul > li:hover > a { color:#41c365; }
+         .sub { display:none; padding-top: 5px; width: 1000px; height: 30px; }
          .sub.item2 { margin-left: -240px; }
          .sub.item3 { margin-left: -320px; }
          .sub.item4 { margin-left: -480px; }
-
-            .gnb > ul > li:hover > .sub { display:block; }
-            .sub > ul > li { float:left; width: 20%; }
-            .sub > ul > li > a { display:block; color:#075d46; font-size:1.1em; font-weight: 500; }
          
          .vs { clear:both; position:relative; width: 100vw; height:calc(100vh - 135px); overflow:hidden; }
          .vs video {display: block; width: 100%;}
          
+         .page { clear: both; position: relative; width: 100vw; height: 100vh; }
+         .page_wrap { clear: both; width: 1400px; margin: 0 auto; }
+         .page_title { text-align: center; font-size: 40px; padding-top: 1.5em;}
+
+         #page1 { background-color: #fff;}
+         #page2 { background-color: #fffee5;}
+         #page3 { background-color: #fff;}
+
          /*.menu_gnb li:nth-child(3) ::before { content:"|"; color:#082841;}
          .menu_gnb li:nth-child(4) ::before { content:"|"; color:#082841;}
          .menu_gnb li:nth-child(5) ::before { content:"|"; color:#082841;}
@@ -172,7 +175,24 @@
                     <video src="./movie/jin.mp4" muted autoplay loop></video>
                 </div>
             </figure>
-
+            <section class="page" id="page1">
+                <h2 class="page_title">오뚜기 뉴스</h2>
+                <div class="page_wrap">
+                    지속가능경영 미래가치 나눔미학 오뚜기몰
+                </div>
+            </section>
+            <section class="page" id="page2">
+                <h2 class="page_title">오뚜기 인기상품</h2>
+                <div class="page_wrap">
+                    오키친
+                </div>
+            </section>
+            <section class="page" id="page3">
+                <h2 class="page_title">오뚜기 SNS</h2>
+                <div class="page_wrap">
+                    오뚜기 데일리 오늘 맛으로 행복한 세상 오뚜기 플레이트 옐로우즈 투게더
+                </div>
+            </section>
         </div>
         <footer class="ft">
 
