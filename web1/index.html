@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오 - 오뚜기</title>
-    <!-- 문서 정보 등록 -->
-    <!-- 검색엔진최적화(Search Engine Optimization) : SEO -->
+
     <meta name="subject" content="오뚜기 벤치마킹 사이트">
     <meta name="keywords" content="오뚜기, 오뚝이, 진라면, 짜슐랭, 스파게티, 스파게티소스  ">
-    <meta name="description" content="오뚜기 인기상품. 오뚜기의 인기상품들을 소개 합니다. 프레스코 미트 스파게티소스 조미소스/식품스파게티소스. 프레스코 미트 스파게티소스.
-    ">
+    <meta name="description" content="오뚜기 인기상품. 오뚜기의 인기상품들을 소개 합니다. 프레스코 미트 스파게티소스 조미소스/식품스파게티소스. 프레스코 미트 스파게티소스.">
     <meta name="author" content="ms. jo">
 
     <!-- 파비콘(favicon) 설정 -->
@@ -59,31 +57,34 @@
          .right_tnb li a.icon2 { width:22px; height:23px; background-image: url("./images/icon_lang.png"); }
          .right_tnb li a.icon3 { width:28px; height:25px; background-image: url("./images/top_chat.png"); }
   
-         .menu_gnb {font-size: 20px; text-align: center; color:#082841; width: 1200px; margin: 0 auto;}
+         .menu_gnb {font-size: 20.5px; text-align: center; color:#082841; width: 1200px; margin: 0 auto;}
          .menu_gnb li {float: left; line-height: 80px; width: 16.66%; color:#082841;}
          .menu_gnb li a:visited { color: #082841;; text-decoration: none;}
          .menu_gnb li a:hover {display: block; border-bottom: 3px solid red; color:#dc2c34; font-weight: bold; }
          .menu_gnbli a:hover > .sub {display: block;}
 
-         .gnb { clear: both; width: 100%; height:80px; background-color: #fef100;}
-         .gnb_wrab { width: 1400px; margin: 0 auto;}
+         .gnb { position:relative; width: 100%; height:80px; background-color: #fef100;}
+         .gnb_wrab { width: 1200px; margin: 0 auto;}
          .menu_gnb > li:hover > .sub { display:block; }
-         .sub > ul > li { float:left; width: 200px; font-size:16px;}
+
+         .sub > ul > li { float:left; width: 150px; font-size:16px;}
          .sub > ul > li:hover > a { color:#dc2c34; border-style: none;}
-         .sub { display:none; padding-top: 3px; width: 1000px; height: 20px;}
-         .sub.item2 { margin-left: -200px;  }
-         .sub.item3 { margin-left: -450px; }
+         .sub { display:none; padding-top: 5px; width: 800px; }
+         .sub.item2 { margin-left: -180px;  }
+         .sub.item3 { margin-left: -300px; }
          .sub.item4 { margin-left: -300px; }
+         .sub.item5 { margin-left: -300px; }
+         .sub.item6 { margin-left: -200px; width: 600px;}
          
          .vs { clear:both; position:relative; width: 100vw; height:calc(100vh - 135px); overflow:hidden; }
          .vs video {display: block; width: 100%;}
          
-         .page { clear: both; position: relative; width: 100vw; height: 100vh; }
+         .page { clear: both; position: relative; width: 100vw; height: 85vh; }
          .page_wrap { clear: both; width: 1400px; margin: 0 auto; }
          .page_title { text-align: center; font-size: 40px; padding-top: 1.5em;}
 
-         #page1 { background-color: #fffee5; color:#333; }
-         #page1 .page_wrap { width:1280px; padding-top: 40px; }
+         #page1 { background-color: #fff; color:#333; height: 65vh;}
+         #page1 .page_wrap { width:1280px; padding-top: 60px; }
          #page1 .tit_box { float:right; }
          .sub_title { font-size:20px; color:orange; font-weight: 100; letter-spacing:-2px;}
          .main_title { font-size:60px; color:#000; font-weight:600; float:left;}
@@ -101,7 +102,7 @@
          #pg1_ra3:checked ~ .ban_fr .ban_box { margin-top:-1100px; }
          #pg1_ra4:checked ~ .ban_fr .ban_box { margin-top:-1650px; }
 
-         #page2 { background-color: #fff; color:#222; }
+         #page2 { background-color: #fff; color:#222;  height: 65vh;}
          #page2 .page_wrap { width: 1280px; padding-top:50px; }
          .grid_fr { clear:both; width: 1280px; }
          .grid_fr .grid_box { clear:both; width: 1280px; padding-top: 30px; }
@@ -117,8 +118,8 @@
          .grid_box li a .grid_tit { line-height: 1.8;}
          .grid_box li a .grid_com { font-size:18px;}
 
-         #page3 { background-color: #fffee5;}
-         #page3 .page_wrap { width: 1280px; padding-top:60px; }
+         #page3 { background-color: #fffee5; height: 75vh;}
+         #page3 .page_wrap { width: 1280px; padding-top: 65px; }
          .col_fr { clear:both; width: 1280px; padding-top: 40px; }
          .col_fr .col_box { clear: both; width: 1280px; }
          .col_fr .col_box li.left { float:left; width: 844px; height: 458px; 
@@ -167,21 +168,19 @@
          .tb1 td a:hover .td_com { color:darkorange;}
 
          #page5 { background-color: #fffee5;}
-         #page5 .tit_box { clear:both; padding-top: 80px; }
+         #page5 .tit_box { clear:both; padding-top: 10px; }
          .colm_fr { clear:both; }
-         .colm_fr .lst_tit { clear:both; padding-top: 30px; font-size:28px; font-weight:100; 
-            line-height: 2; }
+         .colm_fr .lst_tit { clear:both; padding-top: 30px; font-size:28px; font-weight:200; line-height: 2; margin-left: 25px;}
          .lst1, .lst2 { clear:both; }
-         .lst1 li, .lst2 li { float:left; width: 410px; margin-right: 25px; height: 250px;
-            background-color: #fff;   border-radius:25px; box-sizing:border-box; padding: 28px; 
-         padding-left: 40px; }
+         .lst1 li, .lst2 li { float:left; width: 410px; margin-right: 25px; margin-left: 25px; height: 220px;
+            background-color: #fff;   border-radius:25px; box-sizing:border-box; padding: 20px; padding-left: 40px; }
          .lst1 li:last-child, .lst2 li:last-child { margin-right: 0; }
-         .colm_fr ul .item_tit { font-size:32px; line-height: 2.8; color:#075d46; }
+         .colm_fr ul .item_tit { font-size:30px; line-height: 2.2; color:#333; }
          .colm_fr ul li:before { content:""; display:block; width:60px; height:60px;
-         background-image: url("./images/icons.png"); background-repeat:no-repeat; 
+         background-image: url("./images/spliticons.png"); background-repeat:no-repeat; 
          background-size:300px auto; }
          .colm_fr ul li a { display:block; width: 150px; line-height: 30px; padding-left: 18px; 
-            background-color:#075d46; color:#fff; border-radius:20px; }
+            background-color:darkorange; color:#fff; border-radius:10px; }
          .colm_fr ul li a:after { content:"→"; padding-left:60px;  }    
          .colm_fr .lst1 .item1:before { background-position: 0px -400px; }
          .colm_fr .lst1 .item2:before { background-position: -60px -400px; }
@@ -190,38 +189,34 @@
          .colm_fr .lst2 .item2:before { background-position: -240px -400px; }
          .colm_fr .lst2 .item3:before { background-position: 0px -460px; }
 
-            #ft { clear:both;  }
-         .ft .row { clear:both; padding-top: 25px; padding-bottom: 25px; min-height:60px; }
-         .ft .row1 { background-color:#075d46;  }
-         .ft .fnb li { float:left; margin-right: 50px; line-height: 60px; }
-         .ft .fnb li a { color:#fff; font-size: 18px; }
-         .ft .fnb li a:hover { color:gold; }
-         .ft #favo { display:block; line-height: 60px; height: 60px; width: 200px; text-align: center;
-         font-size: 18px;  }
+         #ft { clear:both;  }
+         .ft .row { clear:both; padding-top: 20px; padding-bottom: 20px; min-height:40px; }
+         .ft .row1 { background-color:#eee;  }
+         .ft .fnb li { float:left; margin-right: 60px; line-height: 40px; }
+         .ft .fnb li a { color:#333; font-size: 18px; }
+         .ft .fnb li a:hover { color:#fff; font-weight: bold; }
+         .ft #favo { display:block; line-height: 40px; height: 40px; width: 200px; text-align: center; font-size: 18px;  }
 
-         .ft .row2 { background-color: #f1f1f1; height: 224px; }
-         .ft .slogan { font-size: 36px; color:#e0e0e0; }
-         .ft .ft_link_fr dl { float:left; font-size:16px; line-height: 32px; padding-left: 28px; }
-         .ft .ft_link_fr dl a { color:#a0a0a0; }
+         .ft .row2 {position: relative; background-color: #fff; height: 100px; }
+         .ft .slogan { font-size: 17px; color:#999 ; line-height: 25px; padding-top: 22px;}
+         .ft .ft_link_fr dl { float:left; font-size:16px; line-height: 30px; padding-left: 28px; }
+         .ft .ft_link_fr dl a { color:#999; }
          .ft .ft_link_fr dl a:hover { color:#333; }
 
-         .ft .row3 { background-color: #fff; }
-         .ft .ft_logo { width: 125px; height: 45px; background-image: url("./images/headerlogo_pc_kor.png"); 
-         background-size:125px auto; }
-         .ft .copyright { height: 45px; line-height: 45px; font-style: normal; font-weight:100;
-         color:#a0a0a0; }
+         .ft .row3 { background-color: #fff; position: relative; padding-bottom: 20px;}
+         .ft .ft_logo { width: 170px; height: 60px; background-image: url("./images/f_logo.jpg"); background-size:100% auto; }
+         .ft .copyright { height: 45px; line-height: 45px; font-style: normal; font-weight:100;color: #333; margin-right: 650px; padding-top: 15px;}
 
          .ft_wrap { clear:both; width: 1280px; margin: 0 auto; }
          .ft_wrap .left { float: left; }
          .ft_wrap .right { float: right; }
-
 
          .fix_area { position:fixed; z-index:9999; bottom:40px; right:40px; }
          .fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; 
          border-radius:35px; box-sizing: border-box; padding: 6px; font-size:12px; padding-top:15px; 
          overflow:hidden; box-shadow:1px 1px 6px #333; }
          .fix_area .counsel { background-color:rgba(255,255,255,0.75); color:#333; }
-         .fix_area .totop { background-color:#075d46; color:#fff; margin-top: 20px; }
+         .fix_area .totop { background-color:#dc2c34; color:#fff; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -251,31 +246,45 @@
             <nav class="gnb">
                 <div class="gnb_wrab">
                     <ul class="menu_gnb">
-                        <li><a href="" class="m1">회사소개</a>
+                        <li><a href="">회사소개</a>
                            <div class="sub item1">
                                 <ul class="dp2">
-                                    <li><a href="">(주)오뚜기 ></a></li>
-                                    <li><a href="">인재 채용 ></a></li>
-                                    <li><a href="">사업장 소개 ></a></li>
+                                    <li><a href="">(주)오뚜기</a></li>
+                                    <li><a href="">인재 채용</a></li>
+                                    <li><a href="">사업장 소개</a></li>
                                     <li><a href="">찾아오시는 길</a></li>
                                  </ul>
                              </div>
                         </li>
-                        <li><a href="" class="m2">ESG경영</a>
+                        <li><a href="">ESG경영</a>
                             <div class="sub item2">
                                 <ul class="dp2">
                                     <li><a href="">ESG경영소개</a></li>
-                                    <li><a href="">환경 ></a></li>
-                                    <li><a href="">사회 ></a></li>
-                                    <li><a href="">지배구조 ></a></li>
+                                    <li><a href="">환경</a></li>
+                                    <li><a href="">사회</a></li>
+                                    <li><a href="">지배구조</a></li>
                                     <li><a href="">지속가능경영 보고서</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="" class="m3">제품정보</a></li>
-                        <li><a href="" class="m4">O'Kitchen</a></li>
-                        <li><a href="" class="m5">홍보센터</a>
+                        <li><a href="">제품정보</a></li>
                             <div class="sub item3">
+                                 <ul class="dp2">
+                                    <li><a href="">신제품 소개</a></li>
+                                     <li><a href="">제품 소개</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="">O'Kitchen</a></li>
+                            <div class="sub item4">
+                                 <ul class="dp2">
+                                    <li><a href="">추천 레시피</a></li>
+                                    <li><a href="">인기 레시피</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="">홍보센터</a>
+                            <div class="sub item5">
                                 <ul class="dp2">
                                     <li><a href="">오뚜기 뉴스 ></a></li>
                                     <li><a href="">오뚜기 광고 ></a></li>
@@ -285,8 +294,8 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="" class="m6">고객서비스</a>
-                            <div class="sub item4">
+                        <li><a href="">고객서비스</a>
+                            <div class="sub item6">
                                 <ul class="dp2">
                                     <li><a href="">자주 묻는 질문</a></li>
                                     <li><a href="">고객 한마디</a></li>
@@ -445,8 +454,8 @@
                                     <td class="td1">5</td>
                                     <td class="td2">
                                         <a href="">
-                                            <h3 class="td_tit">CJ프레시웨이, 외식기업 대상 맞춤형 메뉴 컨설팅 호응</h3>
-                                            <p class="td_com">전문 셰프가 만든 우리 매장 신메뉴 CJ프레시웨이, 외식기업 대상 맞춤형 메뉴 컨설팅 ‘호응’ 외식기업 대상 전문 셰프 노하우 담은 메뉴 개발 지원 주점 프랜차이즈 ‘탄광맥주’에</p>
+                                            <h3 class="td_tit">'스위트홈 제 26회 오뚜기 가족요리 페스티벌' 접수</h3>
+                                            <p class="td_com">㈜오뚜기는 가정의 달을 맞아 오는 5월 13일 과천 서울랜드 피크닉장에서 ‘스위트홈 제 26회 오뚜기 가족요리 페스티벌’을 개최합니다.올해 26회를 맞이한 ‘오뚜기 가족요리 페스트벌’은 요리라는 경험을 통해 가정의 행복한 스위트홈을 실현하고...</p>
                                         </a>
                                     </td>
                                 </tr>
@@ -454,8 +463,8 @@
                                     <td class="td1">4</td>
                                     <td class="td2">
                                         <a href="">
-                                            <h3 class="td_tit">CJ프레시웨이, 병원급식 고객 서비스 질 높인다… 임상영양 전문가 육성</h3>
-                                            <p class="td_com">CJ프레시웨이, 병원급식 고객 서비스 질 높인다... 임상영양 전문가 육성   병원 단체급식 운영그룹 '임상영양 마스터 과정' 수료식 진행 사내 영양사 30명 대상 병원 임상영양</p>
+                                            <h3 class="td_tit">오뚜기 소비기한 적용 제품 현황 안내</h3>
+                                            <p class="td_com">오뚜기 소비기한 적용 제품 현황 안내당사 소비기한 적용 제품 현황(2023.03.31 기준)을 첨부파일로 안내드립니다.</p>
                                         </a>
                                     </td>
                                 </tr>
@@ -463,8 +472,8 @@
                                     <td class="td1">3</td>
                                     <td class="td2">
                                         <a href="">
-                                            <h3 class="td_tit">CJ프레시웨이, 봄 성수기 맞아 컨세션 서비스 개편…</h3>
-                                            <p class="td_com">CJ프레시웨이, 봄 성수기 맞아 컨세션 서비스 개편… “야구장 ‘직관 맥주’ 경험해 보세요”   광주-기아 챔피언스 필드 특별관람석 ‘비스트로 펍’ 개편, 야구장 맛집으로 인기 워</p>
+                                            <h3 class="td_tit">[신동아] 장미란 금메달 숨은 조력자 함태호 오뚜기 명예회장</h3>
+                                            <p class="td_com">많은 분들이 베이징 올림픽에서 장미란 선수가 금메달을 들어올리던 감격의 순간을 기억하실 겁니다당시 저는 고등학생이었는데 저도 그 모습을 보면서 좀만 더 좀만 더를 외치곤 했습니다 마치 제가 역기를들어 올리는 것처럼이 얼굴을 막 찌푸리면서요이...</p>
                                         </a>
                                     </td>
                                 </tr>
@@ -472,8 +481,8 @@
                                     <td class="td1">2</td>
                                     <td class="td2">
                                         <a href="">
-                                            <h3 class="td_tit">CJ프레시웨이, 홈페이지 리뉴얼… 고객 소통, ESG 경영 강화</h3>
-                                            <p class="td_com">CJ프레시웨이, 홈페이지 리뉴얼… "고객 소통, ESG 경영 강화"     뉴스룸, 고객 상담 서비스 및 지속가능경영 콘텐츠 신설 '지디웹 디자인 어워즈' 우수작 선정… "고객 맞</p>
+                                            <h3 class="td_tit">오뚜기 참기름 출시 40주년…"제품 개발 이어간다"</h3>
+                                            <p class="td_com">오뚜기는 1983년 고소한 참기름을 출시했고 2011년 옛날 참기름을 선보였다. 시장조사업체 닐슨IQ코리아에 따르면 오뚜기 참기름은 1990년부터 2020년까지 31년 연속 판매 1위를 기록했다.</p>
                                         </a>
                                     </td>
                                 </tr>
@@ -481,8 +490,8 @@
                                     <td class="td1">1</td>
                                     <td class="td2">
                                         <a href="">
-                                            <h3 class="td_tit">CJ프레시웨이, 푸드 펀딩으로 착한 연어 선봬… 와디즈에 ASC 인증 수산물 출시</h3>
-                                            <p class="td_com">CJ프레시웨이, 푸드 펀딩으로 '착한 연어' 선봬… 와디즈에 ASC 인증 수산물 출시     생산부터 유통까지 엄격한 기준 적용한 칠레 파타고니아 고품질 연어 새로운 맛 찾아 20</p>
+                                            <h3 class="td_tit">오뚜기, 작년 매출 3조 첫 돌파…"창립 이후 53년만"</h3>
+                                            <p class="td_com">오뚜기가 지난해 처음으로 연 매출 3조원을 넘기며 식품업계의 이른바 '3조원 클럽'에 입성했다.</p>
                                         </a>
                                     </td>
                                 </tr>
@@ -492,36 +501,36 @@
                 </div>
             </section>
             <section class="page" id="page5">
-                <h2 class="page_title style="display:none">상담센터</h2>
+                <h2 class="page_title style="display:none"></h2>
                 <div class="page_wrap">
                     <div class="tit_box">
                         <h3 class="sub_title">CS CENTER</h3>
-                        <h2 class="main_title">고객상담센터</h2>
+                        <h2 class="main_title">고객서비스</h2>
                     </div>
                     <article class="colm_fr">
                         <h3 class="lst_tit">비즈니스 상담센터</h3>
                         <ul class="lst1">
                             <li class="item1">
-                                <h3 class="item_tit">식자재 구매 상담</h3>
+                                <h3 class="item_tit">공장견학 신청</h3>
                                 <a href="" class="item_more">상담하기</a>
                             </li>
                             <li class="item2">
-                                <h3 class="item_tit">단체급식 위탁 상담</h3>
-                                <a href="" class="item_more">상담하기</a>
+                                <h3 class="item_tit">견학 공장 위치</h3>
+                                <a href="" class="item_more">보러가기</a>
                             </li>
                             <li class="item3">
-                                <h3 class="item_tit">협력사 상담</h3>
-                                <a href="" class="item_more">상담하기</a>
+                                <h3 class="item_tit">공장 소개</h3>
+                                <a href="" class="item_more">보러가기</a>
                             </li>
                         </ul>
                         <h3 class="lst_tit">간편 상담센터</h3>
                         <ul class="lst2">
                             <li class="item1">
-                                <h3 class="item_tit">챗봇 문의</h3>
+                                <h3 class="item_tit">자주 묻는 질문</h3>
                                 <a href="" class="item_more">문의하기</a>
                             </li>
                             <li class="item2">
-                                <h3 class="item_tit">고객의 소리</h3>
+                                <h3 class="item_tit">고객 한마디</h3>
                                 <a href="" class="item_more">상담하기</a>
                             </li>
                             <li class="item3">
@@ -536,24 +545,22 @@
         <footer class="ft">
             <article class="row row1">
                 <div class="ft_wrap">
-                    <!-- (nav.fnb>ul.fnb_box>li*5>a{메뉴$})+(select.favorite>option{사이트$}*6) -->
                     <nav class="fnb left">
                         <ul class="fnb_box">
-                            <li><a href="">개인정보처리방침</a></li>
-                            <li><a href="">이용약관</a></li>
-                            <li><a href="">법적고지</a></li>
-                            <li><a href="">이메일 무단수집 거부</a></li>
-                            <li><a href="">온라인 제보</a></li>
+                            <li><a href="https://www.ottogi.co.kr/overview/individual_230306.asp">개인정보처리방침</a></li>
+                            <li><a href="https://www.ottogi.co.kr/customer/counseling.asp">고객상담</a></li>
+                            <li><a href="https://www.ottogi.co.kr/overview/location.asp">찾아오시는 길</a></li>
+                            <li><a href="https://www.ottogimall.co.kr/front/main">오뚜기몰</a></li>
+                            <li><a href="https://v2.coginsight.net/service/#/aa15f11b-60b0-470a-90df-c84d1af43be9?">고객상담 챗봇</a></li>
                         </ul>
                     </nav>
                     <select name="favo" id="favo" class="favo right" onchange="favo(this)">
                         <option value="">FAMILY SITE</option>
-                        <option value="http://www.cj.net/">CJ주식회사</option>
-                        <option value="http://www.cj.co.kr/">CJ제일제당</option>
-                        <option value="https://www.cj.co.kr/kr/about/business/bio">CJ바이오</option>
-                        <option value="https://www.cjlogistics.com/ko/main">CJ대한통운</option>
-                        <option value="https://www.cjenm.com/ko/">CJ ENM</option>
-                        <option value="http://corp.cgv.co.kr/">CJ CGV</option>
+                        <option value="https://ottogi.okitchen.co.kr/main/main.asp">O'kitchen</option>
+                        <option value="https://blog.naver.com/ottogitoday1">Daily blog</option>
+                        <option value="https://www.instagram.com/ottogi_daily/">Instagram</option>
+                        <option value="https://www.facebook.com/Ottogitoday">Facebook</option>
+                        <option value="https://www.youtube.com/user/Ottogimkt">Youtube</option>
                     </select>
                     <script>
                     function favo(s){
@@ -568,49 +575,50 @@
             <article class="row row2">
                 <div class="ft_wrap">
                     <div class="slogan left">
-                        FOOD<br>
-                        BUSINESS PARTNER<br>
-                        CREATING<br>
-                        THE SUCCESS WAY
+                        (주)오뚜기 | 사업자등록번호 : 138-81-03238 | 대표이사 황성만<br>
+                        주소 (14060) 경기도 안양시 동안구 흥안대로 405 (평촌동 160)<br>
+                        오뚜기 고객상담실 : 080-024-2311<br>
+                        오뚜기라면 고객상담실 : 080-088-1212 (월~금 08:30~17:00)
                     </div>
-                    <!-- nav.ft_col2>dl.ft_link.item$*5>dt{솔루션$}+(dd>a)*6 -->
                     <nav class="ft_link_fr right">
                         <dl class="ft_link item1">
-                            <dt>솔루션</dt>
-                            <dd><a href="">회사소개</a></dd>
-                            <dd><a href="">사업영역</a></dd>
-                            <dd><a href="">역량/인프라</a></dd>
-                            <dd><a href="">브랜드</a></dd>
+                            <dt>회사소개</dt>
+                            <dd><a href="">(주)오뚜기</a></dd>
+                            <dd><a href="">인재 채용</a></dd>
+                            <dd><a href="">사업장 소개</a></dd>
+                            <dd><a href="">찾아오시는 길</a></dd>
                         </dl>
                         <dl class="ft_link item2">
-                            <dt>지속가능경영</dt>
-                            <dd><a href="">OVERVIEW</a></dd>
-                            <dd><a href="">전략</a></dd>
-                            <dd><a href="">주요활동 및 성과</a></dd>
-                            <dd><a href="">윤리경영</a></dd>
-                            <dd><a href="">사회공헌</a></dd>
-                            <dd><a href="">보고서 및 정책</a></dd>
+                            <dt>ESG경영</dt>
+                            <dd><a href="">ESG경영 소개</a></dd>
+                            <dd><a href="">환경</a></dd>
+                            <dd><a href="">사회</a></dd>
+                            <dd><a href="">지배구조</a></dd>
+                            <dd><a href="">지속가능경영 보고서</a></dd>
                         </dl>
                         <dl class="ft_link item3">
-                            <dt>뉴스룸</dt>
-                            <dd><a href="">보도자료</a></dd>
-                            <dd><a href="">미디어</a></dd>
-                            <dd><a href="">홍보영상/브로슈어</a></dd>
-                            <dd><a href="">공지사항</a></dd>
+                            <dt>제품정보</dt>
+                            <dd><a href="">신제품 소개</a></dd>
+                            <dd><a href="">제품 소개</a></dd>
                         </dl>
                         <dl class="ft_link item4">
-                            <dt>투자정보</dt>
-                            <dd><a href="">경영정보</a></dd>
-                            <dd><a href="">주가정보</a></dd>
-                            <dd><a href="">재무정보</a></dd>
-                            <dd><a href="">IR 자료실</a></dd>
+                            <dt><a href=""></a>O'Kitchen</dt>
+                            <dd><a href="">인기 레시피</a></dd>
+                            <dd><a href="">신규 레시피</a></dd>
                         </dl>
                         <dl class="ft_link item5">
-                            <dt>채용</dt>
-                            <dd><a href="">인사정보</a></dd>
-                            <dd><a href="">CJ프레시웨이 人SIDE</a></dd>
-                            <dd><a href="">채용정보</a></dd>
-                            <dd><a href="">인재 POOL</a></dd>
+                            <dt>홍보센터</dt>
+                            <dd><a href="">오뚜기 뉴스</a></dd>
+                            <dd><a href="">오뚜기 광고</a></dd>
+                            <dd><a href="">즐거운 오뚜기</a></dd>
+                            <dd><a href="">투자정보</a></dd>
+                            <dd><a href="">오뚜기 창립 50주년</a></dd>
+                        </dl>
+                        <dl class="ft_link item6">
+                            <dt>고객서비스</dt>
+                            <dd><a href="">자주 묻는 질문</a></dd>
+                            <dd><a href="">고객 한마디</a></dd>
+                            <dd><a href="">공장 견학</a></dd>
                         </dl>
                     </nav>
                 </div>
@@ -618,7 +626,9 @@
             <article class="row row3">
                 <div class="ft_wrap">
                     <div class="ft_logo left"></div>
-                    <address class="copyright right">서울시 마포구 월드컵북로 54길 25 S-city   COPYRIGHT© CJ FRESHWAY. ALL RIGHTS RESERVED.</address>
+                    <address class="copyright right">
+                        Copyright ⓒ OTTOGI CORPORATION.,Ltd All Rights Reserved.
+                    </address>
                 </div>
             </article>
         </footer>
