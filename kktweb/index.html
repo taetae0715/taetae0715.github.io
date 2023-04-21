@@ -31,258 +31,10 @@
     <!-- 스타일 초기화 -->
     <!-- reset.css나 normalize.css를 CDN 또는 다운로드 받아 link로 연결 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="main.css">
     <style>
-    /* 
-    웹 폰트 : 구글 웹폰트 또는 눈누, 응용 프로그램용 폰트 : 다폰트
-    font-family:"1차폰트명",2차폰트명,3차폰트명;}
-    3차 폰트는 기본 폰트를 적용함
-    기본 폰트 : 브라우저에서 기본적으로 제공하는 폰트
-    sans-serif(고딕), serif(명조), cursive(궁서), monospace(가로세로비율1:1폰트), fantasy(심볼기호나 디자인폰트)
-    */
-    * { margin: 0; padding: 0; }
-    
-    body, html { width: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x:hidden; }    
-    ul { list-style:none; }
-    a { text-decoration: none; }
-    img { border: none; }
-
-    .np { font-family: 'Nanum Pen Script', cursive;}
-
-    .container { clear:both; width:100%; }
-    .hd { clear:both; width: 100%; }
-    .tnb { clear:both; width: 100%; height:35px; background-color:#075d46;}
-    .tnb_wrap { clear:both;  width: 1400px; margin: 0 auto; height:20px; }
-    .left_tnb { float:left; }
-    .left_tnb li { float:left; line-height: 35px; }
-    .left_tnb li:first-child::after { content:"|"; color:#fff; margin-right: 14px; }
-    .left_tnb li a { margin-right: 14px; }
-    .left_tnb li a:hover { color:deeppink; }
-    .right_tnb { float:right; }
-    .right_tnb li { float:left; line-height: 35px; }
-    .right_tnb li a { margin-left: 14px; display:block; width:30px; height:30px;
-     text-indent:9999px; overflow: hidden; 
-     background-image: url("./images/icons.png");
-     margin-top: 10px; background-size:300px 700px; }
-    /* split icon : 하나의 아이콘셋 이미지를 쪼개어 여러 아이콘을 표시 
-        background-image는 같고, background-position으로 조절하여 해당 아이콘이 나타나도록 함
-    */
-    /* 각 각의 아이콘 이미지 적용시
-    .right_tnb li a { background-size:auto; background-position:center center; }
-    .right_tnb li a.ico1 { background-image: url("./images/icon1.png"); }
-    .right_tnb li a.ico2 { background-image: url("./images/icon2.png"); }
-    .right_tnb li a.ico3 { background-image: url("./images/icon3.png"); }
-    */
-    .right_tnb li a.sns1 { background-position:-67px -67px; }
-    .right_tnb li a.sns2 { background-position:-7px -67px; }
-    .right_tnb li a.sns3 { background-position:-36px -67px; }
-    .tnb ul li a { color:#fff; font-size:0.9em; }
-    
-    .main { clear:both; width: 100%; height:75px; background-color: #fff; 
-    border-bottom:1px solid #ecedee; }
-    .main_wrap { width: 1400px; margin: 0 auto; position:relative; }
-    
-    .logo { display:block; width: 120px; height:45px; overflow:hidden;
-        position:absolute; top:10px; left: 0; z-index:10;   }
-    .logo img { display:block; width: 100%; height:auto; }
-    
-    .gnb { position:relative; margin-top: 10px; }
-    .gnb > ul { width:800px;  height:48px;  margin: 0 auto; }
-    .gnb > ul > li { float:left; width: 20%; text-align: center; 
-        line-height: 50px; }
-    .gnb > ul > li > a { display:block; font-size:1.3em; color:#333;
-    font-weight: bold; }
-    .gnb > ul > li:hover > a { border-bottom:2px solid #075d46; 
-        color:#075d46; }
-
-    .sub { display:none; padding-top: 20px; width: 1000px; }
-    .sub.item2 { margin-left: -240px; }
-    .sub.item3 { margin-left: -320px; }
-    .sub.item4 { margin-left: -480px; }
-    .sub.item5 { margin-left: -640px; }
-    .gnb > ul > li:hover > .sub { display:block; }
-    .sub > ul > li { float:left; width: 20%; }
-    .sub > ul > li > a { display:block; color:#075d46; font-size:1.1em; 
-    font-weight: 500; }
-    .sub > ul > li:hover > a { color:#41c365; }
-
-    .sitemap_btn { display:block; position:absolute; top:20px;  z-index:10;
-         right:0px; cursor:pointer; width: 20px; height: 20px; overflow:hidden;
-        text-indent:-9999px; background-image: url("./images/gnb_icon_menu.png");
-        background-size:20px 40px; background-position:center -20px; }
-    .sitemap { position:fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-         z-index:999; background-color: deeppink; display:none; }
-    #sitemap_ck:checked ~ .sitemap { display:block; }    
-    #sitemap_ck { display:none; }
-
-    .vs { clear:both; position:relative; width: 100vw; height:calc(100vh - 135px);
-    overflow:hidden;  }
-    .vs video { display:block; width: 100%; }
-
-    .page { clear:both; position:relative; width: 100vw; height:100vh; }
-    .page_wrap { clear:both; width: 1400px; margin: 0 auto; }
-    .page_title { text-align: center; font-size:48px; padding-top: 1.5em; }
-
-    #page1 { background-color: #fff; color:#333; }
-    #page1 .page_wrap { width:1280px; padding-top: 80px; }
-    #page1 .tit_box { float:right; }
-    .sub_title { font-size:28px; color:orange; font-weight: 100; letter-spacing:-2px;}
-    .main_title { font-size:72px; color:#000; font-weight:700; float:left; }
-    #page1 .pg1_btn_box { clear:both;  }
-    #page1 .pg1_btn_box label { display:block; padding:0.8em; float:left; 
-    border:1px solid #e1e1e1; border-radius:36px; margin:0.5rem; color:#999;
-    cursor:pointer;  }
-    #page1 .pg1_btn_box label:hover {  color:#fff; background-color:#37e3b5; }
-    .pg1_ra { display:none; }    
-    #page1 .pg1_ra:checked + label { color:#fff; background-color:#075d46; }
-    .ban_fr { clear:both; width: 1280px; height: 550px; padding-top: 40px; overflow:hidden; }
-    .ban_fr .ban_box { width: 600%; height: 550px; transition-duration:0.6s; }
-    .ban_fr .ban_box li { width: 1280px; float:left; height: 550px; }
-    .ban_fr .ban_box li .pic { display:block; width: 840px; height: 550px; float:left;
-    border-radius:40px;  }
-    .ban_fr .ban_box li .ban_tit_box { float:right; width: 400px; height: 550px; position:relative; 
-        background-color: #f1f1f1; border-radius:40px; }
-    .ban_fr .ban_box li .ban_tit_box .ban_tit1 { font-size:64px; line-height:3; color:#075d46; 
-    margin-left:50px; }
-    .ban_fr .ban_box li .ban_tit_box .ban_tit2 { position:absolute; left:50px; bottom: 120px;
-         font-size:36px; line-height:2; color:#075d46; }
-    .ban_fr .ban_box li .ban_tit_box .ban_com { position:absolute; bottom:50px;
-        left: 50px;  font-size:16px; color:#666; }
-
-    #pg1_ra1:checked ~ .ban_fr .ban_box { margin-left: 0; }
-    #pg1_ra2:checked ~ .ban_fr .ban_box { margin-left:-1280px; }
-    #pg1_ra3:checked ~ .ban_fr .ban_box { margin-left:-2560px; }
-    #pg1_ra4:checked ~ .ban_fr .ban_box { margin-left:-3840px; }
-    #pg1_ra5:checked ~ .ban_fr .ban_box { margin-left:-5120px; }
-    #pg1_ra6:checked ~ .ban_fr .ban_box { margin-left:-6400px; }
-
-    #page2 { background-color: #f1f1f1; color:#222; }
-    #page2 .page_wrap { width: 1280px; padding-top:80px; }
-    .grid_fr { clear:both; width: 1280px; }
-    .grid_fr .grid_box { clear:both; width: 1280px; padding-top: 40px; }
-    .grid_box li { width: 410px; margin-right: 25px; float:left; height: 624px; }
-    .grid_box li:last-child { margin-right: 0; }
-    .grid_box li a { display:block; color:#fff; background-position:center center; 
-    background-repeat: no-repeat; border-radius:40px; margin-top: 25px; height: 300px;
-    padding-top:6em;  padding-left: 2em; font-size:30px; box-sizing:border-box; }
-    .grid_box li a.item1 { background-image: url("./images/esg01_landscape.jpg");}
-    .grid_box li a.item2 { background-image: url("./images/esg02_landscape.jpg"); }
-    .grid_box li a.item3 { height:624px; background-image: url("./images/esg03_landscape.jpg");  
-    background-size:auto 100%; }
-    .grid_box li a.item4 { background-image: url("./images/esg04_landscape.jpg"); }
-    .grid_box li a.item5 { background-image: url("./images/esg05_landscape.jpg"); }
-    .grid_box li a .grid_tit { line-height: 1.8; }
-    .grid_box li a.item3 .grid_tit { padding-top:9.2em; line-height: 1.8; }
-    .grid_box li a .grid_com { font-size:16px; }
-
-    #page3 { background-color:#075d46; color:#fff; }
-    #page3 .page_wrap { width: 1280px; padding-top:80px; }
-    .col_fr { clear:both; width: 1280px; padding-top: 40px; }
-    .col_fr .col_box { clear: both; width: 1280px; }
-    .col_fr .col_box li.left { float:left; width: 844px; height: 458px; 
-    background-color:#fff; color:#000; border-radius:25px; box-sizing: border-box; 
-padding:38px; }
-    .one_line { font-size:28px; line-height: 2; padding-bottom:18px; }    
-    .inv_p { clear:both; }
-    .large_txt { float:left; font-size:70px; padding-right: 40px; }
-    .small_txt { float:left; font-size:18px; padding-top: 14px; line-height: 1.8; }
-    .col_dl { clear:both; padding-top:30px;  }
-    .col_dl dd { width:250px; float:left; margin:20px 0px; font-size:22px; font-weight:100; 
-    line-height: 1.6; }
-    .col_dl dd .d_tit { font-weight: 200; color:#999; }
-    .col_dl dd .d_com { font-weight: 100; }
-    .gtxt { color:#37e3b5; padding-left: 24px; }
-    .ltxt { color:#999; }
-    .dot:after { content:"|"; padding-left: 24px; }
-    .col_fr .col_box li.right { float:right; width: 410px; height: 458px; }
-    .col_fr .col_box li.right a { display:block; background-color: #fff; color:#333; 
-        height: 135px; line-height: 135px;  margin-bottom: 26px; border-radius:25px;   }
-    .col_fr .col_box li.right a span { padding-left: 20px; }
-    .col_fr .col_box li.right a:after { content:""; display:block; width: 28px; height: 35px; 
-    background-image: url("./images/icons.png"); background-repeat: no-repeat; 
-    background-position: -495px -72px; float:right; margin-top:50px; margin-right:20px; }
-    .col_fr .col_box li.right a span:before { content:""; display:block; float:left; 
-    width:79px; height:76px; background-image:url("./images/icons.png"); background-repeat: no-repeat;
-    background-position:0px -682px; margin-top: 30px; margin-left: 20px; } 
-
-    #page4 { background-color: #fff; color:#333; }
-    #page4 .tit_box { clear:both; padding-top:80px; width: 1280px; margin: 0 auto; }
-    .more { display:block; position:absolute; top:60px; right:200px; font-size:68px; font-weight:bold; 
-    width:80px; height:80px; border:1px solid #ccc; text-align: center; color:#999; }
-    .board_fr { clear:both; width: 1280px; margin:0px auto;  padding-top: 40px; }
-    .tb1 { clear:both; display:table; border-collapse: collapse;  }
-    .tb1 tr { display:table-row;  width: 1280px; }
-    .tb1 td { display:table-cell; min-height:50px; padding-top: 20px; padding-bottom: 20px; 
-    border-top:1px solid #ccc; }
-    .tb1 tr:last-child td { border-bottom:1px solid #ccc; }
-    .tb1 td.td1 { vertical-align:top; width:100px; text-align:left; font-size:32px; 
-        color:#075d46; font-weight: 100; }
-    .tb1 td a { display:block; color:#333; transition-duration:0.4s; }
-    .tb1 td a .td_tit { width:1100px; font-size:28px; line-height:1.4; font-weight:200;  padding-right: 36px;
-        white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
-    .tb1 td a .td_com { width:1100px; font-size:18px; line-height:2.2; font-weight:100; 
-        color:#999;  padding-right: 36px;
-        white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
-    .tb1 td a:hover { color:#075d46; }
-    .tb1 td a:hover .td_com { color:#075d46;}
-
-
-    #page5 { background-color: #eee; color:#222; }
-    #page5 .tit_box { clear:both; padding-top: 80px; }
-    .colm_fr { clear:both; }
-    .colm_fr .lst_tit { clear:both; padding-top: 30px; font-size:28px; font-weight:100; 
-        line-height: 2; }
-    .lst1, .lst2 { clear:both; }
-    .lst1 li, .lst2 li { float:left; width: 410px; margin-right: 25px; height: 250px;
-        background-color: #fff;   border-radius:25px; box-sizing:border-box; padding: 28px; 
-    padding-left: 40px; }
-    .lst1 li:last-child, .lst2 li:last-child { margin-right: 0; }
-    .colm_fr ul .item_tit { font-size:32px; line-height: 2.8; color:#075d46; }
-    .colm_fr ul li:before { content:""; display:block; width:60px; height:60px;
-    background-image: url("./images/icons.png"); background-repeat:no-repeat; 
-    background-size:300px auto; }
-    .colm_fr ul li a { display:block; width: 150px; line-height: 30px; padding-left: 18px; 
-        background-color:#075d46; color:#fff; border-radius:20px; }
-    .colm_fr ul li a:after { content:"→"; padding-left:60px;  }    
-    .colm_fr .lst1 .item1:before { background-position: 0px -400px; }
-    .colm_fr .lst1 .item2:before { background-position: -60px -400px; }
-    .colm_fr .lst1 .item3:before { background-position: -120px -400px; }
-    .colm_fr .lst2 .item1:before { background-position: -180px -400px; }
-    .colm_fr .lst2 .item2:before { background-position: -240px -400px; }
-    .colm_fr .lst2 .item3:before { background-position: 0px -460px; }
-
-
-    #ft { clear:both;  }
-    .ft .row { clear:both; padding-top: 25px; padding-bottom: 25px; min-height:60px; }
-    .ft .row1 { background-color:#075d46;  }
-    .ft .fnb li { float:left; margin-right: 50px; line-height: 60px; }
-    .ft .fnb li a { color:#fff; font-size: 18px; }
-    .ft .fnb li a:hover { color:gold; }
-    .ft #favo { display:block; line-height: 60px; height: 60px; width: 200px; text-align: center;
-    font-size: 18px;  }
-
-    .ft .row2 { background-color: #f1f1f1; height: 224px; }
-    .ft .slogan { font-size: 36px; color:#e0e0e0; }
-    .ft .ft_link_fr dl { float:left; font-size:16px; line-height: 32px; padding-left: 28px; }
-    .ft .ft_link_fr dl a { color:#a0a0a0; }
-    .ft .ft_link_fr dl a:hover { color:#333; }
-
-    .ft .row3 { background-color: #fff; }
-    .ft .ft_logo { width: 125px; height: 45px; background-image: url("./images/headerlogo_pc_kor.png"); 
-    background-size:125px auto; }
-    .ft .copyright { height: 45px; line-height: 45px; font-style: normal; font-weight:100;
-    color:#a0a0a0; }
-
-    .ft_wrap { clear:both; width: 1280px; margin: 0 auto; }
-    .ft_wrap .left { float: left; }
-    .ft_wrap .right { float: right; }
-
-
-    .fix_area { position:fixed; z-index:9999; bottom:40px; right:40px; }
-    .fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; 
-    border-radius:35px; box-sizing: border-box; padding: 6px; font-size:12px; padding-top:15px; 
-    overflow:hidden; box-shadow:1px 1px 6px #333; }
-    .fix_area .counsel { background-color:rgba(255,255,255,0.75); color:#333; }
-    .fix_area .totop { background-color:#075d46; color:#fff; margin-top: 20px; }
+    /* 내부 스타일 */
     </style>
 </head>
 <body>
@@ -291,84 +43,128 @@ padding:38px; }
             <nav class="tnb">
                 <div class="tnb_wrap">
                     <ul class="left_tnb">
-                        <li><a href="">로그인</a></li>
-                        <li><a href="">회원가입</a></li>
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="agreement.html">회원가입</a></li>
                     </ul>
                     <ul class="right_tnb">
-                        <li><a href="" class="sns1">A1</a></li>
-                        <li><a href="" class="sns2">A2</a></li>
-                        <li><a href="" class="sns3">A3</a></li>
+                        <li><a href="https://smartstore.naver.com/cjfreshway01" class="sns1">A1</a></li>
+                        <li><a href="https://www.youtube.com/channel/UC1MUkmNae8N5tbcQc24BE3g?view_as=subscrib" class="sns2">A2</a></li>
+                        <li><a href="https://www.instagram.com/cjfreshway_official/" class="sns3">A3</a></li>
                     </ul>
                 </div>
             </nav>
             <div class="main">
                 <div class="main_wrap">
-                    <a href="" class="logo">
+                    <a href="index.html" class="logo">
                         <img src="./images/headerlogo_pc_kor.png" alt="CJ프레시웨이로고">
                     </a>
                     <nav class="gnb">
                         <ul class="gnb_fr">
-                            <li><a href="">솔루션</a>
+                            <li><a href="sub1.html">솔루션</a>
                                 <div class="sub item1">
                                     <ul class="dp2">
-                                        <li><a href="">회사소개</a></li>
-                                        <li><a href="">사업영역</a></li>
-                                        <li><a href="">역량/인프라</a></li>
-                                        <li><a href="">브랜드</a></li>
+                                        <li><a href="sub1.html#page1">회사소개</a></li>
+                                        <li><a href="sub1.html#page2">사업영역</a></li>
+                                        <li><a href="sub1.html#page3">역량/인프라</a></li>
+                                        <li><a href="sub1.html#page4">브랜드</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="">지속가능경영</a>
+                            <li><a href="sub2.html">지속가능경영</a>
                                 <div class="sub item2">
                                     <ul class="dp2">
-                                        <li><a href="">전략</a></li>
-                                        <li><a href="">주요활동 및 성과</a></li>
-                                        <li><a href="">윤리경영</a></li>
-                                        <li><a href="">사회공헌</a></li>
-                                        <li><a href="">보고서 및 정책</a></li>
+                                        <li><a href="sub2.html#page1">전략</a></li>
+                                        <li><a href="sub2.html#page2">주요활동 및 성과</a></li>
+                                        <li><a href="sub2.html#page3">윤리경영</a></li>
+                                        <li><a href="sub2.html#page4">사회공헌</a></li>
+                                        <li><a href="sub2.html#page5">보고서 및 정책</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="">뉴스룸</a>
+                            <li><a href="sub3.html">뉴스룸</a>
                                 <div class="sub item3">
                                     <ul class="dp2">
-                                        <li><a href="">보도자료</a></li>
-                                        <li><a href="">미디어</a></li>
-                                        <li><a href="">홍보영상/브로슈어</a></li>
-                                        <li><a href="">공지사항</a></li>
+                                        <li><a href="sub3.html#page1">보도자료</a></li>
+                                        <li><a href="sub3.html#page2">미디어</a></li>
+                                        <li><a href="sub3.html#page3">홍보영상/브로슈어</a></li>
+                                        <li><a href="sub3.html#page4">공지사항</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="">투자정보</a>
+                            <li><a href="sub4.html">투자정보</a>
                                 <div class="sub item4">
                                     <ul class="dp2">
-                                        <li><a href="">경영정보</a></li>
-                                        <li><a href="">주가정보</a></li>
-                                        <li><a href="">재무정보</a></li>
-                                        <li><a href="">IR 자료실</a></li>
+                                        <li><a href="sub4.html#page1">경영정보</a></li>
+                                        <li><a href="sub4.html#page2">주가정보</a></li>
+                                        <li><a href="sub4.html#page3">재무정보</a></li>
+                                        <li><a href="sub4.html#page4">IR 자료실</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="">채용</a>
+                            <li><a href="sub5.html">채용</a>
                                 <div class="sub item5">
                                     <ul class="dp2">
-                                        <li><a href="">인사정보</a></li>
-                                        <li><a href="">CJ프레시웨어人</a></li>
-                                        <li><a href="">채용정보</a></li>
-                                        <li><a href="">인재 POOL</a></li>
+                                        <li><a href="sub5.html#page1">인사정보</a></li>
+                                        <li><a href="sub5.html#page2">CJ프레시웨어人</a></li>
+                                        <li><a href="sub5.html#page3">채용정보</a></li>
+                                        <li><a href="sub5.html#page4">인재 POOL</a></li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
                     </nav>
-                    <label for="sitemap_ck" class="sitemap_btn">사이트맵</label>
+                    <label for="sitemap_ck" class="sitemap_btn" title="관계 사이트">관계 사이트</label>
                 </div>
             </div>
             <input type="checkbox" id="sitemap_ck">
             <div class="sitemap">
                 <div class="sitemap_fr">
                     <label for="sitemap_ck" class="close_btn">닫기</label>
-                    여기는 사이트 맵
+                    <div id="realtedSites">
+                        <ul class="selectul">
+                            <li class="group">CJ그룹
+                                <ul>
+                                    <li><a href="http://www.cj.net" target="_blank" title="새 창">CJ주식회사</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">식품 &amp; 식품서비스
+                                <ul>
+                                    <li><a href="http://www.cj.co.kr/" target="_blank" title="새 창">CJ제일제당(식품)</a></li>
+                                    <li><a href="http://www.cjfoodville.co.kr/" target="_blank" title="새 창">CJ푸드빌</a></li>
+                                    <li><a href="/" class="self">CJ프레시웨이</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">생명공학
+                                <ul>
+                                    <li><a href="https://www.cj.co.kr/kr/about/business/bio" target="_blank" title="새 창">CJ제일제당 BIO사업부문</a></li>
+                                    <li><a href="https://www.cj.co.kr/kr/about/business/bio" target="_blank" title="새 창">CJFEED&amp;CARE</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">물산 &amp; 신유통
+                                <ul>
+                                    <li><a href="https://www.cjlogistics.com/ko/main" target="_blank" title="새 창">CJ대한통운</a></li>
+                                    <li><a href="http://www.cjenc.co.kr/kr/Default.asp" target="_blank" title="새 창">CJ대한통운 건설부문</a></li>
+                                    <li><a href="https://www.oliveyoung.co.kr/store/company/brandStory.do" target="_blank" title="새 창">CJ올리브영</a></li> 
+                                    <li><a href="https://www.cjolivenetworks.co.kr/" target="_blank" title="새 창">CJ올리브네트웍스</a></li>
+                                    <li><a href="https://company.cjonstyle.com/index.asp" target="_blank" title="새 창">CJ ENM 커머스부문</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">엔터테인먼트 &amp; 미디어
+                                <ul>
+                                    <li><a href="https://www.cjenm.com/ko/" target="_blank" title="새 창">CJ ENM 엔터테인먼트부문</a></li>
+                                    <li><a href="http://corp.cgv.co.kr/" target="_blank" title="새 창">CJ CGV</a></li>
+                                </ul>
+                            </li>
+                            <li class="group">글로벌 법인
+                                <ul>
+                                    <li><a href="https://cjamerica.com/" target="_blank" title="새 창">CJ America</a></li>
+                                    <li><a href="https://www.cjchina.net/index.html" target="_blank" title="새 창">CJ China</a></li>
+                                    <li><a href="http://www.cjjapan.net/" target="_blank" title="새 창">CJ Japan</a></li>
+                                    <li><a href="https://cjvietnam.vn/" target="_blank" title="새 창">CJ Vietnam</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
@@ -664,11 +460,11 @@ padding:38px; }
                     <!-- (nav.fnb>ul.fnb_box>li*5>a{메뉴$})+(select.favorite>option{사이트$}*6) -->
                     <nav class="fnb left">
                         <ul class="fnb_box">
-                            <li><a href="">개인정보처리방침</a></li>
-                            <li><a href="">이용약관</a></li>
-                            <li><a href="">법적고지</a></li>
-                            <li><a href="">이메일 무단수집 거부</a></li>
-                            <li><a href="">온라인 제보</a></li>
+                            <li><a href="pravacy.html">개인정보처리방침</a></li>
+                            <li><a href="usepromotion.html">이용약관</a></li>
+                            <li><a href="#">법적고지</a></li>
+                            <li><a href="#">이메일 무단수집 거부</a></li>
+                            <li><a href="#">온라인 제보</a></li>
                         </ul>
                     </nav>
                     <select name="favo" id="favo" class="favo right" onchange="favo(this)">

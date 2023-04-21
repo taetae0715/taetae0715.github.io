@@ -31,7 +31,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Noto+Sans+KR&family=Sono&display=swap" rel="stylesheet">
     <style>
-    /* 내부 스타일 */
+        * { margin: 0; padding: 0; }    
+    </style>
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="sub_common.css">
+        <link rel="stylesheet" href="sublayout.css">
+    <style>
+        /* 내부 스타일 */
+        .content { background-image: url("./images/top_solution.jpg"); }
+        #page1 .grid4 li { text-align: center; box-sizing:border-box; border:1px solid #eee; height: 300px; }
+        #page1 .grid4 .grid_tit { font-size:28px; font-weight:200; color:#075d46; padding-top:50px;  }
+        #page1 .grid4 .grid_tit:after { content:""; display:block; clear:both; width:80px;
+        height:5px; background-color:#075d46; margin:30px auto; }
+        #page1 .grid4 .grid_com { padding-top: 14px; }
+        #page2 { background-image: url("./images/esg01_landscape.jpg"); background-position:center center;
+        background-size:100% auto; background-attachment: fixed; }
+        #page2 .page_comment { text-shadow:1px 1px 3px #333; color:#fff; }
     </style>
 </head>
 <body>
@@ -166,235 +181,71 @@
         <div class="content">
             <figure class="vs">
                 <div class="img_box">
-                    <video src="./movie/jin.mp4" muted autoplay loop></video>
+                    <h1 class="tit">회사소개</h1>
                 </div>
             </figure>
             <section class="page" id="page1">
-                <h2 class="page_title" style="display:none;">오뚜기 SNS</h2>
+                <h2 class="page_tit">(주)오뚜기</h2>
                 <div class="page_wrap">
-                    <div class="tit_box">
-                        <h5 class="sub_title">소셜미디어를 통해 보는 오뚜기 스토리</h5>
-                        <h2 class="main_title">오뚜기 SNS</h2>
-                    </div>
-                    <article class="pg1_btn_box">
-                        <input type="radio" name="pg_ra" id="pg1_ra1" class="pg1_ra" checked>
-                        <label for="pg1_ra1" class="item1">오뚜기 데일리</label>
-                        <input type="radio" name="pg_ra" id="pg1_ra2" class="pg1_ra">
-                        <label for="pg1_ra2" class="item2">오늘,맛으로 행복한세상</label>
-                        <input type="radio" name="pg_ra" id="pg1_ra3" class="pg1_ra">
-                        <label for="pg1_ra3" class="item3">오뚜기 플레이트</label>
-                        <input type="radio" name="pg_ra" id="pg1_ra4" class="pg1_ra">
-                        <label for="pg1_ra4" class="item4">옐로우즈 투게더</label>
-                        <div class="ban_fr">
-                            <ul class="ban_box">
-                                <li class="item1">
-                                    <img src="./images/slide01.JPG" alt="오뚜기 데일리" class="pic">
-                                </li>
-                                <li class="item2">
-                                    <img src="./images/slide02.JPG" alt="오늘,맛으로 행복한세상" class="pic">
-                                </li>
-                                <li class="item3">
-                                    <img src="./images/slide03.JPG" alt="오뚜기 플레이트" class="pic">
-                                </li>
-                                <li class="item4">
-                                    <img src="./images/slide04.JPG" alt="옐로우즈 투게더" class="pic">
-                                </li>
-                            </ul>
-                        </div>
+                    <p class="page_comment">CJ프레시웨이는 대한민국을 대표하는 식자재 유통 및 푸드 서비스 기업입니다.
+                        국내 최고 수준의 인프라와 핵심역량을 바탕으로,
+                        식문화 트렌드와 고객 사업환경에 최적화된 솔루션을 제공하여
+                        고객의 사업 성공에 기여하는 ‘푸드 비즈니스 파트너’ 로 거듭나고 있습니다.
+                    </p>
+                    <article class="grid4">
+                        <ul class="grid_box">
+                            <li>
+                                <div>
+                                    <h3 class="grid_tit">최초</h3>
+                                    <p class="grid_com">최초의 트렌드를<br>
+                                        선도하는 창조성</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3 class="grid_tit">최고</h3>
+                                    <p class="grid_com">최고 수준의 구매,<br>
+                                        물류, 식품안전 인프라</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3 class="grid_tit">차별화</h3>
+                                    <p class="grid_com">차별화된 사업분야별<br>
+                                        고객 맞춤 컨설팅</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3 class="grid_tit">상생</h3>
+                                    <p class="grid_com">고객 & 협력사와<br>
+                                        동반성장하는 CSV</p>
+                                </div>
+                            </li>
+                        </ul>
                     </article>
                 </div>
             </section>
             <section class="page" id="page2">
-                <h2 class="page_title" style="display:none">오뚜기 뉴스</h2>
+                <h2 class="page_tit">인재 채용</h2>
                 <div class="page_wrap">
-                    <div class="tit_box">
-                        <h3 class="sub_title">오뚜기</h3>
-                        <h2 class="main_title">ESG 경영</h2>
-                    </div>
-                    <article class="grid_fr">
-                        <ul class="grid_box">
-                            <li>
-                                <a href="" class="item1">
-                                    <h3 class="grid_tit">지속가능</h3>
-                                    <p class="grid_com">ESG 경영</p>
-                                </a>
-                            </li>    
-                            <li>
-                                <a href="" class="item2">
-                                    <h3 class="grid_tit">미래가치</h3>
-                                    <p class="grid_com">투자정보</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="item3">
-                                    <h3 class="grid_tit">나눔미학</h3>
-                                    <p class="grid_com">사회공헌</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="item4">
-                                    <h3 class="grid_tit">오뚜기몰</h3>
-                                    <p class="grid_com">바로가기</p>
-                                </a>
-                            </li>  
-                        </ul>
-                    </article>
+                    <p class="page_comment">국내외 유통 네트워크를 기반으로 품목별 특화된 상품 경쟁력을 갖추고 있으며
+                        업계 최대 규모의 물류 인프라와 선진화된 품질 및 위생관리 시스템으로 최상의 상품을 신속 · 정확 · 안전하게 공급하고 있습니다.
+                        온라인 시스템을 통해 간편한 식자재 주문과 결제는 물론, AI 상품 큐레이션 서비스를 제공하고 있으며
+                        전문 고객센터 운영을 통해 고객의 요청사항을 실시간으로 해결하며 고객 만족을 높이고 있습니다.
+                    </p>
                 </div>
             </section>
             <section class="page" id="page3">
-                <h2 class="page_title" style="display:none">오뚜기 주식정보</h2>
+                <h2 class="page_tit">사업장 소개</h2>
                 <div class="page_wrap">
-                    <div class="tit_box">
-                        <h3 class="sub_title">오뚜기</h3>
-                        <h2 class="main_title">주식정보</h2>
-                    </div>
-                    <article class="col_fr">
-                        <ul class="col_box">
-                            <li class="left">
-                                <p class="one_line"><span class="dot">오뚜기</span> <span class="gtxt">450,000</span></p>
-                                <div class="inv_p">
-                                    <p class="large_txt">450,500</p>
-                                    <p class="small_txt">
-                                        <span class="ltxt">2023/04/19 14:59:25</span><br>
-                                        <span class="btxt">─ 0 &nbsp; &nbsp; 0.00%</span>
-                                    </p>
-                                </div>
-                                <dl class="col_dl">
-                                    <dd>
-                                        <h4 class="d_tit">시가</h4>
-                                        <p class="d_com">450,500원</p>
-                                    </dd>
-                                    <dd>
-                                        <h4 class="d_tit">고가</h4>
-                                        <p class="d_com">456,000원</p>
-                                    </dd>
-                                    <dd>
-                                        <h4 class="d_tit">저가</h4>
-                                        <p class="d_com">449,500원</p>
-                                    </dd>
-                                    <dd>
-                                        <h4 class="d_tit">전일가격</h4>
-                                        <p class="d_com">450,500원</p>
-                                    </dd>
-                                    <dd>
-                                        <h4 class="d_tit">거래량</h4>
-                                        <p class="d_com">3,210주</p>
-                                    </dd>
-                                    <dd>
-                                        <h4 class="d_tit">거래대금</h4>
-                                        <p class="d_com">1,450백만원</p>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li class="right">
-                                <a href="" class="item1"><span>재무제표</span></a>
-                                <a href="" class="item2"><span>공시현황</span></a>
-                                <a href="" class="item3"><span>종합정보</span></a>
-                            </li>
-                        </ul>
-                    </article>
+
                 </div>
             </section>
             <section class="page" id="page4">
-                <h2 class="page_title" style="display:none">오뚜기 뉴스</h2>
+                <h2 class="page_tit">찾아오시는 길</h2>
                 <div class="page_wrap">
-                    <div class="tit_box">
-                        <h3 class="sub_title">NEWS</h3>
-                        <h2 class="main_title">오뚜기 뉴스</h2>
-                    </div>
-                    <a href="" class="more">+</a>
-                    <article class="board_fr">
-                        <table class="tb1">
-                            <tbody>
-                                <tr>
-                                    <td class="td1">5</td>
-                                    <td class="td2">
-                                        <a href="">
-                                            <h3 class="td_tit">'스위트홈 제 26회 오뚜기 가족요리 페스티벌' 접수</h3>
-                                            <p class="td_com">㈜오뚜기는 가정의 달을 맞아 오는 5월 13일 과천 서울랜드 피크닉장에서 ‘스위트홈 제 26회 오뚜기 가족요리 페스티벌’을 개최합니다.올해 26회를 맞이한 ‘오뚜기 가족요리 페스트벌’은 요리라는 경험을 통해 가정의 행복한 스위트홈을 실현하고...</p>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="td1">4</td>
-                                    <td class="td2">
-                                        <a href="">
-                                            <h3 class="td_tit">오뚜기 소비기한 적용 제품 현황 안내</h3>
-                                            <p class="td_com">오뚜기 소비기한 적용 제품 현황 안내당사 소비기한 적용 제품 현황(2023.03.31 기준)을 첨부파일로 안내드립니다.</p>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="td1">3</td>
-                                    <td class="td2">
-                                        <a href="">
-                                            <h3 class="td_tit">[신동아] 장미란 금메달 숨은 조력자 함태호 오뚜기 명예회장</h3>
-                                            <p class="td_com">많은 분들이 베이징 올림픽에서 장미란 선수가 금메달을 들어올리던 감격의 순간을 기억하실 겁니다당시 저는 고등학생이었는데 저도 그 모습을 보면서 좀만 더 좀만 더를 외치곤 했습니다 마치 제가 역기를들어 올리는 것처럼이 얼굴을 막 찌푸리면서요이...</p>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="td1">2</td>
-                                    <td class="td2">
-                                        <a href="">
-                                            <h3 class="td_tit">오뚜기 참기름 출시 40주년…"제품 개발 이어간다"</h3>
-                                            <p class="td_com">오뚜기는 1983년 고소한 참기름을 출시했고 2011년 옛날 참기름을 선보였다. 시장조사업체 닐슨IQ코리아에 따르면 오뚜기 참기름은 1990년부터 2020년까지 31년 연속 판매 1위를 기록했다.</p>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="td1">1</td>
-                                    <td class="td2">
-                                        <a href="">
-                                            <h3 class="td_tit">오뚜기, 작년 매출 3조 첫 돌파…"창립 이후 53년만"</h3>
-                                            <p class="td_com">오뚜기가 지난해 처음으로 연 매출 3조원을 넘기며 식품업계의 이른바 '3조원 클럽'에 입성했다.</p>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </article>
-                </div>
-            </section>
-            <section class="page" id="page5">
-                <h2 class="page_title style="display:none"></h2>
-                <div class="page_wrap">
-                    <div class="tit_box">
-                        <h3 class="sub_title">CS CENTER</h3>
-                        <h2 class="main_title">고객서비스</h2>
-                    </div>
-                    <article class="colm_fr">
-                        <h3 class="lst_tit">비즈니스 상담센터</h3>
-                        <ul class="lst1">
-                            <li class="item1">
-                                <h3 class="item_tit">공장견학 신청</h3>
-                                <a href="" class="item_more">상담하기</a>
-                            </li>
-                            <li class="item2">
-                                <h3 class="item_tit">견학 공장 위치</h3>
-                                <a href="" class="item_more">보러가기</a>
-                            </li>
-                            <li class="item3">
-                                <h3 class="item_tit">공장 소개</h3>
-                                <a href="" class="item_more">보러가기</a>
-                            </li>
-                        </ul>
-                        <h3 class="lst_tit">간편 상담센터</h3>
-                        <ul class="lst2">
-                            <li class="item1">
-                                <h3 class="item_tit">자주 묻는 질문</h3>
-                                <a href="" class="item_more">문의하기</a>
-                            </li>
-                            <li class="item2">
-                                <h3 class="item_tit">고객 한마디</h3>
-                                <a href="" class="item_more">상담하기</a>
-                            </li>
-                            <li class="item3">
-                                <h3 class="item_tit">FAQ</h3>
-                                <a href="" class="item_more">보러가기</a>
-                            </li>
-                        </ul>
-                    </article>
+
                 </div>
             </section>
         </div>

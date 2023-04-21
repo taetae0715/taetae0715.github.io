@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* 초기화 스타일 */
+* {margin: 0; padding: 0; max-width:1900px;}
+body {width: 100%; font-family: 'Noto Sans KR', sans-serif;}
+ul {list-style: none;}
+a {text-decoration: none;}
+img {border: none;}
+.np {font-family: 'Nanum Pen Script', cursive;}
+.container{ clear: both; width: 100%; }
+
+/* 헤더 스타일 */
+.hd{ clear: both; width: 100%; }
+.tnb{ clear: both; width: 100%; height: 120px; background-color:#fef100;}
+.tnb_wrap {clear: both; width: 1400px; margin: 0 auto; height: 110px;}
+
+.left_tnb { float:left; }
+.left_tnb li { float:left; line-height: 35px; margin-top: 30px; }
+.left_tnb li:first-child::after { content:"|"; color:yellow; margin-right: 14px; }
+.left_tnb li a { margin-right: 14px; color:#082841; }
+.left_tnb li a:hover { color:deeppink; }
+
+.sitemap_btn { display:block; float: left; cursor:pointer; margin-top: 36px; margin-left: 15px; overflow: hidden; width: 22px; height: 23px; text-indent:-9999px; background-image: url("./images/icon_all_M.gif");}
+.sitemap { position:fixed; top: 0; left: 0; width: 80vw; height: 80vh; z-index:999; background-color: rgb(199, 83, 83); display:none; }
+#sitemap_ck:checked ~ .sitemap { display:block; }    
+#sitemap_ck { display:none; }
+
+.sitemap #realtedSites { color:#fff; padding-top: 60px; margin-top:40px; border-top:1px solid #fff; }
+.sitemap #realtedSites li { float:left; padding-right: 40px; line-height: 2.4; font-size:22px; }
+.sitemap #realtedSites li a { color:#fff; font-size:16px; }
+.sitemap #realtedSites li ul { clear:both; }
+.sitemap #realtedSites li ul li { clear:both; }
+#sitemap_ck:checked ~ .sitemap { display:block; }    
+.close_btn { display:block; width: 30px; height: 30px; background-image: url("./images/spliticons.png"); background-repeat: no-repeat; background-size: 300px auto;
+            background-position: -150px -60px;  cursor:pointer; position:absolute; right:10%; top:10%; z-index:9999; overflow:hidden; text-indent:-9999px; }
+
+.center_tnb {position: absolute; top:0px; left: 900px; line-height: 120px;}
+.center_tnb li a {text-indent:9999px; overflow: hidden; margin-top: 15px; display:block; width:101px; height:98px; background-image: url("./images/logo.png"); background-size:auto; background-position:center center; }
+
+.right_tnb {float: right; margin: 0 auto;}
+.right_tnb li {float: left; line-height: 130px; }
+.right_tnb li a { text-indent:9999px; overflow: hidden; background-size:auto; background-position:center center; margin-top: 35px; margin-left: 17px; display:block;}
+.right_tnb li a.icon2 { width:22px; height:23px; background-image: url("./images/icon_lang.png"); }
+.right_tnb li a.icon3 { width:28px; height:25px; background-image: url("./images/top_chat.png"); }
+
+.menu_gnb {font-size: 20.5px; text-align: center; color:#082841; width: 1200px; margin: 0 auto;}
+.menu_gnb li {float: left; line-height: 80px; width: 20%; color:#082841;}
+.menu_gnb li a { color: #082841; text-decoration: none;}
+.menu_gnb li a:hover {display: block; border-bottom: 3px solid red; color:#dc2c34; font-weight: bold; }
+.menu_gnb li a:hover > .sub {display: block;}
+
+.gnb { position:relative; width: 100%; height:80px; background-color: #fef100;}
+.gnb_wrab { width: 1200px; margin: 0 auto;}
+.menu_gnb > li:hover > .sub { display:block; }
+
+.sub > ul > li { float:left; width: 150px; font-size:16px;}
+.sub > ul > li:hover > a { color:#dc2c34; border-style: none;}
+.sub { display:none; padding-top: 5px; width: 800px; }
+.sub.item2 { margin-left: -200px;  }
+.sub.item3 { margin-right: 100px; }
+.sub.item4 { margin-left: -200px; }
+.sub.item5 { margin-left: -150px; width: 600px; }
+
+/* 푸터 스타일 */
+#ft { clear:both;  }
+.ft .row { clear:both; padding-top: 20px; padding-bottom: 20px; min-height:40px; }
+.ft .row1 { background-color:#eee;  }
+.ft .fnb li { float:left; margin-right: 60px; line-height: 40px; }
+.ft .fnb li a { color:#333; font-size: 18px; }
+.ft .fnb li a:hover { color:#fff; font-weight: bold; }
+.ft #favo { display:block; line-height: 40px; height: 40px; width: 200px; text-align: center; font-size: 18px;  }
+
+.ft .row2 {position: relative; background-color: #fff; height: 100px; }
+.ft .slogan { font-size: 17px; color:#999 ; line-height: 25px; padding-top: 22px;}
+.ft .ft_link_fr dl { float:left; font-size:16px; line-height: 30px; padding-left: 28px; }
+.ft .ft_link_fr dl a { color:#999; }
+.ft .ft_link_fr dl a:hover { color:#333; }
+
+.ft .row3 { background-color: #fff; position: relative; padding-bottom: 20px;}
+.ft .ft_logo { width: 170px; height: 60px; background-image: url("./images/f_logo.jpg"); background-size:100% auto; }
+.ft .copyright { height: 45px; line-height: 45px; font-style: normal; font-weight:100;color: #333; margin-right: 650px; padding-top: 15px;}
+
+.ft_wrap { clear:both; width: 1280px; margin: 0 auto; }
+.ft_wrap .left { float: left; }
+.ft_wrap .right { float: right; }
+
+.fix_area { position:fixed; z-index:9999; bottom:40px; right:40px; }
+.fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; 
+border-radius:35px; box-sizing: border-box; padding: 6px; font-size:12px; padding-top:15px; 
+overflow:hidden; box-shadow:1px 1px 6px #333; }
+.fix_area .counsel { background-color:rgba(255,255,255,0.75); color:#333; }
+.fix_area .totop { background-color:#dc2c34; color:#fff; margin-top: 20px; }
