@@ -1,0 +1,268 @@
+
+
+
+
+  
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:8082/pro03/FoodUpdate.do?fno=50011 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:52:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<title>관광안내 > 관광지도 > 음식점 > 음식점 수정</title>
+<style>
+.title { padding-top:36px; padding-bottom:10px; }
+.agree_fr { width: 1000px; padding: 24px; margin: 10px auto; }
+.image { display: block; width: 300px; height: 250px; }
+#postcode { width: 250px; margin-right: 10px;}
+.file2 {display:none}
+/* #fileSel1:checked ~ #file1 { display:none; } */
+#fileSel2:checked ~ .file2 { display:block; }
+</style>
+</head>
+<body>
+
+
+
+
+ 
+
+<link href="../css/bulma.css" rel="stylesheet">
+<script src="../js/jquery-1.12.4.js"></script>
+<style>
+.navbar-link { margin-right: 50px; }
+#adminmode { width: 71%; }
+</style>
+<header id="header" class="container">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="../png/logo.png" alt="logo" width="321px;" height="56px;" style="margin-top: 10px; margin-right: 60px;">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu" style="margin-top: 10px;">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">공지사항</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="gonoticelist.html">함안소식</a>
+          
+          <a class="navbar-item" href="userlogin.html">고객민원</a>
+          
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">축제행사</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="event1.html">함안수박축제</a>
+          <a class="navbar-item" href="event2.html">함안낙화놀이</a>
+          <a class="navbar-item" href="event3.html">해바라기축제</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">함안여행</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>문화재</strong></span>
+          <a class="navbar-item" href="cultural.html">문화재현황</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>생태관광</strong></span>
+          <a class="navbar-item" href="eco1.html">함안악양둑방</a>
+          <a class="navbar-item" href="eco2.html">입곡문화공원</a>
+          <a class="navbar-item" href="eco3.html">입곡군립공원</a>
+          <a class="navbar-item" href="eco4.html">연꽃테마파크</a>
+          <a class="navbar-item" href="eco5.html">악양생태공원</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>역사여행</strong></span>
+		<a class="navbar-item" href="history1.html">함안광심정</a>
+		<a class="navbar-item" href="history2.html">함안악양루</a>
+		<a class="navbar-item" href="history3.html">원효암 칠성각</a>
+		<a class="navbar-item" href="history4.html">장춘사 대웅전</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">관광안내</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>여행갤러리</strong></span>
+          <a class="navbar-item" href="photolist.html">포토갤러리</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>관광지도</strong></span>
+          <a class="navbar-item" href="market.html">전통시장</a>
+          <a class="navbar-item" href="food.html">음식점</a>
+          <a class="navbar-item" href="accom.html">숙박시설</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>교통안내</strong></span>
+		<a class="navbar-item" href="traffic1.html">시내/시외버스</a>
+		<a class="navbar-item" href="traffic2.html">공영버스/농어촌버스</a>
+		<a class="navbar-item" href="traffic3.html">기차/택시</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="userlogin.html"><strong>로그인</strong></a>
+          <a class="button is-light" href="useragree.html">회원가입</a>
+         
+         
+         
+        </div>
+      </div>
+    </div>
+</nav>
+</header>
+<div class="content" style="padding-top:30px; margin-top:30px; border-top:3px solid #333; min-height:500px; ">
+	<div class="container-fluid">
+	<h2 class="title" style="text-align: center;">함안 맛집 수정</h2>
+	<article class="agree_fr">
+		<form action="http://localhost:8082/pro03/FoodUpdatePro.do" method="post" enctype="multipart/form-data" class="box">
+		<table class="table">
+			<tbody>
+				<tr>
+					<th><label class="label" for="title">상호명</label></th>
+					<td>
+						<input type="hidden" name="fno" id="fno" value="50011" />
+						<input type="text" name="title" id="title" placeholder="상호명 입력" class="input" value="아라밀면" required />
+					</td>
+				</tr>
+				<tr>
+					<th><label class="label" for="tel">전화번호</label></th>
+					<td><input type="tel" name="tel" id="tel" maxlength="14" placeholder="ex) 0505-1234-5678" class="input" value="055-583-1882" required></td>
+				</tr>
+				<tr>
+					<th><label class="label" for="post_btn">주소</label></th>
+					<td>
+					
+					<input type="hidden" name="addr" id="addr" value="(52046) 경남 함안군 가야읍 중앙남길 36, 아라밀면" />
+					<input type="text" name="postcode" id="postcode" placeholder="우편번호" class="input" value="52046" readonly>
+					<button id="post_btn" onclick="return findAddr()" class="button is-info is-rounded">우편번호 검색</button>
+					<input type="text" name="address1" id="address1" placeholder="기본 주소" class="input" value="경남 함안군 가야읍 중앙남길 36" required readonly /><br>
+					<input type="text" name="address2" id="address2" placeholder="상세 주소 입력" class="input" value="아라밀면" required  /><br>
+					</td>
+				</tr>
+				<tr>
+					<th><label class="label" for="fileSel2">첨부파일</label></th>
+					<td>
+						<input type="hidden" name="file1" id="file1" value="5.%2b%ec%95%84%eb%9d%bc%eb%b0%80%eb%a9%b4.jpg.small.html">
+						<input type="radio" name="fileSel" id="fileSel1" onclick="fileCall()" checked>교체 안 함<br> 
+						<input type="radio" name="fileSel" id="fileSel2" onclick="fileCall()" >교체<br>
+						<input type="file" name="fileSel" id="file2" class="file2">
+						<script>
+						function fileCall(){
+							var fileSel1 = document.getElementById("fileSel1");
+							var fileSel2 = document.getElementById("fileSel2");
+							var file1 = document.getElementById("file1");
+							var file2 = document.getElementById("file2");
+							if(fileSel1.checked){
+								file1.style.display = "none";
+								file1.setAttribute("disabled");
+								file2.removeAttribute("disabled");
+							} else {
+								file1.style.display = "block";
+								file1.removeAttribute("disabled");
+								file2.setAttribute("disabled");
+							}
+						}
+						</script>		
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+       				<input type="submit" value="등록하기" class="button is-info"/>
+					&nbsp; &nbsp; &nbsp;
+					<a href="javascript:history.go(-1)" class="button is-light">취소</a>
+					<!-- <input type="reset" value="초기화" class="button is-ghost"/> -->
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		<script>
+		function findAddr(){
+		new daum.Postcode({
+			oncomplete: function(data) {
+				console.log(data);
+				var roadAddr = data.roadAddress;
+				var jibunAddr = data.jibunAddress;
+				document.getElementById("postcode").value = data.zonecode;
+				if(roadAddr !== '') {
+					document.getElementById("address1").value = roadAddr;				
+				} else if(jibunAddr !== ''){
+					document.getElementById("address1").value = jibunAddr;
+				}
+				document.getElementById("address2").value = "";
+				document.getElementById("address2").focus();
+			}
+		}).open();
+		return false;
+	}
+	</script>
+	<script src="../js/postcode.v2.js"></script>
+	</article>		
+	</div>
+</div>
+
+<style>
+a { color: #333; }
+#level1 a { color: #fff; }
+#level2 a { margin-top: -70px; }
+#level3 span { display:block; margin-top: -70px; margin-left: 500px; font-size: 90%;}
+.fix_area { position:fixed; z-index:9999; bottom:50px; right:50px; }
+.fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; color:#fff;
+border-radius:35px; box-sizing: border-box; padding: 6px; font-size:15px; 
+overflow:hidden; box-shadow:1px 1px 6px #333; }
+.fix_area .totop { background-color:rgb(0,154,218); margin-top: 10px; }
+</style>
+<footer class="footer" style="height: 250px; background-color: #fff;">
+	<div class="fix_area">
+     <a href="#" class="cir_box totop">↑<br>TOP</a>
+	</div>
+  <nav class="level" id="level1" style="background-color: rgb(0,154,218); height: 50px;">
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03678/03693.web">실과소 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03638/03836.web">읍면 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.gyeongnam.go.kr/index.gyeong">도,시군청 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="http://www.gnpolice.go.kr/ha/#">유관기관,단체 바로가기</a>
+  </p>
+ </nav>
+  <nav class="level" id="level2">
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_logo.png" alt="logo" style="width:190px; height: 62px;">
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/06455.web">개인정보 처리방침</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/04168.web">저작권정책</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03637/03815.web">오시는길</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_mark.png" alt="logo" style="width:112px; height: 77px;">
+  </p>
+  </nav>
+  <nav class="level" id="level3">
+    <span>(52043) 경상남도 함안군 가야읍 말산로 1 (함안군청) &nbsp;&nbsp;&nbsp; 대표전화 : 055-580-2114 &nbsp;&nbsp;&nbsp; 팩스 : 055-580-2899<br>
+  		  본 사이트에 게시된 이메일주소의 자동수집을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.<br>
+  		Copyright (C) 2019 Haman County Office. All rights reserved.</span>
+ </nav>
+</footer>
+</body>
+
+<!-- Mirrored from localhost:8082/pro03/FoodUpdate.do?fno=50011 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:52:17 GMT -->
+</html>

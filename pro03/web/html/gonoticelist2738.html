@@ -1,0 +1,513 @@
+
+
+
+
+ 
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:8082/pro03/GoNoticeList.do?nowPage=1 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:51:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<title>공지사항</title>
+<style>
+.main_wrap {width:1000px; margin:0 auto;min-height:700px}
+.blank {height:100px}
+.divide {height:35px ; background-color:lightgray;text-align:center;line-height:35px}
+.colred {color:red}
+textarea {resize:none}
+table {  border-collapse: separate; border-spacing: 10px 10px;}
+tr {margin-left:20px}
+
+.pagelist {clear:both; width:560px;height:50px; margin:0 auto; background-color:green}
+.listboxc {cursor:pointer;width:50px;height:50px;border: 1px solid rgb(224, 224, 224); float:left;margin-right:20px;text-align:center;line-height:50px}
+.listbox {width:50px;height:50px;border: 1px solid rgb(224, 224, 224); float:left;margin-right:20px;text-align:center;line-height:50px}
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+   alert(width);
+   var totalWidth = 0;
+   var set = $(".set")   
+   /* set.each(function(){
+    totalWidth = totalWidth + $(this).width();
+   })
+   $('.scroll').css('width', totalWidth)
+  });  */ 
+</script>
+</head>
+<body>
+
+
+
+
+ 
+
+<link href="../css/bulma.css" rel="stylesheet">
+<script src="../js/jquery-1.12.4.js"></script>
+<style>
+.navbar-link { margin-right: 50px; }
+#adminmode { width: 71%; }
+</style>
+<header id="header" class="container">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="../png/logo.png" alt="logo" width="321px;" height="56px;" style="margin-top: 10px; margin-right: 60px;">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu" style="margin-top: 10px;">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">공지사항</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="gonoticelist.html">함안소식</a>
+          
+          <a class="navbar-item" href="userlogin.html">고객민원</a>
+          
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">축제행사</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="event1.html">함안수박축제</a>
+          <a class="navbar-item" href="event2.html">함안낙화놀이</a>
+          <a class="navbar-item" href="event3.html">해바라기축제</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">함안여행</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>문화재</strong></span>
+          <a class="navbar-item" href="cultural.html">문화재현황</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>생태관광</strong></span>
+          <a class="navbar-item" href="eco1.html">함안악양둑방</a>
+          <a class="navbar-item" href="eco2.html">입곡문화공원</a>
+          <a class="navbar-item" href="eco3.html">입곡군립공원</a>
+          <a class="navbar-item" href="eco4.html">연꽃테마파크</a>
+          <a class="navbar-item" href="eco5.html">악양생태공원</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>역사여행</strong></span>
+		<a class="navbar-item" href="history1.html">함안광심정</a>
+		<a class="navbar-item" href="history2.html">함안악양루</a>
+		<a class="navbar-item" href="history3.html">원효암 칠성각</a>
+		<a class="navbar-item" href="history4.html">장춘사 대웅전</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">관광안내</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>여행갤러리</strong></span>
+          <a class="navbar-item" href="photolist.html">포토갤러리</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>관광지도</strong></span>
+          <a class="navbar-item" href="market.html">전통시장</a>
+          <a class="navbar-item" href="food.html">음식점</a>
+          <a class="navbar-item" href="accom.html">숙박시설</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>교통안내</strong></span>
+		<a class="navbar-item" href="traffic1.html">시내/시외버스</a>
+		<a class="navbar-item" href="traffic2.html">공영버스/농어촌버스</a>
+		<a class="navbar-item" href="traffic3.html">기차/택시</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="userlogin.html"><strong>로그인</strong></a>
+          <a class="button is-light" href="useragree.html">회원가입</a>
+         
+         
+         
+        </div>
+      </div>
+    </div>
+</nav>
+</header>
+<div class="blank"></div>
+
+<div class="main_wrap">
+	<h3 class="title is-3 min" style="color:rgb(0,154,218)">●공지사항</h3>
+
+	<table class="table is-hoverable" style="width:100%">
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/%ec%b0%b8%ea%b0%80%ec%9d%8c%ec%8b%9d%ec%a0%90%20%eb%aa%a8%ec%a7%911.jpg">
+			</th>
+			<td >
+			<a href="gonoticedetail7bb3.html?nno=20109">
+			<strong>경남 미식여행 예약결제시스템 2023년 참가음식점 모집</strong><br>
+			경남 미식여행 예약결제시스템 2023년 참가음식점 모집</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/noti21.jpg">
+			</th>
+			<td >
+			<a href="gonoticedetail5e87.html?nno=20108">
+			<strong>제1회 나만의 홍시가요제 개최</strong><br>
+			☆제1회 나만의 홍시가요제가 개최됩니다☆
+
+주제는 <<홍시와 관련된 곡으로 노래부르기>> 입니다
+
+많은 관심과 참여 바랍니다
+
+ 
+
+참가팀: 20팀
+
+일시: 22. 11. 19.(토) 18시
+
+장소: 함안문화원 대공연장
+
+문의: 아라가야협동조합(☎055-582-0582)
+
+※자세한 내용은 홍보물 참고</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/noti31.jpg">
+			</th>
+			<td >
+			<a href="gonoticedetail12c9.html?nno=20107">
+			<strong>2023 대한민국 관광공모전(기념품 부문) 안내</strong><br>
+			문화체육관광부와 한국관광공사에서는 대한민국을 상징하는 우수한 관광기념품을
+
+발굴, 육성하기 위하여
+
+대한민국 관광공모전(기념품 부문)을 개최해오고 있습니다.
+
+이와 관련 2023 대한민국 관광공모전(기념품 부문)을 아래와 같이 안내드리오니, 
+
+관심있는 관내 업체에서는 참고하여 주시기 바랍니다.
+
+ 
+
+○ 접수기간: 2023. 5. 25.(목) ~ 6. 13.(화) 17:00까지
+
+○ 접수방법: 온라인 및 우편접수
+
+ ※ 자세한 접수방법 및 접수처는 첨부파일 확인
+
+○ 공모대상: 한국의 역사, 문화, 자연, 관광지, 먹거리 등 매력적인 콘텐츠를 소재로 한 기념품 또는
+
+                 상품화 가능한 기념품 아이디어</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../png/sumnail.png">
+			</th>
+			<td >
+			<a href="gonoticedetail074d.html?nno=20106">
+			<strong>괴항습지 에코티어링 참가자모집 안내</strong><br>
+			괴항습지 에코티어링 참가자모집 안내입니다.
+
+ 
+
+ㅁ 접수 :  https://narus.kr   (주) 나루 홈페이지를 통한 접수
+
+
+ㅁ 문의: 055-585-9555</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/%ec%83%9d%ed%83%9c%ec%82%b0%ec%b1%851.jpg">
+			</th>
+			<td >
+			<a href="gonoticedetaile9c0.html?nno=20105">
+			<strong><나풀나풀, 괴항습지 생태산책>프로그램 참가자 모집</strong><br>
+			<나풀나풀, 괴항습지 생태산책> 프로그램 참가자를 모집합니다.</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/%ea%b0%80%ec%9d%84%20%ec%97%ac%ed%96%8911.jpg">
+			</th>
+			<td >
+			<a href="gonoticedetailc737.html?nno=20104">
+			<strong>가을 함안 감잡은 여행 프로그램 참가자 모집</strong><br>
+			가을 함안 감잡은 여행 프로그램 참가자를 모집합니다.
+
+☆함안만의 가을 정취를 가득 담아가세요☆
+
+ 
+
+○ 체험기간: 2022. 10월(매주 토, 일 - 8,9,15,16,22,23,29,30)
+
+   ※ 운영세부일정 및 계획표는 첨부파일 참고  
+
+○ 모집인원: 30여명 선착순 접수
+
+○ 참가대상: 일반인, 학생(초,중학생은 가족동반)
+
+○ 참가비용: 25000원(버스, 중식, 체험비 포함)
+
+ 
+
+★신 청 방 법★
+
+아라가야협동조합 홈페이지: http://www.aragaya.co.kr
+
+- 전화문의: 055-582-0582 ( FAX: 055-582-0585 )</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/2.%20%5b%ec%a0%9c25%ed%9a%8c%20%ea%b2%bd%ec%83%81%eb%82%a8%eb%8f%84%20%ea%b4%80%ea%b4%91%ea%b8%b0%eb%85%90%ed%92%88%20%ea%b3%b5%eb%aa%a8%ec%a0%84%5d%20%ec%9b%b9%ed%8f%ac%ec%8a%a4%ed%84%b0%20(2).jpg">
+			</th>
+			<td >
+			<a href="gonoticedetail9c89.html?nno=20103">
+			<strong>제25회 경남 관광기념품 공모전 개최</strong><br>
+			제25회 경상남도 관광기념품 공모전 개최를 안내드리니 관심있으신 분들의 많은 참여 바랍니다.
+
+ 
+
+1. 서류접수: 22. 7. 13.(수)~ 7. 27.(수) 18:00
+
+ 1) 제출처
+
+   -이 메 일:  gntohjna@naver.com
+
+   -등기우편:  경남 창원시 성산구 원이대로362, 창원컨벤션센터 1002호( 경남관광재단 관광사업팀)
+
+2. 공모대상: 경남의 역사, 문화, 관광지, 먹거리 등을 소재로 한 관광기념품
+
+3. 응모자격: 현재 유통 중 또는 예정인 관광기념품 관련분야 국내생산사업자 또는 법인
+
+4. 문 의 처: 경남관광재단 관광사업팀(☎055-212-6838)
+
+ 
+
+※ 자세한 내용은 붙임의 공고문 내용을 참고하여 주시기 바랍니다</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/%ea%b3%b5%ec%8b%9d%20%ed%8f%ac%ec%8a%a4%ed%84%b0(%ec%84%b8%ec%83%81%ec%9d%84%20%eb%b3%b4%eb%93%ac%ec%9d%80%20%ec%84%b8%20%ea%b0%80%ec%a7%80%20%ec%82%ac%eb%9e%91).jpg">
+			</th>
+			<td >
+			<a href="gonoticedetailcb99.html?nno=20102">
+			<strong>세상을 보듬은 세 가지 사랑(3.3.4) 프로그램 참가자 모집!!</strong><br>
+			「2022 세상을 보듬은 세 가지 사랑(3.3.4) 프로그램」 참가자를 다음과 같이 모집하오니 많은 관심 바랍니다!!
+
+ 
+
+1. 사 업 명 : 세상을 보듬은 세 가지 사랑(3.3.4)
+
+    ※ 문화체육관광부 종교문화여행 치유순례 프로그램 지원 공모 사업
+
+2. 모집기간 : 2022. 5. 2.(월) ~ 7. 31.(일)
+
+3. 체험일시 :  2022. 5. 13.(금) ~ 8. 20.(토) / 매주 금ㆍ토
+
+4. 체험장소 : 손양원기념관, 이태준기념관, 사촌교회
+
+    ※ 체험비용 : 무료
+
+5. 사업내용
+
+- 사업대상지 별 마음치유 체험 프로그램 개발·운영
+
+- 사업대상지 연계 방문 유도를 위한 스탬프순례 운영
+
+6. 문 의 처 : 운영대행 업체 055-715-1360 
+
+                          함안군 가야사담당관실 관광진흥담당 055-580-2583
+
+ 
+
+★ 자세한 내용은 첨부된 포스터 및 리플릿을 확인해주세요!!
+
+   ★ www.haman334.com << 여기서도 자세한 내용 확인 및 예약까지 할 수 있어요!!
+ </a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/%ed%98%84%ec%9e%a5%ec%a0%91%ec%88%98.jpg">
+			</th>
+			<td >
+			<a href="gonoticedetailfe08.html?nno=20101">
+			<strong>[문화재야행]선착순 현장접수 안내</strong><br>
+			2021 함안문화재야행 행사 당일 함안군민에 한하여 선착순으로 현장접수 가능합니다. 많은 관심 부탁드립니다.
+
+* 기간 : 2021. 11. 19.(금) ~ 21(일) / 17:30 ~ 22:00
+
+* 대상 : 함안군민 중 코로나백신 2차 접종자 또는 48시간 내 PCR 음성 확인자
+
+* 접수인원 : 매 회차당 30명/선착순 입장
+
+* 함안군민을 증명할 수 있는 신분증, 주민등록증 필수 지참
+
+* 문의 : 055-580-2555</a>
+			</td>
+			 
+			 
+		</tr>
+		
+		<tr>
+			
+			<th style="width:30%">
+			<img src="../jpg/%ed%98%84%ec%9e%a5%ec%a0%91%ec%88%982.jpg">
+			</th>
+			<td >
+			<a href="gonoticedetail5078.html?nno=20100">
+			<strong>[문화재야행] 말이산고분군 출입통제 안내</strong><br>
+			함안 문화재야행 행사로 인한 말이산 고분군 출입로를 임시 통제합니다.
+
+양해부탁드립니다.
+
+ 
+
+* 일시 : 2021. 11. 19.(금)~11. 21.(일)
+
+* 통제시간 : 17시 ~ 22시
+
+* 문의 : 055-580-2555 </a>
+			</td>
+			 
+			 
+		</tr>
+		
+	</table>
+	
+	<div class="blank"></div>
+
+	
+		<div class="pagelist" style="width: 470px;height:100%">
+			
+			
+			
+			<div class="listbox">
+			이전
+			</div>
+			
+		
+		<div class="listboxc" onclick="location.href='gonoticelist2738.html?nowPage=1'">1</div>
+		
+		<div class="listboxc" onclick="location.href='gonoticelistad5e.html?nowPage=2'">2</div>
+		
+		<div class="listboxc" onclick="location.href='gonoticelist4fe1.html?nowPage=3'">3</div>
+		
+		<div class="listboxc" onclick="location.href='gonoticelist6a73.html?nowPage=4'">4</div>
+		
+		<div class="listboxc" onclick="location.href='gonoticelistef73.html?nowPage=5'">5</div>
+		
+			
+			<div class="listboxc" onclick="location.href='gonoticelistdaa7.html?nowPage=6'" style="margin-right:0">
+			다음
+			</div>
+			
+			
+	</div>
+	
+	
+	<div style="text-align:right">
+	
+	</div>
+	<div class="blank" style="margin-bottom:100px"></div>
+</div>
+
+<style>
+a { color: #333; }
+#level1 a { color: #fff; }
+#level2 a { margin-top: -70px; }
+#level3 span { display:block; margin-top: -70px; margin-left: 500px; font-size: 90%;}
+.fix_area { position:fixed; z-index:9999; bottom:50px; right:50px; }
+.fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; color:#fff;
+border-radius:35px; box-sizing: border-box; padding: 6px; font-size:15px; 
+overflow:hidden; box-shadow:1px 1px 6px #333; }
+.fix_area .totop { background-color:rgb(0,154,218); margin-top: 10px; }
+</style>
+<footer class="footer" style="height: 250px; background-color: #fff;">
+	<div class="fix_area">
+     <a href="#" class="cir_box totop">↑<br>TOP</a>
+	</div>
+  <nav class="level" id="level1" style="background-color: rgb(0,154,218); height: 50px;">
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03678/03693.web">실과소 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03638/03836.web">읍면 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.gyeongnam.go.kr/index.gyeong">도,시군청 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="http://www.gnpolice.go.kr/ha/#">유관기관,단체 바로가기</a>
+  </p>
+ </nav>
+  <nav class="level" id="level2">
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_logo.png" alt="logo" style="width:190px; height: 62px;">
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/06455.web">개인정보 처리방침</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/04168.web">저작권정책</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03637/03815.web">오시는길</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_mark.png" alt="logo" style="width:112px; height: 77px;">
+  </p>
+  </nav>
+  <nav class="level" id="level3">
+    <span>(52043) 경상남도 함안군 가야읍 말산로 1 (함안군청) &nbsp;&nbsp;&nbsp; 대표전화 : 055-580-2114 &nbsp;&nbsp;&nbsp; 팩스 : 055-580-2899<br>
+  		  본 사이트에 게시된 이메일주소의 자동수집을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.<br>
+  		Copyright (C) 2019 Haman County Office. All rights reserved.</span>
+ </nav>
+</footer>
+</body>
+
+<!-- Mirrored from localhost:8082/pro03/GoNoticeList.do?nowPage=1 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:51:44 GMT -->
+</html>

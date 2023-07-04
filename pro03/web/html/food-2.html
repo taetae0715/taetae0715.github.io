@@ -1,0 +1,905 @@
+
+
+
+
+ 
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:8082/pro03/data/notice/Food.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:52:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<title>메인 페이지</title>
+<style>
+.img_container { height:574px; width: 400vw; transition: transform 0.5s; }
+.inner { height:574px; width: 100vw; float: left; }
+.inner img { width: 100%; }
+#btn { font-size: 12px; margin-left: 5px; border-radius:35px; color:#fff; background-color: #fff; width: 19px; height: 19px; }
+.btngroup { position: absolute; left: 47%; margin-top: -50px;  }
+
+.notititle { text-align: center; color:#fff; font-size: 34px; font-weight: 600;}
+.notice { width: auto; background-color:rgb(0,154,218); color:#fff; font-size: 18px; }
+.media { width: 1200px; text-align: center; display: block; margin: 0 auto;}
+#noti { font-size: 22px; font-weight: 550; color:#fff;}
+#datedeco { position:absolute; margin-left: 530px; margin-top: -140px; }
+.datedecotit { position:absolute; margin-left: 565px; margin-top: -130px; font-size: 20px; vertical-align: middle; }
+#dt2 { display: block; font-size: 42px; font-weight: 550; color:#fff; margin-top: -12px;}
+#dt3 { margin-top: -12px; margin-left: 4px;  16px; }
+
+.tour { background-image: url("../png/tourback.png"); min-height: 600px; }
+.tourwp { width: 1800px; margin-left: 150px; }
+.cardli { float: left; margin: 20px; }
+.card { width: 500px; height: 400px; margin: 10px auto;}
+#cardimg { margin-top: -23px; width: 499px; height: 320px; padding: 5px;}
+
+
+#togu { height: 500px; }
+.togu { width: 1200px; height: 500px; position: relative; }
+#togu1 { width: 1200px; height: 500px; border: solid 1px; margin: 0; 
+		background-image: url("../png/togu1.png"); }
+#togu2 { width: 400px; height: 500px; border: solid 1px; margin-top: -500px; margin-left: 1205px;
+		background-color: #09b;	}
+
+/* 0601추가부분 */
+.map_wrap, .map_wrap * {margin:0; padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
+.map_wrap {position:relative;width:80%;height:650px; margin:20px auto; border:2px solid black}
+#category {position:absolute;top:10px;left:10px;border-radius: 5px; border:1px solid #909090;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);background: #fff;overflow: hidden;z-index: 2;}
+#category li {float:left;list-style: none;width:50px;px;border-right:1px solid #acacac;padding:6px 0;text-align: center; cursor: pointer;}
+#category li.on {background: #eee;}
+#category li:hover {background: #ffe6e6;border-left:1px solid #acacac;margin-left: -1px;}
+#category li:last-child{margin-right:0;border-right:0;}
+#category li span {display: block;margin:0 auto 3px;width:27px;height: 28px;}
+#category li .category_bg {background:url(../png/places_category.png) no-repeat;}
+#category li .bank {background-position: -10px 0;}
+#category li .mart {background-position: -10px -36px;}
+#category li .pharmacy {background-position: -10px -72px;}
+#category li .oil {background-position: -10px -108px;}
+#category li .cafe {background-position: -10px -144px;}
+#category li .store {background-position: -10px -180px;}
+#category li.on .category_bg {background-position-x:-46px;}
+.placeinfo_wrap {position:absolute;bottom:28px;left:-150px;width:300px;}
+.placeinfo {position:relative;width:100%;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;padding-bottom: 10px;background: #fff;}
+.placeinfo:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+.placeinfo_wrap .after {content:'';position:relative;margin-left:-12px;left:50%;width:22px;height:12px;background:url('../png/vertex_white.png')}
+.placeinfo a, .placeinfo a:hover, .placeinfo a:active{color:#fff;text-decoration: none;}
+.placeinfo a, .placeinfo span {display: block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.placeinfo span {margin:5px 5px 0 5px;cursor: default;font-size:13px;}
+.placeinfo .title {font-weight: bold; font-size:14px;border-radius: 6px 6px 0 0;margin: -1px -1px 0 -1px;padding:10px; color: #fff;background: #d95050;background: #d95050 url(../png/arrow_white.png) no-repeat right 14px center;}
+.placeinfo .tel {color:#0f7833;}
+.placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
+/* //0601추가부분  */
+</style>
+</head>
+<body style="margin: 0">
+
+
+
+
+ 
+
+<link href="bulma.html" rel="stylesheet">
+<script src="../js/jquery-1.12.4.js"></script>
+<style>
+.navbar-link { margin-right: 50px; }
+#adminmode { width: 71%; }
+</style>
+<header id="header" class="container">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="logo.html" alt="logo" width="321px;" height="56px;" style="margin-top: 10px; margin-right: 60px;">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu" style="margin-top: 10px;">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">공지사항</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="gonoticelist.html">함안소식</a>
+          
+          <a class="navbar-item" href="userlogin.html">고객민원</a>
+          
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">축제행사</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="event1-2.html">함안수박축제</a>
+          <a class="navbar-item" href="event2-2.html">함안낙화놀이</a>
+          <a class="navbar-item" href="event3-2.html">해바라기축제</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">함안여행</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>문화재</strong></span>
+          <a class="navbar-item" href="cultural.html">문화재현황</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>생태관광</strong></span>
+          <a class="navbar-item" href="eco1.html">함안악양둑방</a>
+          <a class="navbar-item" href="eco2.html">입곡문화공원</a>
+          <a class="navbar-item" href="eco3.html">입곡군립공원</a>
+          <a class="navbar-item" href="eco4.html">연꽃테마파크</a>
+          <a class="navbar-item" href="eco5.html">악양생태공원</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>역사여행</strong></span>
+		<a class="navbar-item" href="history1.html">함안광심정</a>
+		<a class="navbar-item" href="history2.html">함안악양루</a>
+		<a class="navbar-item" href="history3.html">원효암 칠성각</a>
+		<a class="navbar-item" href="history4.html">장춘사 대웅전</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">관광안내</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>여행갤러리</strong></span>
+          <a class="navbar-item" href="photolist.html">포토갤러리</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>관광지도</strong></span>
+          <a class="navbar-item" href="market-2.html">전통시장</a>
+          <a class="navbar-item" href="food-2.html">음식점</a>
+          <a class="navbar-item" href="accom-2.html">숙박시설</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>교통안내</strong></span>
+		<a class="navbar-item" href="traffic1.html">시내/시외버스</a>
+		<a class="navbar-item" href="traffic2.html">공영버스/농어촌버스</a>
+		<a class="navbar-item" href="traffic3.html">기차/택시</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="userlogin-2.html"><strong>로그인</strong></a>
+          <a class="button is-light" href="useragree-2.html">회원가입</a>
+         
+         
+         
+        </div>
+      </div>
+    </div>
+</nav>
+</header>
+<div class="main_page">
+	<div style="overflow: hidden">
+	<br>
+		<div class="img_container">
+			<div class="inner">
+				<img alt="main1" src="../jpg/main1.jpg">
+			</div>
+			<div class="inner">
+				<img alt="main2" src="../jpg/main2.jpg">
+			</div>
+			<div class="inner">
+				<img alt="main3" src="../jpg/main3.jpg">
+			</div>
+			<div class="inner">
+				<img alt="main4" src="../jpg/main4.jpg">
+			</div>
+		</div>
+	</div>
+	<div class="btngroup">
+		<button id="btn" class="btn1">1</button>
+		<button id="btn" class="btn2">2</button>
+		<button id="btn" class="btn3">3</button>
+		<button id="btn" class="btn4">4</button>
+	</div>
+	<script> 
+	/* btn 누르면 transform: translate(-?vw) */ 
+	 document.querySelector('.btn1').addEventListener('click', function(){
+		document.querySelector('.img_container').style.transform = 'translate(-0vw)'; });
+	 document.querySelector('.btn2').addEventListener('click', function(){
+		document.querySelector('.img_container').style.transform = 'translate(-100vw)'; });
+	 document.querySelector('.btn3').addEventListener('click', function(){
+		document.querySelector('.img_container').style.transform = 'translate(-200vw)'; });
+	 document.querySelector('.btn4').addEventListener('click', function(){
+		document.querySelector('.img_container').style.transform = 'translate(-300vw)'; });
+	</script>
+	<div class="notice">
+	<br><br><h2 class="notititle">함안소식 알림</h2><br><br>
+	<img id="datedeco" alt="datedeco" src="../png/fpr1deco1.png">
+	<span class="datedecotit">2023<strong id="dt2">05</strong><p id="dt3">may</p></span> 
+    <br>
+    
+      
+    
+    <article class="media">
+      <figure class="media-left">
+        <p class="imageis">
+          <img src="%ec%b0%b8%ea%b0%80%ec%9d%8c%ec%8b%9d%ec%a0%90%20%eb%aa%a8%ec%a7%911.html" style="width: 200px; height: 220px;">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+			<a style="color:#fff" href="gonoticedetail7bb3.html?nno=20109">
+			<strong id="noti">경남 미식여행 예약결제시스템 2023년 참가음식점 모집</strong><br>
+            <br>
+            경남 미식여행 예약결제시스템 2023년 참가음식점 모집
+            <br>
+            </a>
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    
+    
+    
+    <article class="media">
+      <figure class="media-left">
+        <p class="imageis">
+          <img src="noti21.html" style="width: 200px; height: 220px;">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+			<a style="color:#fff" href="gonoticedetail5e87.html?nno=20108">
+			<strong id="noti">제1회 나만의 홍시가요제 개최</strong><br>
+            <br>
+            ☆제1회 나만의 홍시가요제가 개최됩니다☆
+
+주제는 <<홍시와 관련된 곡으로 노래부르기>> 입니다
+
+많은 관심과 참여 바랍니다
+
+ 
+
+참가팀: 20팀
+
+일시: 22. 11. 19.(토) 18시
+
+장소: 함안문화원 대공연장
+
+문의: 아라가야협동조합(☎055-582-0582)
+
+※자세한 내용은 홍보물 참고
+            <br>
+            </a>
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    
+    
+    
+    <article class="media">
+      <figure class="media-left">
+        <p class="imageis">
+          <img src="noti31.html" style="width: 200px; height: 220px;">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+			<a style="color:#fff" href="gonoticedetail12c9.html?nno=20107">
+			<strong id="noti">2023 대한민국 관광공모전(기념품 부문) 안내</strong><br>
+            <br>
+            문화체육관광부와 한국관광공사에서는 대한민국을 상징하는 우수한 관광기념품을
+
+발굴, 육성하기 위하여
+
+대한민국 관광공모전(기념품 부문)을 개최해오고 있습니다.
+
+이와 관련 2023 대한민국 관광공모전(기념품 부문)을 아래와 같이 안내드리오니, 
+
+관심있는 관내 업체에서는 참고하여 주시기 바랍니다.
+
+ 
+
+○ 접수기간: 2023. 5. 25.(목) ~ 6. 13.(화) 17:00까지
+
+○ 접수방법: 온라인 및 우편접수
+
+ ※ 자세한 접수방법 및 접수처는 첨부파일 확인
+
+○ 공모대상: 한국의 역사, 문화, 자연, 관광지, 먹거리 등 매력적인 콘텐츠를 소재로 한 기념품 또는
+
+                 상품화 가능한 기념품 아이디어
+            <br>
+            </a>
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            <br><br>
+  </div>
+	<div class="tour">
+			<br><br>
+			<h2 class="title" style="text-align: center;">함안으로 떠나자!</h2>
+		<div class="tourwp">
+			<ul class="cardul">
+				<li class="cardli">
+					<div class="card">
+						<p style="text-align: center; font-size: 18px;">
+							<br><strong>[축제행사]</strong> 함안낙화놀이
+						</p>
+						<hr>
+						<a href="event2.html">
+							<img id="cardimg" alt="함안낙화놀이 이미지" src="../jpg/ev2_1.jpg">
+						</a>
+					</div>
+				</li>
+				<li class="cardli">
+					<div class="card">
+						<p style="text-align: center; font-size: 18px;">
+							<br><strong>[생태관광]</strong> 연꽃테마파크
+						</p>
+						<hr>
+						<a href="eco4.html">
+							<img id="cardimg" alt="연꽃테마파크 이미지" src="../jpg/temapark1.jpg">
+						</a>
+					</div>
+				</li>
+				<li class="cardli">
+					<div class="card">
+						<p style="text-align: center; font-size: 18px;">
+							<br><strong>[역사여행]</strong> 함안악양루
+						</p>
+						<hr>
+						<a href="history2.html">
+							<img id="cardimg" alt="함안악양루 이미지" src="../jpg/akyangroo1.jpg">
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<!-- 0601추가부분 -->
+	<br><br><h2 class="notititle" style="color:#363636">함안 주변 지도</h2><br><br>
+	<div class="map_wrap">
+	    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+	    <ul id="category">
+	        <li id="CT1" data-order="0"> 
+	            <span class="category_bg bank"></span>
+	            문화시설
+	        </li>       
+	        <li id="AT4" data-order="1"> 
+	            <span class="category_bg mart"></span>
+	            관광명소
+	        </li>  
+	        <li id="AD5" data-order="2"> 
+	            <span class="category_bg pharmacy"></span>
+	            숙박
+	        </li>  
+	        <li id="FD6" data-order="3"> 
+	            <span class="category_bg oil"></span>
+	           음식점
+	        </li>  
+	        <li id="OL7" data-order="4"> 
+	            <span class="category_bg cafe"></span>
+	            주유소
+	        </li>  
+	        <li id="PM9" data-order="5"> 
+	            <span class="category_bg store"></span>
+	            약국
+	        </li>      
+	    </ul>
+	</div>
+	
+	<script type="text/javascript" src="../json/sdk17c8.json?appkey=4e5844a91d6f6ebd1c2d952b89252020&amp;libraries=services"></script>
+		<script>
+		var placeOverlay = new kakao.maps.CustomOverlay({zIndex:1}), 
+		    contentNode = document.createElement('div'),
+		    markers = [], currCategory = '';		 
+		var mapContainer = document.getElementById('map'),
+		    mapOption = {
+		        center: new kakao.maps.LatLng(35.272463385486475, 128.40652120224922),
+		        level: 5
+		    };  
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		var ps = new kakao.maps.services.Places(map); 
+		kakao.maps.event.addListener(map, 'idle', searchPlaces);
+		contentNode.className = 'placeinfo_wrap';
+		addEventHandle(contentNode, 'mousedown', kakao.maps.event.preventMap);
+		addEventHandle(contentNode, 'touchstart', kakao.maps.event.preventMap);
+		placeOverlay.setContent(contentNode);  
+		addCategoryClickEvent();
+		function addEventHandle(target, type, callback) {
+		    if (target.addEventListener) {
+		        target.addEventListener(type, callback);
+		    } else {
+		        target.attachEvent('on' + type, callback);
+		    }
+		}
+		function searchPlaces() {
+		    if (!currCategory) {
+		        return;
+		    }
+		    placeOverlay.setMap(null);
+		    removeMarker();
+		    ps.categorySearch(currCategory, placesSearchCB, {useMapBounds:true}); 
+		}
+		function placesSearchCB(data, status, pagination) {
+		    if (status === kakao.maps.services.Status.OK) {
+		        displayPlaces(data);
+		    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {		
+		    } else if (status === kakao.maps.services.Status.ERROR) {		        
+		    }
+		}
+		function displayPlaces(places) {
+		    var order = document.getElementById(currCategory).getAttribute('data-order');
+		    for ( var i=0; i<places.length; i++ ) {
+		            var marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order);
+		            (function(marker, place) {
+		                kakao.maps.event.addListener(marker, 'click', function() {
+		                    displayPlaceInfo(place);
+		                });
+		            })(marker, places[i]);
+		    }
+		}
+		function addMarker(position, order) {
+		    var imageSrc = '../png/places_category.png',
+		        imageSize = new kakao.maps.Size(27, 28),
+		        imgOptions =  {
+		            spriteSize : new kakao.maps.Size(72, 208),
+		            spriteOrigin : new kakao.maps.Point(46, (order*36)),
+		            offset: new kakao.maps.Point(11, 28)
+		        },
+		        markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+		            marker = new kakao.maps.Marker({
+		            position: position,
+		            image: markerImage 
+		        });
+		
+		    marker.setMap(map);
+		    markers.push(marker);
+		
+		    return marker;
+		}
+		function removeMarker() {
+		    for ( var i = 0; i < markers.length; i++ ) {
+		        markers[i].setMap(null);
+		    }   
+		    markers = [];
+		}
+		function displayPlaceInfo (place) {
+		    var content = '<div class="placeinfo">' +
+		                    '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';   
+		
+		    if (place.road_address_name) {
+		        content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' +
+		                    '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
+		    }  else {
+		        content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
+		    }                
+		   
+		    content += '    <span class="tel">' + place.phone + '</span>' + 
+		                '</div>' + 
+		                '<div class="after"></div>';
+		
+		    contentNode.innerHTML = content;
+		    placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
+		    placeOverlay.setMap(map);  
+		}
+		function addCategoryClickEvent() {
+		    var category = document.getElementById('category'),
+		        children = category.children;
+		
+		    for (var i=0; i<children.length; i++) {
+		        children[i].onclick = onClickCategory;
+		    }
+		}
+		function onClickCategory() {
+		    var id = this.id,
+		        className = this.className;
+		
+		    placeOverlay.setMap(null);
+		
+		    if (className === 'on') {
+		        currCategory = '';
+		        changeCategoryClass();
+		        removeMarker();
+		    } else {
+		        currCategory = id;
+		        changeCategoryClass(this);
+		        searchPlaces();
+		    }
+		}
+		function changeCategoryClass(el) {
+		    var category = document.getElementById('category'),
+		        children = category.children,
+		        i;
+		
+		    for ( i=0; i<children.length; i++ ) {
+		        children[i].className = '';
+		    }
+		
+		    if (el) {
+		        el.className = 'on';
+		    } 
+		} 
+	</script>
+	<!-- //0601 추가부분 -->
+	
+	
+</div>
+
+<style>
+a { color: #333; }
+#level1 a { color: #fff; }
+#level2 a { margin-top: -70px; }
+#level3 span { display:block; margin-top: -70px; margin-left: 500px; font-size: 90%;}
+.fix_area { position:fixed; z-index:9999; bottom:50px; right:50px; }
+.fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; color:#fff;
+border-radius:35px; box-sizing: border-box; padding: 6px; font-size:15px; 
+overflow:hidden; box-shadow:1px 1px 6px #333; }
+.fix_area .totop { background-color:rgb(0,154,218); margin-top: 10px; }
+</style>
+<footer class="footer" style="height: 250px; background-color: #fff;">
+	<div class="fix_area">
+     <a href="#" class="cir_box totop">↑<br>TOP</a>
+	</div>
+  <nav class="level" id="level1" style="background-color: rgb(0,154,218); height: 50px;">
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03678/03693.web">실과소 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03638/03836.web">읍면 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.gyeongnam.go.kr/index.gyeong">도,시군청 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="http://www.gnpolice.go.kr/ha/#">유관기관,단체 바로가기</a>
+  </p>
+ </nav>
+  <nav class="level" id="level2">
+  <p class="level-item has-text-centered">
+    <img src="foot_logo.html" alt="logo" style="width:190px; height: 62px;">
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/06455.web">개인정보 처리방침</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/04168.web">저작권정책</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03637/03815.web">오시는길</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <img src="foot_mark.html" alt="logo" style="width:112px; height: 77px;">
+  </p>
+  </nav>
+  <nav class="level" id="level3">
+    <span>(52043) 경상남도 함안군 가야읍 말산로 1 (함안군청) &nbsp;&nbsp;&nbsp; 대표전화 : 055-580-2114 &nbsp;&nbsp;&nbsp; 팩스 : 055-580-2899<br>
+  		  본 사이트에 게시된 이메일주소의 자동수집을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.<br>
+  		Copyright (C) 2019 Haman County Office. All rights reserved.</span>
+ </nav>
+</footer>
+</body>
+
+<!-- Mirrored from localhost:8082/pro03/data/notice/Food.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:52:47 GMT -->
+</html>
