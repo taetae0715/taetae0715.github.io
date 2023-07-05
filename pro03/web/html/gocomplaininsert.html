@@ -1,0 +1,239 @@
+
+
+
+
+ 
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:8082/pro03/GoComplainInsert.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:51:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<title>민원게시판</title>
+<style>
+.main_wrap {width:1000px; margin:0 auto;}
+.blank {height:100px}
+.divide {height:35px ; background-color:lightgray;text-align:center;line-height:35px}
+.colred {color:red}
+textarea {resize:none}
+table {  border-collapse: separate; border-spacing: 10px 10px;}
+tr {margin-left:20px}
+
+</style>
+</head>
+<body>
+
+
+
+
+ 
+
+<link href="../css/bulma.css" rel="stylesheet">
+<script src="../js/jquery-1.12.4.js"></script>
+<style>
+.navbar-link { margin-right: 50px; }
+#adminmode { width: 71%; }
+</style>
+<header id="header" class="container">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="../png/logo.png" alt="logo" width="321px;" height="56px;" style="margin-top: 10px; margin-right: 60px;">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu" style="margin-top: 10px;">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">공지사항</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="gonoticelist.html">함안소식</a>
+          
+          <a class="navbar-item" href="userlogin.html">고객민원</a>
+          
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">축제행사</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="event1.html">함안수박축제</a>
+          <a class="navbar-item" href="event2.html">함안낙화놀이</a>
+          <a class="navbar-item" href="event3.html">해바라기축제</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">함안여행</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>문화재</strong></span>
+          <a class="navbar-item" href="cultural.html">문화재현황</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>생태관광</strong></span>
+          <a class="navbar-item" href="eco1.html">함안악양둑방</a>
+          <a class="navbar-item" href="eco2.html">입곡문화공원</a>
+          <a class="navbar-item" href="eco3.html">입곡군립공원</a>
+          <a class="navbar-item" href="eco4.html">연꽃테마파크</a>
+          <a class="navbar-item" href="eco5.html">악양생태공원</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>역사여행</strong></span>
+		<a class="navbar-item" href="history1.html">함안광심정</a>
+		<a class="navbar-item" href="history2.html">함안악양루</a>
+		<a class="navbar-item" href="history3.html">원효암 칠성각</a>
+		<a class="navbar-item" href="history4.html">장춘사 대웅전</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">관광안내</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>여행갤러리</strong></span>
+          <a class="navbar-item" href="photolist.html">포토갤러리</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>관광지도</strong></span>
+          <a class="navbar-item" href="market.html">전통시장</a>
+          <a class="navbar-item" href="food.html">음식점</a>
+          <a class="navbar-item" href="accom.html">숙박시설</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>교통안내</strong></span>
+		<a class="navbar-item" href="traffic1.html">시내/시외버스</a>
+		<a class="navbar-item" href="traffic2.html">공영버스/농어촌버스</a>
+		<a class="navbar-item" href="traffic3.html">기차/택시</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="userlogin.html"><strong>로그인</strong></a>
+          <a class="button is-light" href="useragree.html">회원가입</a>
+         
+         
+         
+        </div>
+      </div>
+    </div>
+</nav>
+</header>
+<div class="blank"></div>
+
+<div class="main_wrap">
+	<h3 class="title is-3 min" style="color:rgb(0,154,218)">●민원 안내</h3>
+	<pre>제목과 내용은 접수 후 수정, 삭제가 불가능하므로 다시 확인하시고 신청해 주시기 바랍니다.
+규제 관련 민원의 경우 규제개혁신문고로 이관될 수 있습니다.
+신고성 민원의 경우 청렴포털시스템으로 이관될 수 있습니다.
+허위신고 등은 명예훼손, 무고죄 등으로 처벌될 수 있습니다.
+민원 내용에 따라 여러 부처에서 처리될 수 있으니, 민감한 내용이 포함되어 있을 경우 기관별로 해당내용을 제출해주시기 바랍니다.
+공무원에 대한 폭언, 욕설 등은 관련 법령(형법, 경범죄처벌법)에 따라 법적조치를 받을 수 있습니다.</pre>
+	<div class="divide">피신고자 정보(필수)</div>
+	<form action="http://localhost:8082/pro03/InsertComplain.do" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="sid" value="">
+		<table class="table is-fullwidth">
+		<tr>
+		<th>이름(개인,기업,단체)</th> <td><input type="text" name="name" placeholder="내용을 입력해주세요" required></td>
+		<th>주 소</th><td><input type="text" name="addr" placeholder="내용을 입력해주세요" required></td>
+		</tr>
+		<tr>
+		<th>근무처(상호명)</th> <td><input type="text" name="company" placeholder="내용을 입력해주세요" required></td>
+		<th>연락처</th><td><input type="text" name="tel" placeholder="내용을 입력해주세요" required></td>
+		</tr>
+		</table>
+	<div class="divide">민원 내용 <span class="colred">*</span> 표는 필수 입력사항입니다.</div>
+	<pre>※ 민원신청을 유도한 후 금융 정보(계좌, 카드, 비밀번호 등)를 요구하는 전화사기(보이스피싱)에 주의하시기 바랍니다.
+
+※ 고소장 등 법정서식이 필요한 신청은 해당 기관에 사전 문의하시기 바랍니다.
+
+※ 현금영수증 미발급·발급거부, 신용카드 결제거부 신고는 국세청 홈(손)택스로 접속> 상담/제보를 이용하여 주시기 바랍니다.
+
+※ 로그인 유지시간은 120분이며, 민원 내용을 자세히 작성해주시면 원활한 민원 처리에 도움이 됩니다.</pre>
+		<table class="table is-fullwidth">
+		<tr>
+		<th>
+		<span class="colred">*</span> 민원 제목
+		</th>
+		<td>
+		<input type="text" name="title" placeholder="내용을 입력해주세요" required>
+		</td>
+		</tr>
+		<tr>
+		<th>
+		<span class="colred">*</span> 민원 내용
+		</th>
+		<td>
+		<textarea rows="20" cols="100" name="content" placeholder="내용을 입력해주세요" required></textarea>
+		</td>
+		</tr>
+		<tr>
+		<th>
+		첨부파일
+		</th>
+		<td>
+		<input type="file" name="file1">
+		</td>
+		</tr>
+		</table>
+		<input type="submit" class="button is-info" value="민원 신청" style="float:right">
+	</form>
+	<div class="blank" style="margin-bottom:100px"></div>
+</div>
+
+<style>
+a { color: #333; }
+#level1 a { color: #fff; }
+#level2 a { margin-top: -70px; }
+#level3 span { display:block; margin-top: -70px; margin-left: 500px; font-size: 90%;}
+.fix_area { position:fixed; z-index:9999; bottom:50px; right:50px; }
+.fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; color:#fff;
+border-radius:35px; box-sizing: border-box; padding: 6px; font-size:15px; 
+overflow:hidden; box-shadow:1px 1px 6px #333; }
+.fix_area .totop { background-color:rgb(0,154,218); margin-top: 10px; }
+</style>
+<footer class="footer" style="height: 250px; background-color: #fff;">
+	<div class="fix_area">
+     <a href="#" class="cir_box totop">↑<br>TOP</a>
+	</div>
+  <nav class="level" id="level1" style="background-color: rgb(0,154,218); height: 50px;">
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03678/03693.web">실과소 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03638/03836.web">읍면 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.gyeongnam.go.kr/index.gyeong">도,시군청 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="http://www.gnpolice.go.kr/ha/#">유관기관,단체 바로가기</a>
+  </p>
+ </nav>
+  <nav class="level" id="level2">
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_logo.png" alt="logo" style="width:190px; height: 62px;">
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/06455.web">개인정보 처리방침</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/04168.web">저작권정책</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03637/03815.web">오시는길</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_mark.png" alt="logo" style="width:112px; height: 77px;">
+  </p>
+  </nav>
+  <nav class="level" id="level3">
+    <span>(52043) 경상남도 함안군 가야읍 말산로 1 (함안군청) &nbsp;&nbsp;&nbsp; 대표전화 : 055-580-2114 &nbsp;&nbsp;&nbsp; 팩스 : 055-580-2899<br>
+  		  본 사이트에 게시된 이메일주소의 자동수집을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.<br>
+  		Copyright (C) 2019 Haman County Office. All rights reserved.</span>
+ </nav>
+</footer>
+</body>
+
+<!-- Mirrored from localhost:8082/pro03/GoComplainInsert.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:51:58 GMT -->
+</html>

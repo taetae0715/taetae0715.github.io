@@ -1,0 +1,322 @@
+
+
+
+
+ 
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:8082/pro03/Event3.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:50:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<title>축제행사 > 해바라기축제</title>
+<style>
+img {border:0;}
+.main_wrap {width:1000px; margin:0 auto;}
+.blank {clear:left; height:50px;}
+.divide {height:35px ; background-color:lightgray;text-align:center;line-height:35px}
+
+.img_sec {width:600px;height:705px; background-color:rgb(0,154,218);margin:10px 200px;float:right}
+.img1 {display:inline-block;width:570px; height:488px;margin:15px ;}
+#img_btn1:checked ~ .img1 {background: url(../jpg/ev3_1.jpg) no-repeat;background-size:570px 488px;}
+#img_btn2:checked ~ .img1 {background: url(../jpg/ev3_2.jpg) no-repeat;background-size:570px 488px;}
+#img_btn3:checked ~ .img1 {background: url(../jpg/ev3_3.jpg) no-repeat;background-size:570px 488px;}
+.img23_wrap {width:570px;height :155px; margin:13.5px 15px;text-align:center }
+.sm_img1,.sm_img2,.sm_img3 {width:180px; height:155px}
+.sm_img1 {float:left}
+.sm_img3 {float:right}
+
+.btn_hidden {display:none}
+
+.content_blank {width:100%; height :592px ;background-color:transparent;}
+.cont_sec {width:100%; background-color:rgb(122, 196, 227)}
+.cont_art {padding:20px;}
+.cont_adr {float:right; text-align:right}
+
+</style>
+</head>
+<body>
+
+
+
+
+ 
+
+<link href="../css/bulma.css" rel="stylesheet">
+<script src="../js/jquery-1.12.4.js"></script>
+<style>
+.navbar-link { margin-right: 50px; }
+#adminmode { width: 71%; }
+</style>
+<header id="header" class="container">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="../png/logo.png" alt="logo" width="321px;" height="56px;" style="margin-top: 10px; margin-right: 60px;">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu" style="margin-top: 10px;">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">공지사항</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="gonoticelist.html">함안소식</a>
+          
+          
+          <a class="navbar-item" href="gocomplainlist.html">고객민원</a>
+          
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">축제행사</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="event1.html">함안수박축제</a>
+          <a class="navbar-item" href="event2.html">함안낙화놀이</a>
+          <a class="navbar-item" href="event3.html">해바라기축제</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">함안여행</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>문화재</strong></span>
+          <a class="navbar-item" href="cultural.html">문화재현황</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>생태관광</strong></span>
+          <a class="navbar-item" href="eco1.html">함안악양둑방</a>
+          <a class="navbar-item" href="eco2.html">입곡문화공원</a>
+          <a class="navbar-item" href="eco3.html">입곡군립공원</a>
+          <a class="navbar-item" href="eco4.html">연꽃테마파크</a>
+          <a class="navbar-item" href="eco5.html">악양생태공원</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>역사여행</strong></span>
+		<a class="navbar-item" href="history1.html">함안광심정</a>
+		<a class="navbar-item" href="history2.html">함안악양루</a>
+		<a class="navbar-item" href="history3.html">원효암 칠성각</a>
+		<a class="navbar-item" href="history4.html">장춘사 대웅전</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">관광안내</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>여행갤러리</strong></span>
+          <a class="navbar-item" href="photolist.html">포토갤러리</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>관광지도</strong></span>
+          <a class="navbar-item" href="market.html">전통시장</a>
+          <a class="navbar-item" href="food.html">음식점</a>
+          <a class="navbar-item" href="accom.html">숙박시설</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>교통안내</strong></span>
+		<a class="navbar-item" href="traffic1.html">시내/시외버스</a>
+		<a class="navbar-item" href="traffic2.html">공영버스/농어촌버스</a>
+		<a class="navbar-item" href="traffic3.html">기차/택시</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+         
+         
+          <a class="button is-warning is-fullwidth" href="#" id="adminmode"><strong>관리자</strong></a>
+          <a class="button is-light" href="adminuser.html">회원관리</a>
+          <a class="button is-danger is-light" href="request.html">로그아웃</a>
+         
+        </div>
+      </div>
+    </div>
+</nav>
+</header>
+<div class="blank"></div>
+
+<div class="main_wrap">
+	<div style="text-align:right; float:right">
+	
+	<!-- value에 관광지이름 넣으면 알아서 적용돼요 -->
+	
+	<!-- 이곳에 지도주소넣기 -->
+	
+	<input type="hidden" id="hamAddr" value="경상남도 함안군 법수면 강주4길 71">
+	
+	
+		<h2 class="is-size-2" style="color:rgb(0,154,218);font-weight:bold">해바라기축제</h2>
+		<hr style="width:265px;margin:0;background-color:lightgray">
+	</div>
+<section class="img_sec">
+	<div class="img1_wrap">
+		<input type="radio" name="img_btn" id="img_btn1" checked class="btn_hidden">
+		<input type="radio" name="img_btn" id="img_btn2" class="btn_hidden">
+		<input type="radio" name="img_btn" id="img_btn3" class="btn_hidden">
+	<div class="img1"></div>
+	</div>
+	<div class="img23_wrap">
+	<label for="img_btn1"><img src="../jpg/ev3_1.jpg" class="sm_img1"></label>
+	<label for="img_btn2"><img src="../jpg/ev3_2.jpg" class="sm_img2"></label>
+	<label for="img_btn3"><img src="../jpg/ev3_3.jpg" class="sm_img3"></label>
+	</div>
+</section>
+<div class="content_blank">
+</div>
+
+<section class="cont_sec">
+	<article class="cont_art">
+	<div style="height:180px"></div>
+	<pre>
+함안군 법수면 강주마을 주민들이 힘을 합쳐 자체적으로 조성한 해바라기꽃이 장관을 이루는 강주해바라기 축제가 올해로 10회째를 맞는다.
+전체 해바라기 식재면적은 법수면 강주리 주변 20,000㎡에 이르며, 
+전통과 문화를 부흥시켜 보자는 취지로 마을마다 지닌 끼를 모아 축제 한마당도 함께 펼쳐진다.
+	
+- 기간 : 2022년 8월26일 ~ 9월 12일(18일간)
+- 주최 : 강주마을
+- 주관 : 강주해바라기축제위원회
+- 장소 : 법수면 강주마을 일원(함안군 법수면 강주4길 16)
+- 주요행사내용 : 농·특산물 판촉행사, 체험행사, 먹거리, 우산대여 등
+
+<강주해바라기축제 입장 안내>
+입 장 료 : 2,000원
+무료입장 : 장애인, 미취학 어린이, 만70세 이상, 법수면민
+관람시간 : 08:00 ~ 19:00
+* 관람객은 행사장 18:00 까지 입장 완료 하여야 함.
+
+	
+	<span class="cont_adr">
+	주소 : 경상남도 함안군 법수면 강주4길 71
+관리처  : 강주해바라기축제위원회
+문의전화 : 010-4452-3452</span>
+	</pre>
+	</article>
+</section>
+<section>
+	<div id="map" style="width:100%;height:600px;"></div>
+<script type="text/javascript" src="../json/sdk17c8.json?appkey=4e5844a91d6f6ebd1c2d952b89252020&amp;libraries=services"></script>
+
+<script>
+// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+$(document).ready(function(){ 
+	var hamanMapName = $("#hamAddr").val();
+	//alert(hamanMapName);
+	var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = {
+	        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };  
+
+		// 지도를 생성합니다    
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		
+		// 장소 검색 객체를 생성합니다
+		var ps = new kakao.maps.services.Places(); 
+		
+		// 키워드로 장소를 검색합니다
+		 // 경남 함안군 법수면 악양길 49-10
+		ps.keywordSearch(hamanMapName, placesSearchCB); 
+		
+		// 키워드 검색 완료 시 호출되는 콜백함수 입니다
+		function placesSearchCB (data, status, pagination) {
+		    if (status === kakao.maps.services.Status.OK) {
+
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+        // LatLngBounds 객체에 좌표를 추가합니다
+        var bounds = new kakao.maps.LatLngBounds();
+
+        for (var i=0; i<data.length; i++) {
+            displayMarker(data[i]);    
+            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+        }       
+
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+        map.setBounds(bounds);
+    } 
+}
+
+// 지도에 마커를 표시하는 함수입니다
+function displayMarker(place) {
+    
+    // 마커를 생성하고 지도에 표시합니다
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: new kakao.maps.LatLng(place.y, place.x) 
+    });
+
+    // 마커에 클릭이벤트를 등록합니다
+    kakao.maps.event.addListener(marker, 'click', function() {
+        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+        infowindow.open(map, marker);
+    });
+}
+});
+</script>
+
+		
+</section>
+
+</div>
+<div class="blank" style="margin-bottom:100px"></div>
+
+<style>
+a { color: #333; }
+#level1 a { color: #fff; }
+#level2 a { margin-top: -70px; }
+#level3 span { display:block; margin-top: -70px; margin-left: 500px; font-size: 90%;}
+.fix_area { position:fixed; z-index:9999; bottom:50px; right:50px; }
+.fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; color:#fff;
+border-radius:35px; box-sizing: border-box; padding: 6px; font-size:15px; 
+overflow:hidden; box-shadow:1px 1px 6px #333; }
+.fix_area .totop { background-color:rgb(0,154,218); margin-top: 10px; }
+</style>
+<footer class="footer" style="height: 250px; background-color: #fff;">
+	<div class="fix_area">
+     <a href="#" class="cir_box totop">↑<br>TOP</a>
+	</div>
+  <nav class="level" id="level1" style="background-color: rgb(0,154,218); height: 50px;">
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03678/03693.web">실과소 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03638/03836.web">읍면 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.gyeongnam.go.kr/index.gyeong">도,시군청 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="http://www.gnpolice.go.kr/ha/#">유관기관,단체 바로가기</a>
+  </p>
+ </nav>
+  <nav class="level" id="level2">
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_logo.png" alt="logo" style="width:190px; height: 62px;">
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/06455.web">개인정보 처리방침</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/04168.web">저작권정책</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03637/03815.web">오시는길</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_mark.png" alt="logo" style="width:112px; height: 77px;">
+  </p>
+  </nav>
+  <nav class="level" id="level3">
+    <span>(52043) 경상남도 함안군 가야읍 말산로 1 (함안군청) &nbsp;&nbsp;&nbsp; 대표전화 : 055-580-2114 &nbsp;&nbsp;&nbsp; 팩스 : 055-580-2899<br>
+  		  본 사이트에 게시된 이메일주소의 자동수집을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.<br>
+  		Copyright (C) 2019 Haman County Office. All rights reserved.</span>
+ </nav>
+</footer>
+</body>
+
+<!-- Mirrored from localhost:8082/pro03/Event3.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:50:50 GMT -->
+</html>

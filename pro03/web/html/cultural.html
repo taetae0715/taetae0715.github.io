@@ -1,0 +1,494 @@
+
+
+
+
+ 
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from localhost:8082/pro03/Cultural.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:50:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<title>문화재현황</title>
+<style>
+img {border:0;}
+.main_wrap {width:1000px; margin:0 auto;}
+.blank {clear:left; height:50px;}
+.divide {height:35px ; background-color:lightgray;text-align:center;line-height:35px}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+ 
+
+<link href="../css/bulma.css" rel="stylesheet">
+<script src="../js/jquery-1.12.4.js"></script>
+<style>
+.navbar-link { margin-right: 50px; }
+#adminmode { width: 71%; }
+</style>
+<header id="header" class="container">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="../png/logo.png" alt="logo" width="321px;" height="56px;" style="margin-top: 10px; margin-right: 60px;">
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu" style="margin-top: 10px;">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">공지사항</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="gonoticelist.html">함안소식</a>
+          
+          
+          <a class="navbar-item" href="gocomplainlist.html">고객민원</a>
+          
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">축제행사</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="event1.html">함안수박축제</a>
+          <a class="navbar-item" href="event2.html">함안낙화놀이</a>
+          <a class="navbar-item" href="event3.html">해바라기축제</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">함안여행</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>문화재</strong></span>
+          <a class="navbar-item" href="cultural.html">문화재현황</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>생태관광</strong></span>
+          <a class="navbar-item" href="eco1.html">함안악양둑방</a>
+          <a class="navbar-item" href="eco2.html">입곡문화공원</a>
+          <a class="navbar-item" href="eco3.html">입곡군립공원</a>
+          <a class="navbar-item" href="eco4.html">연꽃테마파크</a>
+          <a class="navbar-item" href="eco5.html">악양생태공원</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>역사여행</strong></span>
+		<a class="navbar-item" href="history1.html">함안광심정</a>
+		<a class="navbar-item" href="history2.html">함안악양루</a>
+		<a class="navbar-item" href="history3.html">원효암 칠성각</a>
+		<a class="navbar-item" href="history4.html">장춘사 대웅전</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">관광안내</a>
+        <div class="navbar-dropdown">
+          <span class="navbar-item"><strong>여행갤러리</strong></span>
+          <a class="navbar-item" href="photolist.html">포토갤러리</a>
+          <hr class="navbar-divider">
+          <span class="navbar-item"><strong>관광지도</strong></span>
+          <a class="navbar-item" href="market.html">전통시장</a>
+          <a class="navbar-item" href="food.html">음식점</a>
+          <a class="navbar-item" href="accom.html">숙박시설</a>
+          <hr class="navbar-divider">
+		<span class="navbar-item"><strong>교통안내</strong></span>
+		<a class="navbar-item" href="traffic1.html">시내/시외버스</a>
+		<a class="navbar-item" href="traffic2.html">공영버스/농어촌버스</a>
+		<a class="navbar-item" href="traffic3.html">기차/택시</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+         
+         
+          <a class="button is-warning is-fullwidth" href="#" id="adminmode"><strong>관리자</strong></a>
+          <a class="button is-light" href="adminuser.html">회원관리</a>
+          <a class="button is-danger is-light" href="request.html">로그아웃</a>
+         
+        </div>
+      </div>
+    </div>
+</nav>
+</header>
+<div class="blank"></div>
+
+<div class="main_wrap">
+	<div style="text-align:right; float:right">
+	<h2 class="is-size-2" style="color:rgb(0,154,218);font-weight:bold">● 지정문화재 현황</h2>
+	</div>
+		
+	<div style="clear:both;padding:20px">	
+	<table class="table is-bordered" style="width:100%;text-align:center;font-weight:600;">
+		<tr style="background-color:rgb(230,243,255)">
+			<th rowspan="2" style="line-height:82px;text-align:center">
+			계
+			</th>
+			<td colspan="5">
+			국가지정
+			</td>
+			<td colspan="6">
+			도지정
+			</td>
+		</tr>
+		<tr style="background-color:rgb(230,243,255);">
+			<td>소계</td>			
+			<td>보물</td>
+			<td>사적</td>			
+			<td>천연<br>기념물</td>			
+			<td>국가민속<br>문화재</td>
+			<td>소계</td>			
+			<td>유형</td>
+			<td>기념물</td>			
+			<td>무형</td>			
+			<td>민속<br>문화재</td>	
+			<td>문화재<br>자료</td>			
+		</tr>
+		<tr>
+			<td>70</td>
+			<td>9</td>			
+			<td>2</td>
+			<td>3</td>			
+			<td>3</td>
+			<td>1</td>
+			<td>61</td>			
+			<td>19</td>
+			<td>10</td>			
+			<td>3</td>
+			<td>1</td>			
+			<td>28</td>
+		</tr>
+	</table>
+	</div>
+	
+	<div style="text-align:right; float:right">
+	<h2 class="is-size-2" style="color:rgb(0,154,218);font-weight:bold">● 국가지정 문화재</h2>
+	</div>
+	<div style="clear:both;padding:20px">	
+	<table class="table is-bordered" style="width:100%;text-align:center;">
+		<tr style="background-color:rgb(230,243,255);text-align:center;font-weight:600;">
+			<td>문화재명</td>
+			<td>종류별	</td>
+			<td>수량</td>
+			<td>지정일</td>
+			<td>소재지</td>
+
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 대산리 석조 삼존상</td>			
+			<td>보물</td>
+			<td>3구</td>			
+			<td>1963.01.21</td>			
+			<td>함안군 함안면 대산리 1139</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 방어산 마애약사여러삼존입상</td>			
+			<td>보물</td>
+			<td>3구</td>			
+			<td>1963.01.21</td>			
+			<td>함안군 군북면 하림리 산 131</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 성산산성</td>			
+			<td>사적</td>
+			<td>227,821m2</td>			
+			<td>1963.01.21</td>			
+			<td>함안군 가야읍 광정리 일원<br>함안군 함안면 괴산리 일원</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 말이산 고분군</td>			
+			<td>사적</td>
+			<td>783,619m2</td>			
+			<td>2011.07.28<br>2021.07.29</td>			
+			<td>함안군 가야읍 도향리 일원<br>함안군 가야읍 말산리 일원</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 가야리 유적</td>			
+			<td>사적</td>
+			<td>195,008m2</td>			
+			<td>2019.10.21</td>			
+			<td>함안군 가야읍 가야리 289일원</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 용산리 백악기 새발자국 화석산지</td>			
+			<td>천연기념물</td>
+			<td>12,485m2</td>			
+			<td>1970.04.24</td>			
+			<td>함안군 칠원읍 용산리 산4</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 영동리 회화나무</td>			
+			<td>천연기념물</td>
+			<td>1주(314m2)</td>			
+			<td>1982.11.09</td>			
+			<td>함안군 칠북면 영동리 749-1</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 대송리 늪지식물</td>			
+			<td>천연기념물</td>
+			<td>33,911m2</td>			
+			<td>1984.11.19</td>			
+			<td>함안군 법수면 대송리 883-1</td>			
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">
+			함안 무기연당</td>			
+			<td>국가민속문화재</td>
+			<td>1곽</td>			
+			<td>1984.11.19</td>			
+			<td>함안군 칠원읍 무기1길 33</td>			
+		</tr>
+	</table>
+	</div>
+	
+	<div style="text-align:right; float:right">
+	<h2 class="is-size-2" style="color:rgb(0,154,218);font-weight:bold">● 지방유형 문화재</h2>
+	</div>
+	<div style="clear:both;padding:20px">	
+	<table class="table is-bordered" style="width:100%;text-align:center;">
+		<tr style="background-color:rgb(230,243,255);text-align:center;font-weight:600;">
+			<td>문화재명</td>
+			<td>수량</td>
+			<td>지정일</td>
+			<td>소재지</td>
+
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">	함안 장춘사 석조여래좌상	</td>
+			<td>	1구	</td>
+			<td>	1972.02.12.	</td>
+			<td>	함안군 칠북면 북원로 110-1	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:601;">	함안 주리사지 사자석탑	</td>
+			<td>	1기	</td>
+			<td>	1972.02.12.	</td>
+			<td>	함안군 함안면 함안대로 105-2	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:602;">	이휴복 진무공신 교서	</td>
+			<td>	1매	</td>
+			<td>	1972.02.12.	</td>
+			<td>	함안군 가야읍 고분길 153-31(함안박물관)	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:603;">	함안 장춘사 오층석탑	</td>
+			<td>	1기	</td>
+			<td>	1974.02.16.	</td>
+			<td>	함안군 칠북면 북원로 110-1	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:604;">	주세붕 초상	</td>
+			<td>	1폭	</td>
+			<td>	1976.04.15.	</td>
+			<td>	함안군 칠서면 무릉길 75	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:605;">	함안 무산사	</td>
+			<td>	1동	</td>
+			<td>	1976.04.15.	</td>
+			<td>	함안군 칠서면 무릉길 75	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:606;">	함안 무진정	</td>
+			<td>	1동	</td>
+			<td>	1976.12.20.	</td>
+			<td>	함안군 함안면 괴산4길 25	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:607;">	함안 어계고택	</td>
+			<td>	1동	</td>
+			<td>	1976.12.20.	</td>
+			<td>	함안군 군북면 원북길 104-1	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:608;">	주세붕 무릉잡고 목판	</td>
+			<td>	352매	</td>
+			<td>	2018.12.20.	</td>
+			<td>	함안군 칠서면 무릉길 75	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:609;">	주박 귀봉집 목판	</td>
+			<td>	35매	</td>
+			<td>	2018.12.20.	</td>
+			<td>	함안군 칠서면 무릉길 75	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:610;">	주맹헌 수구집 목판	</td>
+			<td>	65매	</td>
+			<td>	2018.12.20.	</td>
+			<td>	함안군 칠서면 무릉길 75	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:611;">	안축 근재집 목판	</td>
+			<td>	93매	</td>
+			<td>	1979.12.29.	</td>
+			<td>	함안군 가야읍 고분길 153-31(함안박물관)	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:612;">	조임도 간송문집 및 금라전신록목판	</td>
+			<td>	190매	</td>
+			<td>	1979.12.29.	</td>
+			<td>	함안군 가야읍 고분길 153-31(함안박물관)	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:613;">	함안향교	</td>
+			<td>	4,175㎡	</td>
+			<td>	1983.08.06.	</td>
+			<td>	함안군 함안면 덕암길 103	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:614;">	주재성 국담문집 목판	</td>
+			<td>	56매	</td>
+			<td>	1985.01.14.	</td>
+			<td>	함안군 가야읍 고분길 153-31(함안박물관)	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:615;">	악비 장충록	</td>
+			<td>	6책	</td>
+			<td>	1999.08.03.	</td>
+			<td>	함안군 가야읍 고분길 153-31(함안박물관)	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:616;">	조익도공신록권 및 교지	</td>
+			<td>	6점(2책4매)	</td>
+			<td>	1999.08.03.	</td>
+			<td>	함안군 가야읍 고분길 153-31(함안박물관)	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:617;">	함안 내곡리 청간정 고문서	</td>
+			<td>	11건	</td>
+			<td>	2010.10.07.	</td>
+			<td>	함안군 여항면 내곡리 123	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:618;">	함안 장춘사 석조석가여래삼존좌상	</td>
+			<td>	3구	</td>
+			<td>	2015.06.11.	</td>
+			<td>	함안군 칠북면 북원로 110-1	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:619;">	함안 달전사 천지명양수륙재의찬요	</td>
+			<td>	1권	</td>
+			<td>	2017.01.05.	</td>
+			<td>	함안군 칠원읍 유원길 778	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:620;">	함안 말이산 25호분 출토 굽다리등잔	</td>
+			<td>	1점	</td>
+			<td>	2021.10.28.	</td>
+			<td>	함안군 가야읍 고분길 153-31(함안박물관)	</td>
+		</tr>
+	</table>
+	</div>
+
+
+	<div style="text-align:right; float:right">
+	<h2 class="is-size-2" style="color:rgb(0,154,218);font-weight:bold">● 지방무형 문화재</h2>
+	</div>
+	<div style="clear:both;padding:20px">	
+	<table class="table is-bordered" style="width:100%;text-align:center;">
+		<tr style="background-color:rgb(230,243,255);text-align:center;font-weight:600;">
+			<td>문화재명</td>
+			<td>수량</td>
+			<td>지정일</td>
+			<td>소재지</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:600;">	함안 화천농악	</td>
+			<td>	1단체	</td>
+			<td>	1991.12.23.	</td>
+			<td>	함안군 칠북면 화천1길 14	</td>
+		</tr>
+		<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:601;">	함안 낙화놀이	</td>
+			<td>	1단체	</td>
+			<td>	2008.10.30.	</td>
+			<td>	함안군 함안면 괴산리 544-2	</td>
+		</tr>
+				<tr>
+			<td style="background-color:rgb(230,243,255);font-weight:601;">	함안 농요	</td>
+			<td>	1단체	</td>
+			<td>	2016.09.01.	</td>
+			<td>	함안군 가야읍 도향리 263-6	</td>
+		</tr>
+	</table>
+	</div>
+
+
+
+</div>
+<div class="blank" style="margin-bottom:100px"></div>
+
+<style>
+a { color: #333; }
+#level1 a { color: #fff; }
+#level2 a { margin-top: -70px; }
+#level3 span { display:block; margin-top: -70px; margin-left: 500px; font-size: 90%;}
+.fix_area { position:fixed; z-index:9999; bottom:50px; right:50px; }
+.fix_area .cir_box { display:block; width: 60px; height: 60px; text-align:center; color:#fff;
+border-radius:35px; box-sizing: border-box; padding: 6px; font-size:15px; 
+overflow:hidden; box-shadow:1px 1px 6px #333; }
+.fix_area .totop { background-color:rgb(0,154,218); margin-top: 10px; }
+</style>
+<footer class="footer" style="height: 250px; background-color: #fff;">
+	<div class="fix_area">
+     <a href="#" class="cir_box totop">↑<br>TOP</a>
+	</div>
+  <nav class="level" id="level1" style="background-color: rgb(0,154,218); height: 50px;">
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03678/03693.web">실과소 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03638/03836.web">읍면 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.gyeongnam.go.kr/index.gyeong">도,시군청 바로가기</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="http://www.gnpolice.go.kr/ha/#">유관기관,단체 바로가기</a>
+  </p>
+ </nav>
+  <nav class="level" id="level2">
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_logo.png" alt="logo" style="width:190px; height: 62px;">
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/06455.web">개인정보 처리방침</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/04160/04164/04168.web">저작권정책</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="https://www.haman.go.kr/03633/03637/03815.web">오시는길</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <img src="../png/foot_mark.png" alt="logo" style="width:112px; height: 77px;">
+  </p>
+  </nav>
+  <nav class="level" id="level3">
+    <span>(52043) 경상남도 함안군 가야읍 말산로 1 (함안군청) &nbsp;&nbsp;&nbsp; 대표전화 : 055-580-2114 &nbsp;&nbsp;&nbsp; 팩스 : 055-580-2899<br>
+  		  본 사이트에 게시된 이메일주소의 자동수집을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.<br>
+  		Copyright (C) 2019 Haman County Office. All rights reserved.</span>
+ </nav>
+</footer>
+</body>
+
+<!-- Mirrored from localhost:8082/pro03/Cultural.do by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2023 08:50:50 GMT -->
+</html>

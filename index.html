@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Noto+Sans+KR&family=Sono&display=swap" rel="stylesheet">
+  <title>JOTAEJEONG_RESUME</title>
+  <style>
+    body { background: linear-gradient( rgb(163, 223, 247), rgb(201, 234, 247), rgb(195, 232, 247), rgb(201, 236, 250), rgb(174, 229, 251),  rgb(170, 230, 254), rgb(201, 235, 247), rgb(203, 237, 250), rgb(118, 213, 251)); }
+    a { color: black; }
+    ul { float: left; width: 908px; height: 814px; margin: 1 auto; }
+    li::marker { content: '★ '; color: rgb(233, 228, 69); }
+    .wrap { max-width: 1900px; max-height: 1200px; }
+    .ft { width: 1860px; max-height: 115px; margin: 0; padding: 5; font-size: 16px; font-weight: 600;}
+    .left_photo { float: left; width: 176px; height: 231px; margin: 1 auto; padding: 10; border-radius: 1em; background-image: url('./img/jtj.jpg'); background-repeat: no-repeat; }
+    .left_profile { height: 231px; margin-left: 220px; }
+    .pj_wrap { width: 900px; height: 795px; margin: 1px auto; padding: 0; position: relative; overflow: hidden; }
+    .img_wrap{ width: 3000px; height: 100%; position: absolute; top: 0; left: 0; background-color: lightgray; display: flex; }
+    .img { width: 1000px; height: 100%; font-size: 30px; display: flex; justify-content: center; align-items: center; box-sizing: border-box; }
+    .arrow { font-size: 60px; font-weight: 900; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; }
+    .left_arrow{ left: 0; }
+    .right_arrow { right: 0; }  
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          // 오른쪽 화살표를 클릭하면 img_wrap이 left기준으로
+          // -1000px 만큼 이동
+          var num = 0;
+          function img_move(){
+              $(".img_wrap").stop().animate({
+                  left: -num * 1000
+              });
+          }
+          $(".right_arrow").click(function(){
+              num++;
+              if(num > 2){
+                  num = 0;
+              }   
+              img_move();
+          }); 
+          $(".left_arrow").click(function(){
+              num--;
+              if(num < 0){
+                  num = 2;
+              }   
+              img_move();
+            });
+          });//end
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <ul>
+      <li class="left" style="text-align: center;">
+          <h2>ABOUT ME</h2>
+          <h3><span class="icon1">*</span> 조태정 <span class="icon2">*</span> 1995.07.15 <span class="icon3">*</span> 경기도 고양시</h3>
+      </li>
+      <div class="left_photo"></div>
+      <div class="left_profile">
+        <li><h4>2023.02 ~ 2023.07 자바(JAVA)기반 응용 SW 개발자 과정 수료 /  더조은컴퓨터아트학원</h4></li>
+        <li><h4>Eclipse 및 VScode, STS 사용, JAVA 개발 환경 구축, Git Bahs 사용 코드 관리</h4></li>
+        <li><h4>HTML5, CSS, JSP, EL, JSTL, MVC2 Model 활용한 웹 애플리케이션 개발</h4></li>
+        <li><h4>JavaScript, JQuery, Ajax, IoC, Validation 등을 활용한 웹 애플리케이션 개발</h4></li>
+        <li><h4>AES256/SHA256/MD5 및 Spring Security 활용 암호화 및 로그인/회원가입 기능 구현</h4></li>
+        <li><h4>다양한 DBMS (MySQL, Oracle, PostgreSQL, MariaDB) 활용 웹 애플리케이션 개발</h4></li>
+      </div>
+      <br>
+      <div class="ca" style="float: left;">
+        <li>
+          <h2>학력</h2>
+          <li>학점은행제 식품조리학 2019 ~ 2020</li>
+          <li>서일대학교 식품영양학 2014 ~ 2017</li>
+          <li>신도고등학교 인문계열 2011 ~ 2014</li>
+        </li>
+      </div>
+      <div class="ca" style="float: left; margin-left: 80px;">
+        <li>
+          <h2>경력</h2>
+          <li>은평구보건소 2022.02 ~ 2022.12</li>
+          <li>서울대학병원 2020.05 ~ 2021.07</li>
+          <li>웅지세무대학 2017.03 ~ 2019.04</li>
+        </li>
+      </div>
+      <div class="ca" style="margin-left: 670px;">
+        <li>
+          <h2>자격증</h2>
+          <li>컴퓨터활용능력2급</li>
+          <li>전산회계1급, 전산세무2급</li>
+          <li>영양사, 위생사, 식품기사</li>
+        </li>
+      </div>
+      <br>
+      <li>
+        <h2>자기소개</h2>
+        <pre style=" font-size: 14.5px;">식품영양학을 전공하고 약 4년 간 영양사로 근무했던 경험에서 식자재 발주 프로그램과 영양소의 구성 비율을 계산하는 
+프로그램을 접하고 두 프로그램의 원초적 기반인 IT는 무엇일까라는 궁금증이 생기게 되었습니다.
+이러한 궁금증에 대한 답을 얻고자 국비 과정을 통해 자바(JAVA) 기반 응용 SW 개발자 과정에 참여하여 
+새로운 영역으로 도전하기로 결심하였고, 시작은 작은 궁금증에서 출발하였지만 한발 한발 내디딜 때마다 
+신입 개발자가 되기 위해서 배우는 것을 게을리하지 않았으며 꾸준히 노력하고 실천하고 있습니다.
+
+그 결과로 코딩 작업을 할 때 일처리의 우선순위를 고려하여 단계별로 처리해 나가는 방법을 터득하게 되었습니다. 
+코드 한 줄을 작성하더라도 반복적으로 확인하고 수정, 응용하고 구현하는 성격 탓에 스스로에게는 엄격하지만 
+프로젝트 진행에 있어 일처리가 깔끔하고 타인에게 피해가 가지 않는 사람이라는 평가를 많이 받습니다. 
+또한 더 나은 결과물을 도출하기 위해 적극적으로 아이디어를 제시하며 타인의 의견도 놓치지 않고 수용하여 반영합니다.
+
+이처럼 함께하는 학우들과 원만하고 친밀한 인간관계를 유지하고 있으며, 실무에 나가서도 여러 소리를 귀담아들어
+소통을 중요시하는 신입 개발자가 되겠습니다. 또한 입사 초기에는 전체적인 업무 방향을 익히고 기존 방식에 스며들어 
+적응하는 것뿐만 아니라 자신만의 방법을 찾아낼 수 있도록 끊임없이 공부하는 자세로 임하겠습니다.
+        </pre>
+      </li>
+    </ul>
+    <ul style="padding-inline-start: 15px;">
+      <li class="right" style="text-align: center;">
+          <h2>PROJECT</h2>
+      </li>
+      <div class="pj_wrap">
+        <div class="img_wrap">
+          <div class="img">
+            <a href="https://taetae0715.github.io/pro03/" target="blank">
+              <img src="./img/pro03_haman.png" width="1000px;" height="800px;" alt="함안으로 놀러가기" />
+            </a>
+          </div>
+          <div class="img">
+            <a href="https://taetae0715.github.io/pro02/localhost_8081/pro02/ProductList.html" target="blank">
+              <img src="./img/pro02_happtdog.png" width="1000px;" height="800px;" alt="Happy Dog 수제 간식 쇼핑하기" />
+            </a>
+          </div>
+          <div class="img">
+            <a href="https://taetae0715.github.io/pro01/" target="blank">
+              <img src="./img/pro01_otukki.png" width="1000px;" height="800px;" alt="오뚜기 구경하기" />
+            </a>  
+          </div>
+        </div>
+        <div class="arrow left_arrow"> &lt; </div>
+        <div class="arrow right_arrow"> &gt; </div>
+      </div>
+    </ul>
+    <ul class="ft">
+      <li style="font-size: 24px;">CONTACT</li>
+      <br>
+      <li style="float: left; margin-right: 50px;"><a href="tel:" target="blank">TEL: 010-9864-2514</li></a>
+      <li style="float: left; margin-right: 50px;"><a href="mailto:dlddld4495@naver.com" target="blank">EMAIL: dlddld4495@naver.com</li></a>
+      <li style="float: left; margin-right: 400px;"><a href="https://github.com/taetae0715"  target="blank">GitHub: https://github.com/taetae0715</li></a>
+      <span>copyright 2023. TAEJEONG_JO all rights reserved.</span>
+    </ul>
+  </div>
+</body>
+</html>
