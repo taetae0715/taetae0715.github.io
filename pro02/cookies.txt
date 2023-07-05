@@ -1,4 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-localhost:8081	TRUE	/pro02/	FALSE	1999999999	JSESSIONID	463F147D00B5AAB765B5121FDCB73676
-
