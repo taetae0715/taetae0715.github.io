@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="author" content="TAEJEONG_JO">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400&family=Orbit&display=swap" rel="stylesheet">
@@ -16,6 +16,10 @@
     li::marker { content: '★ '; color: rgb(233, 228, 69); }
     .wrap { max-width: 1900px; max-height: 1200px; }
     .ft { width: 1860px; max-height: 115px; margin: 0; padding: 5; font-size: 16px; font-weight: 600;}
+    .ft1 { float: left; margin-left: 130px; font-size: 14px; margin-top: 12px; }
+    .ft2 { float: left; margin-left: 540px; margin-right: 70px; }
+    .ft3 { float: left; margin-right: 70px; }
+    .ft4 { float: left; }
     .left_photo { float: left; width: 176px; height: 231px; margin: 1 auto; padding: 10; border-radius: 1em; background-image: url('./img/jtj.jpg'); background-repeat: no-repeat; }
     .left_profile { height: 231px; margin-left: 220px; }
     .pj_wrap { width: 900px; height: 795px; margin: 1px auto; padding: 0; position: relative; overflow: hidden; }
@@ -24,6 +28,14 @@
     .arrow { font-size: 60px; font-weight: 900; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; }
     .left_arrow{ left: 0; }
     .right_arrow { right: 0; }  
+    @media(min-width : 150px) and (max-width:1600px) {        
+    ul { width : 1500px; height : 900px; margin: 0 auto;}
+    .ft { width : 1500px; height : 115px; margin-top: -70px; }
+    .ft1 { margin-left: 120px; margin-top: 0px; }
+    .ft2 { margin-left: 60px; }
+    .ft3 { margin-left: 20px; }
+    .left_wrap { width : 1000px; margin-left: 300px;}
+    }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script>
@@ -60,43 +72,44 @@
           <h2>ABOUT ME</h2>
           <h3><span class="icon1">*</span> 조태정 <span class="icon2">*</span> 1995.07.15 <span class="icon3">*</span> 경기도 고양시</h3>
       </li>
-      <div class="left_photo"></div>
-      <div class="left_profile">
-        <li><h4>2023.02 ~ 2023.07 자바(JAVA)기반 응용 SW 개발자 과정 수료 /  더조은컴퓨터아트학원</h4></li>
-        <li><h4>Eclipse 및 VScode, STS 사용, JAVA 개발 환경 구축, Git Bahs 사용 코드 관리</h4></li>
-        <li><h4>HTML5, CSS, JSP, EL, JSTL, MVC2 Model 활용한 웹 애플리케이션 개발</h4></li>
-        <li><h4>JavaScript, JQuery, Ajax, IoC, Validation 등을 활용한 웹 애플리케이션 개발</h4></li>
-        <li><h4>AES256/SHA256/MD5 및 Spring Security 활용 암호화 및 로그인/회원가입 기능 구현</h4></li>
-        <li><h4>다양한 RDBMS (MySQL, Oracle, PostgreSQL, MariaDB) 활용 웹 애플리케이션 개발</h4></li>
-      </div>
-      <br>
-      <div class="ca" style="float: left;">
+      <div class="left_wrap">
+        <div class="left_photo"></div>
+        <div class="left_profile">
+          <li><h4>2023.02 ~ 2023.07 자바(JAVA)기반 응용 SW 개발자 과정 수료 /  더조은컴퓨터아트학원</h4></li>
+          <li><h4>Eclipse 및 VScode, STS 사용, JAVA 개발 환경 구축, Git Bahs 사용 코드 관리</h4></li>
+          <li><h4>HTML5, CSS, JSP, EL, JSTL, MVC2 Model 활용한 웹 애플리케이션 개발</h4></li>
+          <li><h4>JavaScript, JQuery, Ajax, IoC, Validation 등을 활용한 웹 애플리케이션 개발</h4></li>
+          <li><h4>AES256/SHA256/MD5 및 Spring Security 활용 암호화 및 로그인/회원가입 기능 구현</h4></li>
+          <li><h4>다양한 RDBMS (MySQL, Oracle, PostgreSQL, MariaDB) 활용 웹 애플리케이션 개발</h4></li>
+        </div>
+        <br>
+        <div class="ca" style="float: left;">
+          <li>
+            <h2>학력</h2>
+            <li>학점은행제 식품조리학 2019 ~ 2020</li>
+            <li>서일대학교 식품영양학 2014 ~ 2017</li>
+            <li>신도고등학교 인문계열 2011 ~ 2014</li>
+          </li>
+        </div>
+        <div class="ca" style="float: left; margin-left: 80px;">
+          <li>
+            <h2>경력</h2>
+            <li>은평구보건소 2022.02 ~ 2022.12</li>
+            <li>서울대학병원 2020.05 ~ 2021.07</li>
+            <li>웅지세무대학 2017.03 ~ 2019.04</li>
+          </li>
+        </div>
+        <div class="ca" style="margin-left: 650px;">
+          <li>
+            <h2>자격증</h2>
+            <li>컴퓨터활용능력2급</li>
+            <li>전산회계1급, 전산세무2급</li>
+            <li>영양사, 위생사, 식품기사</li>
+          </li>
+        </div>
         <li>
-          <h2>학력</h2>
-          <li>학점은행제 식품조리학 2019 ~ 2020</li>
-          <li>서일대학교 식품영양학 2014 ~ 2017</li>
-          <li>신도고등학교 인문계열 2011 ~ 2014</li>
-        </li>
-      </div>
-      <div class="ca" style="float: left; margin-left: 80px;">
-        <li>
-          <h2>경력</h2>
-          <li>은평구보건소 2022.02 ~ 2022.12</li>
-          <li>서울대학병원 2020.05 ~ 2021.07</li>
-          <li>웅지세무대학 2017.03 ~ 2019.04</li>
-        </li>
-      </div>
-      <div class="ca" style="margin-left: 650px;">
-        <li>
-          <h2>자격증</h2>
-          <li>컴퓨터활용능력2급</li>
-          <li>전산회계1급, 전산세무2급</li>
-          <li>영양사, 위생사, 식품기사</li>
-        </li>
-      </div>
-      <li>
-        <h2>자기소개</h2>
-        <pre style=" font-size: 14.5px;">식품영양학을 전공하고 약 4년 간 영양사로 근무했던 경험에서 식자재 발주 프로그램과 영양소의 구성 비율을 계산하는 
+          <h2>자기소개</h2>
+          <pre style=" font-size: 14.5px;">식품영양학을 전공하고 약 4년 간 영양사로 근무했던 경험에서 식자재 발주 프로그램과 영양소의 구성 비율을 계산하는 
 프로그램을 접하고 두 프로그램의 원초적 기반인 IT는 무엇일까라는 궁금증이 생기게 되었습니다.
 이러한 궁금증에 대한 답을 얻고자 국비 과정을 통해 자바(JAVA) 기반 응용 SW 개발자 과정에 참여하여 
 새로운 영역으로 도전하기로 결심하였고, 시작은 작은 궁금증에서 출발하였지만 한발 한발 내디딜 때마다 
@@ -110,9 +123,10 @@
 이처럼 함께하는 학우들과 원만하고 친밀한 인간관계를 유지하고 있으며, 실무에 나가서도 여러 소리를 귀담아들어
 소통을 중요시하는 신입 개발자가 되겠습니다. 또한 입사 초기에는 전체적인 업무 방향을 익히고 기존 방식에 스며들어 
 적응하는 것뿐만 아니라 자신만의 방법을 찾아낼 수 있도록 끊임없이 공부하는 자세로 임하겠습니다.
-        </pre>
-      </li>
-    </ul>
+          </pre>
+        </li>
+      </ul>
+    </div>
     <ul style="padding-inline-start: 15px;">
       <li class="right" style="text-align: center;">
           <h2>PROJECT</h2>
@@ -141,10 +155,10 @@
     </ul>
     <ul class="ft">
       <br><br><br>
-      <li style="float: left; margin-left: 130px; font-size: 14px; margin-top: 12px;">copyright 2023. TAEJEONG_JO all rights reserved.</li>
-      <li style="float: left; margin-left: 540px; margin-right: 70px;"><a href="tel:" target="blank">TEL: 010-9864-2514</li></a>
-      <li style="float: left; margin-right: 70px;"><a href="mailto:dlddld4495@naver.com" target="blank">EMAIL: dlddld4495@naver.com</li></a>
-      <li style="float: left;"><a href="https://github.com/taetae0715"  target="blank">GitHub: https://github.com/taetae0715</li></a>
+      <li class="ft1">copyright 2023. TAEJEONG_JO all rights reserved.</li>
+      <li class="ft2"><a href="tel:" target="blank">TEL: 010-9864-2514</li></a>
+      <li class="ft3"><a href="mailto:dlddld4495@naver.com" target="blank">EMAIL: dlddld4495@naver.com</li></a>
+      <li class="ft4"><a href="https://github.com/taetae0715"  target="blank">GitHub: https://github.com/taetae0715</li></a>
     </ul>
   </div>
 </body>
