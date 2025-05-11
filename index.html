@@ -1,165 +1,386 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="author" content="TAEJEONG_JO">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400&family=Orbit&display=swap" rel="stylesheet">
-  <title>JOTAEJEONG_RESUME</title>
-  <style>
-    * { font-family: 'IBM Plex Sans KR'; }
-    body { background: linear-gradient( rgb(163, 223, 247), rgb(201, 234, 247), rgb(195, 232, 247), rgb(201, 236, 250), rgb(174, 229, 251),  rgb(170, 230, 254), rgb(201, 235, 247), rgb(203, 237, 250), rgb(118, 213, 251)); }
-    a { color: black; }
-    ul { float: left; width: 908px; height: 814px; margin: 1 auto; }
-    li::marker { content: '★ '; color: rgb(233, 228, 69); }
-    .wrap { max-width: 1900px; max-height: 1200px; }
-    .ft { width: 1860px; max-height: 115px; margin: 0; padding: 5; font-size: 16px; font-weight: 600;}
-    .ft1 { float: left; margin-left: 130px; font-size: 14px; margin-top: 12px; }
-    .ft2 { float: left; margin-left: 540px; margin-right: 70px; }
-    .ft3 { float: left; margin-right: 70px; }
-    .ft4 { float: left; }
-    .left_photo { float: left; width: 176px; height: 231px; margin: 1 auto; padding: 10; border-radius: 1em; background-image: url('./img/jtj.jpg'); background-repeat: no-repeat; }
-    .left_profile { height: 231px; margin-left: 220px; }
-    .pj_wrap { width: 900px; height: 795px; margin: 1px auto; padding: 0; position: relative; overflow: hidden; }
-    .img_wrap{ width: 3000px; height: 100%; position: absolute; top: 0; left: 0; background-color: lightgray; display: flex; }
-    .img { width: 1000px; height: 100%; font-size: 30px; display: flex; justify-content: center; align-items: center; box-sizing: border-box; }
-    .arrow { font-size: 60px; font-weight: 900; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; }
-    .left_arrow{ left: 0; }
-    .right_arrow { right: 0; }  
-    @media(min-width : 150px) and (max-width:1890px) {        
-    ul { width : 1500px; height : 900px; margin: 0 auto;}
-    .ft { width : 1500px; height : 115px; margin-top: -70px; }
-    .ft1 { margin-left: 120px; margin-top: 0px; }
-    .ft2 { margin-left: 60px; }
-    .ft3 { margin-left: 20px; }
-    .left_wrap { width : 1000px; margin-left: 300px;}
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>조태정 | 포트폴리오</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbit&amp;display=swap" rel="stylesheet"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbit', sans-serif; }
+    body { background-color: #0f172a; color: #e2e8f0; }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: url('./img/header_bg.jpg') no-repeat center/cover;
     }
-  </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script>
-      $(document).ready(function(){
-          // 오른쪽 화살표를 클릭하면 img_wrap이 left기준으로
-          // -1000px 만큼 이동
-          var num = 0;
-          function img_move(){
-              $(".img_wrap").stop().animate({
-                  left: -num * 1000
-              });
-          }
-          $(".right_arrow").click(function(){
-              num++;
-              if(num > 2){
-                  num = 0;
-              }   
-              img_move();
-          }); 
-          $(".left_arrow").click(function(){
-              num--;
-              if(num < 0){
-                  num = 2;
-              }   
-              img_move();
-            });
-          });//end
-  </script>
+    header img {
+      width: 140px; height: 140px; border-radius: 50%;
+      object-fit: cover; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+    header h1 { font-size: 32px; color: #fff; }
+    header p { margin-top: 8px; font-size: 14px; }
+
+    nav {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      background-color: #1e293b; padding: 12px 0; position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid #334155;
+    }
+    nav a {
+      color: #cbd5e1; text-decoration: none; margin: 10px 20px; font-weight: bold;
+    }
+    nav a:hover { color: #38bdf8; }
+
+    section {
+      padding: 60px 20px; max-width: 1000px; margin: 0 auto;
+      border-bottom: 1px solid #334155;
+    }
+    h2 {
+      font-size: 26px; color: #38bdf8; margin-bottom: 20px;
+    }
+    .badges span {
+      display: inline-block; background: #1e293b; color: #38bdf8;
+      padding: 6px 12px; border-radius: 12px; margin: 5px 5px 5px 0;
+      font-size: 13px;
+    }
+
+    /* 액자형 포트폴리오 스타일 */
+    .gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+    }
+    .frame {
+      position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .frame img {
+      width: 100%; height: 200px; object-fit: cover;
+      display: block; transition: transform 0.3s ease;
+    }
+    .frame:hover img {
+      transform: scale(1.05);
+    }
+    .overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(15,23,42,0.85);
+      color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      opacity: 0; transition: opacity 0.3s ease;
+      text-align: center; padding: 20px;
+    }
+    .frame:hover .overlay {
+      opacity: 1;
+    }
+    .overlay h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #38bdf8;
+    }
+    .overlay p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+      padding: 40px 0;
+      background-color: #0f172a;
+    }
+  
+    section { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    section.visible { opacity: 1; transform: translateY(0); }
+    /* 모션 그래픽 */
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.frame {
+  animation: slideInLeft 0.8s ease forwards;
+}
+.frame:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #38bdf8;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+  text-align: center;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #38bdf8; }
+}
+
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: #38bdf8;
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <ul>
-      <li class="left" style="text-align: center;">
-          <h2>ABOUT ME</h2>
-          <h3><span class="icon1">*</span> 조태정 <span class="icon2">*</span> 1995.07.15 <span class="icon3">*</span> 경기도 고양시</h3>
-      </li>
-      <div class="left_wrap">
-        <div class="left_photo"></div>
-        <div class="left_profile">
-          <li><h4>2023.02 ~ 2023.07 자바(JAVA)기반 응용 SW 개발자 과정 수료 /  더조은컴퓨터아트학원</h4></li>
-          <li><h4>Eclipse 및 VScode, STS 사용, JAVA 개발 환경 구축, Git Bahs 사용 코드 관리</h4></li>
-          <li><h4>HTML5, CSS, JSP, EL, JSTL, MVC2 Model 활용한 웹 애플리케이션 개발</h4></li>
-          <li><h4>JavaScript, JQuery, Ajax, IoC, Validation 등을 활용한 웹 애플리케이션 개발</h4></li>
-          <li><h4>AES256/SHA256/MD5 및 Spring Security 활용 암호화 및 로그인/회원가입 기능 구현</h4></li>
-          <li><h4>다양한 RDBMS (MySQL, Oracle, PostgreSQL, MariaDB) 활용 웹 애플리케이션 개발</h4></li>
-        </div>
-        <br>
-        <div class="ca" style="float: left;">
-          <li>
-            <h2>학력</h2>
-            <li>학점은행제 식품조리학 2019 ~ 2020</li>
-            <li>서일대학교 식품영양학 2014 ~ 2017</li>
-            <li>신도고등학교 인문계열 2011 ~ 2014</li>
-          </li>
-        </div>
-        <div class="ca" style="float: left; margin-left: 80px;">
-          <li>
-            <h2>경력</h2>
-            <li>은평구보건소 2022.02 ~ 2022.12</li>
-            <li>서울대학병원 2020.05 ~ 2021.07</li>
-            <li>웅지세무대학 2017.03 ~ 2019.04</li>
-          </li>
-        </div>
-        <div class="ca" style="margin-left: 650px;">
-          <li>
-            <h2>자격증</h2>
-            <li>컴퓨터활용능력2급</li>
-            <li>전산회계1급, 전산세무2급</li>
-            <li>영양사, 위생사, 식품기사</li>
-          </li>
-        </div>
-        <li>
-          <h2>자기소개</h2>
-          <pre style=" font-size: 14.5px;">식품영양학을 전공하고 약 4년 간 영양사로 근무했던 경험에서 식자재 발주 프로그램과 영양소의 구성 비율을 계산하는 
-프로그램을 접하고 두 프로그램의 원초적 기반인 IT는 무엇일까라는 궁금증이 생기게 되었습니다.
-이러한 궁금증에 대한 답을 얻고자 국비 과정을 통해 자바(JAVA) 기반 응용 SW 개발자 과정에 참여하여 
-새로운 영역으로 도전하기로 결심하였고, 시작은 작은 궁금증에서 출발하였지만 한발 한발 내디딜 때마다 
-신입 개발자가 되기 위해서 배우는 것을 게을리하지 않았으며 꾸준히 노력하고 실천하고 있습니다.
+<div id="progress"></div>
+<header>
+<div class="typing" style="background-color: rgba(0,0,0,0.4); padding: 10px; border-radius: 6px; backdrop-filter: blur(4px); text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">
+조태정 | Java Backend Developer ｜ 📱 <a href="tel:01098642514" style="color:#38bdf8; text-decoration: none;">010-9864-2514</a> ｜ ✉️ <a href="mailto:dlddld4495@naver.com" style="color:#38bdf8; text-decoration: none;">dlddld4495@naver.com</a> ｜ 📍 경기도 고양시
+</div>
 
-그 결과로 코딩 작업을 할 때 일처리의 우선순위를 고려하여 단계별로 처리해 나가는 방법을 터득하게 되었습니다. 
-코드 한 줄을 작성하더라도 반복적으로 확인하고 수정, 응용하고 구현하는 성격 탓에 스스로에게는 엄격하지만 
-프로젝트 진행에 있어 일처리가 깔끔하고 타인에게 피해가 가지 않는 사람이라는 평가를 많이 받습니다. 
-또한 더 나은 결과물을 도출하기 위해 적극적으로 아이디어를 제시하며 타인의 의견도 놓치지 않고 수용하여 반영합니다.
+</header>
+<nav>
+<a href="#about">👤 ABOUT ME</a>
+<a href="#skills">🛠️ SKILLS</a>
+<a href="#projects">📁 PROJECTS</a>
+<a href="#career">💼 CAREER</a>
+<a href="#details">📄 DETAILS</a>
+</nav>
+<section id="about">
+<h2 style="animation: fadeIn 0.6s ease;">👤 ABOUT ME</h2>
+<p>약 2년간 JAVA 전산 개발자로 근무하며 다양한 프로젝트의 유지보수와 신규 구축을 경험하였습니다.</p>
+<br>
+<p>엠에스커뮤니티 및 ㈜디브렉션에서 스마트단말 관리 시스템, 교육환경 관리 시스템, BXT CSR 시스템, StorePay 구축 등 공공기관 및 민간 기업 대상 프로젝트에 참여하여 실무 경험을 쌓았습니다. Java와 MariaDB 기반 백엔드 개발을 중심으로, WebSquare 화면 유지보수, Linux 서버 환경 관리, SVN 및 Git을 활용한 형상관리 등을 수행해왔습니다.</p>
+<br>
+<p>실제 운영 중인 시스템의 유지보수 업무를 통해 문제 해결 능력과 책임감을 키웠으며, 사용자 니즈를 분석하고 기획 단계부터 배포까지 전 과정을 경험했습니다.<br>코드를 단순히 구현하는 것을 넘어서, 효율성과 확장성을 고려한 개선에도 관심을 갖고 업무에 임하고 있습니다.</p>
+<br>
+<p>기술적인 성장뿐만 아니라 커뮤니케이션 능력도 중요하게 생각하며, 협업 속에서 맡은 역할을 충실히 해내는 개발자가 되기 위해 노력하고 있습니다. 앞으로는 보다 고도화된 시스템 개발 및 다양한 기술 스택을 접하며 역량을 넓혀가고자 합니다.</p>
+</section>
+<section id="skills">
+<h2>🛠️ SKILLS</h2>
+<div class="badges">
+<span>Java</span><span>Spring</span><span>WebSquare</span><span>MariaDB</span>
+<span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>Linux</span>
+</div>
+</section>
 
-이처럼 함께하는 학우들과 원만하고 친밀한 인간관계를 유지하고 있으며, 실무에 나가서도 여러 소리를 귀담아들어
-소통을 중요시하는 신입 개발자가 되겠습니다. 또한 입사 초기에는 전체적인 업무 방향을 익히고 기존 방식에 스며들어 
-적응하는 것뿐만 아니라 자신만의 방법을 찾아낼 수 있도록 끊임없이 공부하는 자세로 임하겠습니다.
-          </pre>
-        </li>
-      </ul>
+<section id="projects">
+<h2>📁 PROJECTS</h2>
+<div class="gallery">
+  <div class="frame" onclick="openImage('./img/bxt/bxt1.png', './img/bxt/bxt2.png')">
+    <img src="./img/bxt/bxt2.png" alt="CSR 시스템"/>
+    <div class="overlay">
+      <h3>BXT 고객지원 시스템</h3>
+      <p>CSR 요청 관리 및 운영자 알림 자동화 시스템 구현</p>
+      <div class="badges"><span>Java</span><span>JSP</span><span>MariaDB</span></div>
     </div>
-    <ul style="padding-inline-start: 15px;">
-      <li class="right" style="text-align: center;">
-          <h2>PROJECT</h2>
-      </li>
-      <div class="pj_wrap">
-        <div class="img_wrap">
-          <div class="img">
-            <a href="https://taetae0715.github.io/pro03/" target="blank">
-              <img src="./img/pro03_haman.png" width="1000px;" height="800px;" alt="함안으로 놀러가기" />
-            </a>
-          </div>
-          <div class="img">
-            <a href="https://taetae0715.github.io/pro02/localhost_8081/pro02/ProductList.html" target="blank">
-              <img src="./img/pro02_happtdog.png" width="1000px;" height="800px;" alt="Happy Dog 수제 간식 쇼핑하기" />
-            </a>
-          </div>
-          <div class="img">
-            <a href="https://taetae0715.github.io/pro01/" target="blank">
-              <img src="./img/pro01_otukki.png" width="1000px;" height="800px;" alt="오뚜기 구경하기" />
-            </a>  
-          </div>
-        </div>
-        <div class="arrow left_arrow"> &lt; </div>
-        <div class="arrow right_arrow"> &gt; </div>
-      </div>
-    </ul>
-    <ul class="ft">
-      <br><br><br>
-      <li class="ft1">copyright 2023. TAEJEONG_JO all rights reserved.</li>
-      <li class="ft2"><a href="tel:" target="blank">TEL: 010-9864-2514</li></a>
-      <li class="ft3"><a href="mailto:dlddld4495@naver.com" target="blank">EMAIL: dlddld4495@naver.com</li></a>
-      <li class="ft4"><a href="https://github.com/taetae0715"  target="blank">GitHub: https://github.com/taetae0715</li></a>
-    </ul>
   </div>
+  <div class="frame" onclick="openImage('./img/tsms/tsms1.png', './img/tsms/tsms2.png')">
+    <img src="./img/tsms/tsms2.png" alt="내부 관리자 시스템"/>
+    <div class="overlay">
+      <h3>TSMS</h3>
+      <p>WebSquare 기반 Ａ／Ｓ프로그램 구축</p>
+      <div class="badges"><span>Java</span><span>WebSquare</span><span>Linux</span></div>
+    </div>
+  </div>
+  <div class="frame" onclick="openImage('./img/asst.png', null)">
+    <img src="./img/asst.png" alt="모바일 대응 UI"/>
+    <div class="overlay">
+      <h3>ASST</h3>
+      <p>학교 스마트 자산관리 솔루션</p>
+      <div class="badges"><span>JSP</span><span>반응형 레이아웃</span><span>터치 최적화 구성</span></div>
+    </div>
+  </div>
+  <div class="frame" onclick="openImage('./img/tsms/tsms3.png', null)">
+    <img src="./img/tsms/tsms3.png" alt="교육환경 시스템"/>
+    <div class="overlay">
+      <h3>교육청포탈</h3>
+      <p>스마트기기 상태 관리, 통계 리포트 대시보드</p>
+      <div class="badges"><span>JSP</span><span>Java</span><span>MariaDB</span></div>
+    </div>
+  </div>
+  <div class="frame" onclick="openImage('./img/gsms/gsms1.png', './img/gsms/gsms2.png')">
+    <img src="./img/gsms/gsms2.png" alt="통계 리포트"/>
+    <div class="overlay">
+      <h3>GSMS</h3>
+      <p>접속 통계 및 데이터 시각화 기능 구현</p>
+      <div class="badges"><span>Java</span><span>Chart.js</span><span>Linux</span></div>
+    </div>
+  </div>
+  <div class="frame" onclick="openImage('./img/storepay.png', null)">
+    <img src="./img/storepay.png" alt="StorePay 시스템"/>
+    <div class="overlay">
+      <h3>StorePay 시스템</h3>
+      <p>가맹점 정산 및 본사-매장 API 연동 기능 개발</p>
+      <div class="badges"><span>Java</span><span>API</span><span>MariaDB</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="career">
+<h2>💼 CAREER</h2>
+<ul>
+  <li><strong>(주)디브렉션</strong> <br/><small>2023.11 ~ 2025.05</small><br/>Web 기반 전산 시스템 유지보수 및 신규 기능 개발</li><br/>
+  <li><strong>엠에스커뮤니티</strong> <br/><small>2023.08 ~ 2023.11</small><br/>스마트단말 관리 시스템 유지보수</li>
+</ul>
+</section>
+
+<section id="details">
+<h2>📄 DETAILS</h2>
+<ul>
+  <li><strong>학력</strong><br/>서일대학교 식품영양학</li><br/>
+  <li><strong>자격증</strong><br/>컴퓨터활용능력 2급, 전산세무2급, 전산회계1급</li><br/>
+  <li><strong>교육</strong><br/>더조은컴퓨터아트학원 JAVA 응용SW개발자 과정 수료</li>
+</ul>
+</section>
+<footer>
+    ⓒ 2025 조태정. All Rights Reserved.
+  </footer>
+
+<div id="modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);z-index:10000;justify-content:center;align-items:center;overflow:hidden;">
+  <div style="max-width:90vw; max-height:90vh; background:#000; position:relative; display:flex; flex-direction: column; justify-content:center; align-items:center;">
+    <div id="modalSlider" style="display: flex; width: 100%; height: 100%; overflow: hidden; position: relative;">
+  <img id="modalImg1" src="" style="flex: 0 0 100%; object-fit: contain; max-height: 100%; max-width: 100%; transition: transform 0.5s ease; display: block;" />
+  <img id="modalImg2" src="" style="flex: 0 0 100%; object-fit: contain; max-height: 100%; max-width: 100%; transition: transform 0.5s ease; display: none;" />
+  <button id="prevSlide" onclick="showSlide(1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:48px;background:none;border:none;color:white;cursor:pointer;z-index:10001;">❮</button>
+  <button id="nextSlide" onclick="showSlide(2)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:48px;background:none;border:none;color:white;cursor:pointer;z-index:10001;">❯</button>
+</div>
+    <button onclick="closeModal()" style="position:absolute;top:20px;right:20px;background:#fff;color:#000;font-size:24px;font-weight:bold;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;z-index:10001;">✖</button>
+  </div>
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll("section").forEach(section => {
+    observer.observe(section);
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (scrollTop / scrollHeight) * 100;
+  document.getElementById("progress").style.width = scrolled + "%";
+
+  const topBtn = document.getElementById("topBtn");
+  const bottomBtn = document.getElementById("bottomBtn");
+  const windowHeight = window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+
+  if (scrollTop > 100) {
+    topBtn.style.display = "block";
+    bottomBtn.style.display = "none";
+  } else if (scrollTop + windowHeight >= docHeight - 10) {
+    topBtn.style.display = "none";
+    bottomBtn.style.display = "none";
+  } else {
+    topBtn.style.display = "none";
+    bottomBtn.style.display = "block";
+  }
+});
+  const topBtn = document.getElementById("topBtn");
+  const bottomBtn = document.getElementById("bottomBtn");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    if (scrollY > 100) {
+      topBtn.style.display = "block";
+      bottomBtn.style.display = "none";
+    } else if (scrollY + windowHeight >= docHeight - 10) {
+      topBtn.style.display = "none";
+      bottomBtn.style.display = "none";
+    } else {
+      topBtn.style.display = "none";
+      bottomBtn.style.display = "block";
+    }
+  });
+function openModal(url) {
+  const modal = document.getElementById('modal');
+  const iframe = document.getElementById('modalFrame');
+  iframe.src = url;
+  modal.style.display = 'flex';
+}
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
+}
+function openImage(imgSrc1, imgSrc2) {
+  const modal = document.getElementById('modal');
+  const img1 = document.getElementById('modalImg1');
+  const img2 = document.getElementById('modalImg2');
+  img1.src = imgSrc1;
+  if (imgSrc2) {
+    img2.src = imgSrc2;
+    img1.style.display = 'block';
+    img2.style.display = 'none';
+    document.getElementById('prevSlide').style.display = 'block';
+    document.getElementById('nextSlide').style.display = 'block';
+  } else {
+    img2.src = '';
+    img1.style.display = 'block';
+    img2.style.display = 'none';
+    document.getElementById('prevSlide').style.display = 'none';
+    document.getElementById('nextSlide').style.display = 'none';
+  }
+  modal.style.display = 'flex';
+}
+function closeModal() {
+  const modal = document.getElementById('modal');
+  const iframe = document.getElementById('modalFrame');
+  modal.style.display = 'none';
+  iframe.src = '';
+}
+function showSlide(n) {
+  const img1 = document.getElementById('modalImg1');
+  const img2 = document.getElementById('modalImg2');
+  if (n === 1) {
+    img1.style.display = 'block';
+    img2.style.display = 'none';
+  } else {
+    img1.style.display = 'none';
+    img2.style.display = 'block';
+  }
+}
+document.addEventListener('keydown', function(e) {
+  const modal = document.getElementById('modal');
+  if (modal.style.display === 'flex') {
+    if (e.key === 'ArrowRight') showSlide(2);
+    else if (e.key === 'ArrowLeft') showSlide(1);
+    else if (e.key === 'Escape') closeModal();
+  }
+});
+// 우클릭 방지
+window.addEventListener("contextmenu", e => e.preventDefault());
+
+// F12, Ctrl+Shift+I, Ctrl+U 등 방지
+window.addEventListener("keydown", function (e) {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) ||
+    (e.ctrlKey && (e.key === "U" || e.key === "u"))
+  ) {
+    e.preventDefault();
+    alert("개발자 도구 사용이 제한되었습니다.");
+  }
+});
+</script><a id="topBtn" href="#" style="position: fixed; bottom: 80px; right: 20px; background: #38bdf8; color: white; padding: 10px 16px; border-radius: 50px; font-weight: bold; text-decoration: none; display: none; z-index: 999;">↑ TOP</a>
+<a id="bottomBtn" href="#details" style="position: fixed; bottom: 20px; right: 20px; background: #38bdf8; color: white; padding: 10px 16px; border-radius: 50px; font-weight: bold; text-decoration: none; display: block; z-index: 999;">↓ BOTTOM</a>
 </body>
 </html>
