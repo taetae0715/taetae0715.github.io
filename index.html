@@ -1,392 +1,758 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>조태정 | Backend Portfolio</title>
-<meta property="og:title" content="조태정 | Backend Portfolio" />
-<meta property="og:description" content="Java와 Spring 중심의 실무 프로젝트 포트폴리오입니다." />
-<meta property="og:image" content="https://taetae0715.github.io/img/thumbnail.jpg" />
-<meta property="og:url" content="https://taetae0715.github.io/" />
-<meta name="twitter:card" content="summary_large_image" />
-<link href="https://fonts.googleapis.com/css2?family=Orbit&amp;display=swap" rel="stylesheet"/>
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbit', sans-serif; }
-    body { background-color: #0f172a; color: #e2e8f0; }
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
-      background: url('./img/header_bg.jpg') no-repeat center/cover;
-    }
-    header img {
-      width: 140px; height: 140px; border-radius: 50%;
-      object-fit: cover; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      margin-bottom: 20px;
-    }
-    header h1 { font-size: 32px; color: #fff; }
-    header p { margin-top: 8px; font-size: 14px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조태정 — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        :root{
+            --bg:#f8f9fb;
+            --white:#ffffff;
+            --text:#0f0f14;
+            --text2:#3a3a50;
+            --text3:#7a7a96;
+            --border:#e2e4f0;
+            --border2:#cacade;
+            --accent:#5b4cf5;
+            --accent-light:#ede9ff;
+            --accent-text:#3b30c4;
+        }
+        html{scroll-behavior:smooth}
+        body{
+            font-family:'Noto Sans KR','Inter',sans-serif;
+            color:var(--text);
+            background:var(--bg);
+            line-height:1.7;
+            font-size:15px;
+            -webkit-font-smoothing:antialiased;
+        }
 
-    nav {
-      display: flex; justify-content: center; flex-wrap: wrap;
-      background-color: #1e293b; padding: 12px 0; position: sticky; top: 0; z-index: 1000;
-      border-bottom: 1px solid #334155;
-    }
-    nav a {
-      color: #cbd5e1; text-decoration: none; margin: 10px 20px; font-weight: bold;
-    }
-    nav a:hover { color: #38bdf8; }
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;}
+        .nav-logo{font-family:'Inter',sans-serif;font-size:17px;font-weight:800;color:var(--text);letter-spacing:-0.5px;}
+        .nav-logo span{color:var(--accent)}
+        nav ul{list-style:none;display:flex;gap:32px}
+        nav ul a{color:var(--text3);text-decoration:none;font-size:13px;font-weight:600;transition:color .15s;}
+        nav ul a:hover{color:var(--text)}
 
-    section {
-      padding: 60px 20px; max-width: 1000px; margin: 0 auto;
-      border-bottom: 1px solid #334155;
-    }
-    h2 {
-      font-size: 26px; color: #38bdf8; margin-bottom: 20px;
-    }
-    .badges span {
-      display: inline-block; background: #1e293b; color: #38bdf8;
-      padding: 6px 12px; border-radius: 12px; margin: 5px 5px 5px 0;
-      font-size: 13px;
-    }
+        .hero{background:var(--white);display:flex;flex-direction:column;align-items:center;padding:120px 56px 0;border-bottom:1px solid var(--border);text-align:center;}
+        .hero-name-en{font-family:'Inter',sans-serif;font-size:clamp(52px,8vw,96px);font-weight:900;color:var(--text);line-height:1;letter-spacing:-4px;margin-bottom:10px;}
+        .hero-role-line{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+        .rl-main{font-size:18px;font-weight:800;color:var(--accent)}
+        .rl-sep{color:var(--border2);font-size:20px;font-weight:300}
+        .rl-sub{font-size:16px;font-weight:600;color:var(--text3)}
+        .hero-contacts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
+        .c-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text2);background:var(--bg);border:1px solid var(--border);padding:8px 16px;border-radius:8px;}
+        .hero-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+        .chip{display:inline-block;font-size:12px;font-weight:700;padding:5px 13px;border-radius:7px;}
+        .c-violet{background:#ede9ff;color:#4c3dbf}
+        .c-blue{background:#dbeafe;color:#1d4ed8}
+        .c-sky{background:#e0f2fe;color:#0369a1}
+        .c-teal{background:#ccfbf1;color:#0f766e}
+        .c-green{background:#dcfce7;color:#15803d}
+        .c-orange{background:#ffedd5;color:#c2410c}
+        .c-pink{background:#fce7f3;color:#be185d}
+        .c-slate{background:#e2e8f0;color:#334155}
+        .c-yellow{background:#fef9c3;color:#854d0e}
 
-    /* 액자형 포트폴리오 스타일 */
-    .gallery {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
-    }
-    .frame {
-      position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-    .frame img {
-      width: 100%; height: 200px; object-fit: cover;
-      display: block; transition: transform 0.3s ease;
-    }
-    .frame:hover img {
-      transform: scale(1.05);
-    }
-    .overlay {
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(15,23,42,0.85);
-      color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center;
-      opacity: 0; transition: opacity 0.3s ease;
-      text-align: center; padding: 20px;
-    }
-    .frame:hover .overlay {
-      opacity: 1;
-    }
-    .overlay h3 {
-      margin-bottom: 10px;
-      font-size: 18px;
-      color: #38bdf8;
-    }
-    .overlay p {
-      font-size: 14px;
-      line-height: 1.4;
-    }
+        .hero-stat{width:100%;max-width:860px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);margin-top:36px;}
+        .stat-item{padding:32px 20px;border-right:1px solid var(--border);text-align:center;}
+        .stat-item:last-child{border-right:none}
+        .stat-item .n{font-family:'Inter',sans-serif;font-size:40px;font-weight:900;color:var(--text);line-height:1;letter-spacing:-2px;}
+        .stat-item .n em{font-style:normal;color:var(--accent)}
+        .stat-item .l{font-size:11px;font-weight:700;color:var(--text3);margin-top:6px;letter-spacing:1px;text-transform:uppercase;}
 
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #94a3b8;
-      padding: 40px 0;
-      background-color: #0f172a;
-    }
-  
-    section { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
-    section.visible { opacity: 1; transform: translateY(0); }
-    /* 모션 그래픽 */
-@keyframes slideInLeft {
-  0% { opacity: 0; transform: translateX(-50px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-.frame {
-  animation: slideInLeft 0.8s ease forwards;
-}
-.frame:hover {
-  animation: pulse 0.6s ease-in-out;
-}
-.typing {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #38bdf8;
-  width: 0;
-  animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #38bdf8;
-  text-align: center;
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: #38bdf8; }
-}
+        section{padding:96px 56px}
+        .sec-wrap{max-width:960px;margin:0 auto}
+        .sec-tag{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+        .sec-title{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:900;color:var(--text);letter-spacing:-1.5px;margin-bottom:8px;}
+        .sec-sub{font-size:14px;color:var(--text3);margin-bottom:52px;font-weight:400}
 
-#progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background: #38bdf8;
-  z-index: 9999;
-  transition: width 0.2s ease-out;
-}
-</style>
+        .about-intro{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:20px;}
+        .about-intro p{font-size:15px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+        .about-intro p:last-child{margin-bottom:0}
+        .about-intro strong{color:var(--text);font-weight:700}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+        .a-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;}
+        .a-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+        .info-row{display:flex;gap:12px;margin-bottom:12px;font-size:14px}
+        .info-lbl{color:var(--text3);width:88px;flex-shrink:0;font-size:13px;font-weight:500}
+        .info-val{color:var(--text);font-weight:600;line-height:1.6}
+
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+        .skill-group{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px;}
+        .skill-group-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+        .skill-chips{display:flex;flex-wrap:wrap;gap:7px;}
+
+        .timeline{position:relative;padding-left:36px}
+        .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:0;width:2px;background:var(--border);}
+        .tl-item{position:relative;margin-bottom:20px}
+        .tl-dot{position:absolute;left:-32px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(91,76,245,.15);}
+        .tl-inner{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px 28px;}
+        .tl-company{font-size:19px;font-weight:800;color:var(--text);margin-bottom:4px;}
+        .tl-company small{font-size:13px;font-weight:500;color:var(--text3);margin-left:10px;}
+        .tl-role{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:10px}
+        .tl-desc{font-size:14px;color:var(--text2);line-height:1.8}
+
+        /* --- Projects: 카드 높이 통일 및 이미지 비율 수정 --- */
+        .proj-list{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:20px;
+            align-items:stretch; /* 자식(카드)들의 높이를 동일하게 맞춤 */
+        }
+        .proj-card{
+            background:var(--white);
+            border:1px solid var(--border);
+            border-radius:16px;
+            padding:32px;
+            transition:all .2s;
+            display:flex;
+            flex-direction:column; /* 내부 요소를 세로 정렬 */
+            height:100%; /* 부모(그리드 셀) 높이를 꽉 채움 */
+        }
+        .proj-card:hover{border-color:var(--border2);box-shadow:0 4px 20px rgba(0,0,0,.07)}
+        .proj-head{display:flex;align-items:flex-start;justify-content:between;gap:16px;margin-bottom:14px;}
+        .proj-title{font-size:18px;font-weight:800;color:var(--text);margin-bottom:4px}
+        .proj-meta-text{font-size:12px;color:var(--text3);font-weight:500}
+        .proj-desc{font-size:14px;color:var(--text2);margin-bottom:16px;line-height:1.8}
+        .proj-type{font-size:11px;font-weight:800;padding:4px 13px;border-radius:100px;text-transform:uppercase;white-space:nowrap;}
+        .proj-badges{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
+        .t-new{background:#ede9ff;color:var(--accent-text)}
+        .t-ops{background:#dcfce7;color:#15803d}
+        .t-maint{background:#fef9c3;color:#854d0e}
+        .proj-works{list-style:none;margin-bottom:20px;display:flex;flex-direction:column;gap:6px}
+        .proj-works li{font-size:13px;color:var(--text2);padding-left:16px;position:relative;}
+        .proj-works li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700;font-size:11px;top:2px;}
+
+        .proj-tags{
+            margin-top:auto; /* 위쪽 텍스트 양이 달라도 태그는 항상 하단에 위치 */
+            display:flex;
+            flex-wrap:wrap;
+            gap:7px;
+            padding-top:20px;
+        }
+
+        .img-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+        .img-gallery.cols-2{grid-template-columns:repeat(2,1fr)}
+        .img-gallery.cols-1{grid-template-columns:1fr;max-width:420px}
+
+        .img-thumb{
+            width:100%;
+            height:160px; /* 모든 이미지 높이 통일 */
+            object-fit:cover; /* 이미지 비율 깨짐 방지 */
+            border-radius:8px;
+            border:1px solid var(--border);
+            cursor:pointer;
+            transition:transform .2s,box-shadow .2s;
+        }
+        .img-thumb:hover{transform:scale(1.03);box-shadow:0 4px 16px rgba(0,0,0,.12);}
+
+        .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9000;align-items:center;justify-content:center;}
+        .lightbox.open{display:flex;}
+        .lb-wrap{position:relative;max-width:90vw;max-height:90vh;display:flex;align-items:center;justify-content:center;}
+        .lb-img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;display:block;}
+        .lb-close{position:fixed;top:20px;right:24px;background:#fff;color:#000;font-size:20px;font-weight:800;border:none;padding:4px 12px;border-radius:6px;cursor:pointer;z-index:9001;}
+        .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;font-size:36px;border:none;padding:8px 16px;cursor:pointer;border-radius:8px;z-index:9001;transition:background .2s;}
+        .lb-prev{left:12px}
+        .lb-next{right:12px}
+        .lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.3)}
+        .lb-caption{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:13px;text-align:center;}
+
+        footer{background:var(--text);text-align:center;padding:48px 56px;}
+        footer .fn{font-family:'Inter',sans-serif;font-size:22px;font-weight:900;color:#fff;margin-bottom:10px;}
+        footer .fs{font-size:13px;color:rgba(255,255,255,.45);}
+
+        @media(max-width:820px){
+            nav{padding:0 20px}
+            section{padding:72px 20px}
+            .hero{padding:100px 20px 0}
+            .about-grid{grid-template-columns:1fr}
+            .proj-list{grid-template-columns:1fr}
+            .proj-head{flex-direction:column}
+            .skills-grid{grid-template-columns:1fr 1fr}
+            .img-gallery{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:480px){
+            .skills-grid{grid-template-columns:1fr}
+            .img-gallery{grid-template-columns:1fr}
+        }
+    </style>
 </head>
 <body>
-<div id="progress"></div>
-<header>
-<div class="typing" style="background-color: rgba(0,0,0,0.4); padding: 10px; border-radius: 6px; backdrop-filter: blur(4px); text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">
-조태정 | Java Backend Developer ｜ 📱 <a href="tel:01098642514" style="color:#38bdf8; text-decoration: none;">010-9864-2514</a> ｜ ✉️ <a href="mailto:dlddld4495@naver.com" style="color:#38bdf8; text-decoration: none;">dlddld4495@naver.com</a> ｜ 📍 경기도 고양시
-</div>
 
-</header>
 <nav>
-<a href="#about">👤 ABOUT ME</a>
-<a href="#skills">🛠️ SKILLS</a>
-<a href="#projects">📁 PROJECTS</a>
-<a href="#career">💼 CAREER</a>
-<a href="#details">📄 DETAILS</a>
+    <div class="nav-logo">JO <span>TAE JEONG</span></div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
 </nav>
-<section id="about">
-<h2 style="animation: fadeIn 0.6s ease;">👤 ABOUT ME</h2>
-<p>약 2년간 JAVA 전산 개발자로 근무하며 다양한 프로젝트의 유지보수와 신규 구축을 경험하였습니다.</p>
-<br>
-<p>엠에스커뮤니티 및 ㈜디브렉션에서 스마트단말 관리 시스템, 교육환경 관리 시스템, BXT CSR 시스템, StorePay 구축 등 공공기관 및 민간 기업 대상 프로젝트에 참여하여 실무 경험을 쌓았습니다. Java와 MariaDB 기반 백엔드 개발을 중심으로, WebSquare 화면 유지보수, Linux 서버 환경 관리, SVN 및 Git을 활용한 형상관리 등을 수행해왔습니다.</p>
-<br>
-<p>실제 운영 중인 시스템의 유지보수 업무를 통해 문제 해결 능력과 책임감을 키웠으며, 사용자 니즈를 분석하고 기획 단계부터 배포까지 전 과정을 경험했습니다.<br>코드를 단순히 구현하는 것을 넘어서, 효율성과 확장성을 고려한 개선에도 관심을 갖고 업무에 임하고 있습니다.</p>
-<br>
-<p>기술적인 성장뿐만 아니라 커뮤니케이션 능력도 중요하게 생각하며, 협업 속에서 맡은 역할을 충실히 해내는 개발자가 되기 위해 노력하고 있습니다. 앞으로는 보다 고도화된 시스템 개발 및 다양한 기술 스택을 접하며 역량을 넓혀가고자 합니다.</p>
-</section>
-<section id="skills">
-<h2>🛠️ SKILLS</h2>
-<div class="badges">
-<span>Java</span><span>Spring</span><span>WebSquare</span><span>MariaDB</span>
-<span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>Linux</span>
-</div>
+
+<section class="hero">
+    <div class="hero-top">
+        <div class="hero-name-en">JO TAE JEONG</div>
+        <div class="hero-role-line">
+            <span class="rl-main">Backend Developer</span>
+            <span class="rl-sep">·</span>
+            <span class="rl-sub">Full-Stack Capability</span>
+        </div>
+        <div class="hero-contacts">
+            <span class="c-item">✉&nbsp; dlddld4495@naver.com</span>
+            <span class="c-item">📱&nbsp; 010-9864-2514</span>
+            <span class="c-item">📍&nbsp; 경기도 고양시</span>
+        </div>
+        <div class="hero-chips">
+            <span class="chip c-violet">Java</span>
+            <span class="chip c-violet">Spring Boot</span>
+            <span class="chip c-violet">WebSquare</span>
+            <span class="chip c-blue">React</span>
+            <span class="chip c-blue">JavaScript</span>
+            <span class="chip c-sky">TypeScript</span>
+            <span class="chip c-teal">PostgreSQL</span>
+            <span class="chip c-teal">MariaDB</span>
+            <span class="chip c-slate">Linux</span>
+            <span class="chip c-pink">PHP / Laravel</span>
+            <span class="chip c-slate">Git / SVN</span>
+        </div>
+    </div>
+    <div class="hero-stat">
+        <div class="stat-item">
+            <div class="n">3<em>+</em></div>
+            <div class="l">Years of Exp</div>
+        </div>
+        <div class="stat-item">
+            <div class="n">8</div>
+            <div class="l">Projects</div>
+        </div>
+        <div class="stat-item">
+            <div class="n">3</div>
+            <div class="l">Companies</div>
+        </div>
+    </div>
 </section>
 
-<section id="projects">
-<h2>📁 PROJECTS</h2>
-<div class="gallery">
-  <div class="frame" onclick="openImage('./img/bxt/bxt1.png', './img/bxt/bxt2.png')">
-    <img src="./img/bxt/bxt2.png" alt="CSR 시스템"/>
-    <div class="overlay">
-      <h3>BXT 고객지원 시스템</h3>
-      <p>CSR 요청 관리 및 운영자 알림 자동화 시스템 구현</p>
-      <div class="badges"><span>Java</span><span>JSP</span><span>MariaDB</span></div>
+<section id="about">
+    <div class="sec-wrap">
+        <div class="sec-tag">About</div>
+        <div class="sec-title">소개</div>
+        <div class="about-intro">
+            <p>
+                안녕하세요.<br>
+                <strong>Java/Spring 기반의 공공·교육 시스템 운영</strong>부터 <strong>React 기반 프로젝트</strong>, 그리고 <strong>PHP/Laravel 기반 멀티테넌트 서비스 운영</strong>까지 경험해온 개발자 조태정입니다.
+                직장 생활을 하며 코드를 잘 작성하는 것만큼이나 함께 협업하며 문제를 해결할 수 있는 동료가 되는 것이 중요하다는 것을 느꼈습니다.
+                저 역시 혼자 잘하는 개발자보다 <strong>팀 안에서 결과를 만들어내는 개발자</strong>가 되고자 노력하고 있습니다.
+                또한 요구사항을 단순히 구현하는 데 그치지 않고, 실제 운영 환경에서 안정적으로 동작하고 <strong>유지보수가 용이한 구조</strong>를 만드는 것을 중요하게 생각합니다.
+            </p>
+            <p>
+                <strong>[Java/Spring &amp; React]</strong><br>
+                ㈜디브렉션에서 전사적 지식관리 시스템(SIMS) 프로젝트에 주도적으로 참여하여, 화면 설계를 기반으로 비즈니스 로직을 구현하고 백엔드와 프론트엔드를 함께 개발했습니다.
+                Java와 Spring Boot 환경에서 AI 도구를 활용해 생산성을 높이고, PostgreSQL Full-Text Search를 적용하여 수만 건의 데이터를 다양한 조건으로 빠르게 검색할 수 있도록 최적화했습니다.
+                또한 React와 TypeScript를 활용해 관리자 대시보드를 개발하고, 직관적인 UI를 구현했습니다.
+            </p>
+            <p>
+                <strong>[PHP/Laravel: 멀티테넌트 서비스 운영]</strong><br>
+                한국학술정보 재직 당시 약 80여 개 학회의 웹사이트와 논문 투고 시스템을 운영하며 멀티테넌트 구조 기반 서비스의 안정성을 담당했습니다.
+                특히 대량 데이터 처리 과정에서 발생하던 Excel Export 타임아웃 문제를 로직 개선으로 해결하여 운영 부담을 줄였고, AWS S3 기반 파일 관리 및 다국어 기능 유지보수를 통해 서비스 확장성을 지원했습니다.
+            </p>
+            <p>
+                <strong>[교육기관 프로젝트]</strong><br>
+                교육청 스마트단말 관리 및 학교 자산 관리 시스템 등 준공공 프로젝트를 수행하며 Linux 서버 환경 구성부터 SVN/Git 기반 형상관리까지 전체 개발 흐름을 경험했습니다.
+                여러 이해관계자와 협업하는 과정에서 기술뿐 아니라 커뮤니케이션과 책임감이 서비스 품질에 큰 영향을 준다는 점도 배울 수 있었습니다.
+            </p>
+            <p>
+                현재 <strong>한국방송통신대학교 컴퓨터과학과</strong>에 재학하며 이론적 기반을 보완하고 있으며, 정보처리기사 취득을 준비하며 기본기를 다지고 있습니다.
+                앞으로도 운영과 개발을 함께 이해하는 개발자로 성장하여 팀에 기여하고, 함께 일하고 싶은 동료가 되고자 합니다.
+            </p>
+        </div>
+
+        <div class="about-grid">
+            <div class="a-card">
+                <div class="a-title">기본 정보</div>
+                <div class="info-row"><span class="info-lbl">이름</span><span class="info-val">조태정 (JoTaeJeong)</span></div>
+                <div class="info-row"><span class="info-lbl">생년월일</span><span class="info-val">1995. 07. 15</span></div>
+                <div class="info-row"><span class="info-lbl">거주지</span><span class="info-val">경기도 고양시</span></div>
+                <div class="info-row"><span class="info-lbl">경력</span><span class="info-val">2년 9개월 (2023.08 – 현재)</span></div>
+                <div class="info-row"><span class="info-lbl">학력</span><span class="info-val">서일대학교 식품영양학과 졸업</span></div>
+                <div class="info-row"><span class="info-lbl">재학</span><span class="info-val">한국방송통신대학교 컴퓨터과학과</span></div>
+                <div class="info-row"><span class="info-lbl">교육</span><span class="info-val">JAVA 응용SW개발자 과정 수료</span></div>
+            </div>
+            <div class="a-card">
+                <div class="a-title">자격 정보</div>
+                <div class="info-row">
+                    <span class="info-lbl">2026.03</span>
+                    <span class="info-val">
+                        정보처리기사 필기 합격 · 실기 준비중<br>
+                        <small style="color:var(--text3);font-size:12px;font-weight:400">한국산업인력공단</small>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-lbl">2020.05</span>
+                    <span class="info-val">
+                        컴퓨터활용능력 2급<br>
+                        <small style="color:var(--text3);font-size:12px;font-weight:400">대한상공회의소</small>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-lbl">2022.10</span>
+                    <span class="info-val">
+                        전산세무 2급<br>
+                        <small style="color:var(--text3);font-size:12px;font-weight:400">한국세무사회</small>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-lbl">2022.04</span>
+                    <span class="info-val">
+                        전산회계 1급<br>
+                        <small style="color:var(--text3);font-size:12px;font-weight:400">한국세무사회</span>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-lbl">2017.06</span>
+                    <span class="info-val">
+                        2종 보통운전면허 <br>
+                        <small style="color:var(--text3);font-size:12px;font-weight:400">경찰청</span>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="frame" onclick="openImage('./img/tsms/tsms1.png', './img/tsms/tsms2.png')">
-    <img src="./img/tsms/tsms2.png" alt="내부 관리자 시스템"/>
-    <div class="overlay">
-      <h3>TSMS</h3>
-      <p>WebSquare 기반 Ａ／Ｓ프로그램 구축</p>
-      <div class="badges"><span>Java</span><span>WebSquare</span><span>Linux</span></div>
+</section>
+
+<section id="skills" style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="sec-wrap">
+        <div class="sec-tag">Skills</div>
+        <div class="sec-title">기술 스택</div>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <div class="skill-group-title">Backend</div>
+                <div class="skill-chips">
+                    <span class="chip c-violet">Java</span>
+                    <span class="chip c-violet">Spring Boot</span>
+                    <span class="chip c-pink">PHP</span>
+                    <span class="chip c-pink">Laravel</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">Frontend</div>
+                <div class="skill-chips">
+                    <span class="chip c-blue">React</span>
+                    <span class="chip c-sky">TypeScript</span>
+                    <span class="chip c-blue">JavaScript</span>
+                    <span class="chip c-slate">HTML5</span>
+                    <span class="chip c-slate">CSS3</span>
+                    <span class="chip c-violet">WebSquare</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">Database</div>
+                <div class="skill-chips">
+                    <span class="chip c-teal">PostgreSQL</span>
+                    <span class="chip c-teal">MariaDB</span>
+                    <span class="chip c-teal">MySQL</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">Tools</div>
+                <div class="skill-chips">
+                    <span class="chip c-slate">Git</span>
+                    <span class="chip c-slate">SVN</span>
+                    <span class="chip c-slate">Linux</span>
+                    <span class="chip c-orange">AWS S3</span>
+                    <span class="chip c-blue">Eclipse</span>
+                    <span class="chip c-blue">IntelliJ</span>
+                    <span class="chip c-blue">PhpStorm</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="frame" onclick="openImage('./img/asst.png', null)">
-    <img src="./img/asst.png" alt="모바일 대응 UI"/>
-    <div class="overlay">
-      <h3>ASST</h3>
-      <p>학교 스마트 자산관리 솔루션</p>
-      <div class="badges"><span>JSP</span><span>반응형 레이아웃</span><span>터치 최적화 구성</span></div>
-    </div>
-  </div>
-  <div class="frame" onclick="openImage('./img/tsms/tsms3.png', null)">
-    <img src="./img/tsms/tsms3.png" alt="교육환경 시스템"/>
-    <div class="overlay">
-      <h3>교육청포탈</h3>
-      <p>스마트기기 상태 관리, 통계 리포트 대시보드</p>
-      <div class="badges"><span>JSP</span><span>Java</span><span>MariaDB</span></div>
-    </div>
-  </div>
-  <div class="frame" onclick="openImage('./img/gsms/gsms1.png', './img/gsms/gsms2.png')">
-    <img src="./img/gsms/gsms2.png" alt="통계 리포트"/>
-    <div class="overlay">
-      <h3>GSMS</h3>
-      <p>접속 통계 및 데이터 시각화 기능 구현</p>
-      <div class="badges"><span>Java</span><span>Chart.js</span><span>Linux</span></div>
-    </div>
-  </div>
-  <div class="frame" onclick="openImage('./img/storepay/storepay1.png', './img/storepay/storepay2.png')">
-    <img src="./img/storepay/storepay1.png" alt="StorePay 시스템"/>
-    <div class="overlay">
-      <h3>StorePay 시스템</h3>
-      <p>가맹점 정산 및 본사-매장 API 연동 기능 개발</p>
-      <div class="badges"><span>Java</span><span>API</span><span>MariaDB</span></div>
-    </div>
-  </div>
-</div>
 </section>
 
 <section id="career">
-<h2>💼 CAREER</h2>
-<ul>
-  <li><strong>(주)디브렉션</strong> <br/><small>2023.11 ~ 2025.05</small><br/>Web 기반 전산 시스템 유지보수 및 신규 기능 개발</li><br/>
-  <li><strong>엠에스커뮤니티</strong> <br/><small>2023.08 ~ 2023.11</small><br/>스마트단말 관리 시스템 유지보수</li>
-</ul>
+    <div class="sec-wrap">
+        <div class="sec-tag">Career</div>
+        <div class="sec-title">경력 사항</div>
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-inner">
+                    <div class="tl-company">(주)디브렉션 <small>2026.01 — 2026.04</small></div>
+                    <div class="tl-role">대리 · 지식정보시스템 풀스택 개발</div>
+                    <p class="tl-desc">지식정보시스템(TGS) 신규 구축. Spring Boot + React 기반 설계, REST API 및 전체 UI 개발.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-inner">
+                    <div class="tl-company">한국학술정보 <small>2025.06 — 2025.12</small></div>
+                    <div class="tl-role">대리 · 웹 서비스 운영/개발</div>
+                    <p class="tl-desc">PHP/Laravel 기반 80여 개 학회 논문 투고·심사 시스템 통합 유지보수. Excel Export 타임아웃 로직 개선, AWS S3 파일 관리, 다국어 기능 유지보수.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-inner">
+                    <div class="tl-company">(주)디브렉션 <small>2023.11 — 2025.05</small></div>
+                    <div class="tl-role">대리 · Java 전산 개발</div>
+                    <p class="tl-desc">교육청 스마트단말 관리 시스템(17개시도교육청), 학교 자산관리 솔루션, BXT CSR 시스템, 결제 플랫폼(StorePay) 유지보수 및 고도화.<br>WebSquare 화면 개발, Linux 서버 환경 관리, SVN 형상관리.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-inner">
+                    <div class="tl-company">엠에스커뮤니티 <small>2023.08 — 2023.11</small></div>
+                    <div class="tl-role">사원 · Java 전산 개발</div>
+                    <p class="tl-desc">스마트단말 관리 시스템 유지보수. Java 기반 백엔드 및 JSP 화면 유지관리, SVN 형상관리.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="details">
-<h2>📄 DETAILS</h2>
-<ul>
-  <li><strong>나이</strong><br/>1995년생 (만 29세)</li><br/>
-  <li><strong>학력</strong><br/>서일대학교 식품영양학</li><br/>
-  <li><strong>교육</strong><br/>더조은컴퓨터아트학원 JAVA 응용SW개발자 과정 수료</li><br/>
-  <li><strong>자격증</strong><br/>컴퓨터활용능력 2급, 전산세무2급, 전산회계1급</li><br/>
-</ul>
+<section id="projects" style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="sec-wrap">
+        <div class="sec-tag">Projects</div>
+        <div class="sec-title">주요 프로젝트</div>
+        <div class="proj-list">
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">지식정보 시스템 구축</div>
+                        <div class="proj-meta-text">2026.01 – 2026.04 · 풀스택 개발 · TGS</div>
+                    </div>
+                    <span class="proj-type t-new">신규 개발</span>
+                </div>
+                <p class="proj-desc">기업용 지식 및 제품 정보 통합 관리 시스템. 화면 설계를 기반으로 비즈니스 로직을 구현하고 백엔드와 프론트엔드를 함께 개발.</p>
+                <ul class="proj-works">
+                    <li>Spring Boot 3.4 + MyBatis + PostgreSQL 기반 REST API 서버 구축</li>
+                    <li>React 18 + TypeScript + Vite 기반 SPA 전체 UI 개발 (28개 페이지)</li>
+                    <li>PostgreSQL Full-Text Search를 활용한 통합 검색 기능 구현</li>
+                    <li>JWT 인증 및 역할 기반 권한 관리 시스템 설계 및 적용</li>
+                    <li>Drag & Drop 기반 관리자 대시보드 구현 (동적 그리드 및 반응형 UI)</li>
+                </ul>
+
+                <div class="img-gallery">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/sims/1.로그인.png" alt="로그인" onclick="openLightbox('sims',0)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/sims/2.메인.png" alt="메인 대시보드" onclick="openLightbox('sims',1)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/sims/3.통합검색.png" alt="통합검색 결과" onclick="openLightbox('sims',2)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/sims/4-1.시스템관리-사용자관리.png" alt="사용자 관리" onclick="openLightbox('sims',3)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/sims/5-2.제품정보관리-제품정보등록.png" alt="제품정보등록" onclick="openLightbox('sims',4)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/sims/6.게시판등록.png" alt="게시판 등록" onclick="openLightbox('sims',5)" />
+                </div>
+
+                <div class="proj-tags">
+                    <span class="chip c-violet">Java 21</span>
+                    <span class="chip c-violet">Spring Boot</span>
+                    <span class="chip c-blue">React</span>
+                    <span class="chip c-sky">TypeScript</span>
+                    <span class="chip c-teal">PostgreSQL</span>
+                    <span class="chip c-slate">JWT</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">학회 논문 투고 및 CMS 시스템</div>
+                        <div class="proj-meta-text">2025.06 – 2025.12 · 한국학술정보(KSI)</div>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="proj-type t-maint">유지보수</span>
+                        <span class="proj-type t-new">개발 · 운영</span>
+                    </div>
+                </div>
+                <p class="proj-desc">80여 개 학회의 독립적인 논문 투고·심사 사이트 및 CMS 시스템 통합 관리. PHP Laravel 기반 멀티테넌트 구조로 학회별 독립 도메인 운영.</p>
+                <ul class="proj-works">
+                    <li>PHP Laravel 멀티테넌트 구조 유지보수 및 학회별 커스텀 개발</li>
+                    <li>논문 투고 → 심사위원 배정 → 심사 → 결과 통보 워크플로우 로직 운영</li>
+                    <li>대량 데이터 Excel Export 타임아웃 문제를 로직 개선으로 해결</li>
+                    <li>AWS S3 연동 대용량 논문 파일(PDF) 업로드·다운로드 시스템 안정화</li>
+                    <li>학회별 이메일 발송 템플릿 관리 및 자동 알림 기능 운영</li>
+                </ul>
+                <div class="img-gallery">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/ksi/논문투고 로직 흐름.drawio.png" alt="논문투고 로직 흐름" onclick="openLightbox('ksi',0)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/ksi/자원식물1.png" alt="자원식물 학회 1" onclick="openLightbox('ksi',1)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/ksi/자원식물2.png" alt="자원식물 학회 2" onclick="openLightbox('ksi',2)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/ksi/데모1.png" alt="서비스 데모 1" onclick="openLightbox('ksi',4)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/ksi/데모2.png" alt="서비스 데모 2" onclick="openLightbox('ksi',5)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/ksi/데모3.png" alt="서비스 데모 3" onclick="openLightbox('ksi',6)" />
+                </div>
+                <div class="proj-tags">
+                    <span class="chip c-pink">PHP</span>
+                    <span class="chip c-pink">Laravel</span>
+                    <span class="chip c-teal">MariaDB</span>
+                    <span class="chip c-orange">AWS S3</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">학교 자산관리 솔루션 구축</div>
+                        <div class="proj-meta-text">2025.01 – 2025.05 · 신규 개발 · TGS</div>
+                    </div>
+                    <span class="proj-type t-new">신규 개발</span>
+                </div>
+                <p class="proj-desc">학교 교육환경에 보급된 스마트기기 자산을 관리하는 솔루션 신규 구축. 현장 사용 환경에 맞춘 터치 최적화 반응형 UI 개발.</p>
+                <ul class="proj-works">
+                    <li>스마트기기 자산 등록·배정·회수·폐기 관리 화면 및 백엔드 신규 개발</li>
+                    <li>JSP 기반 반응형 레이아웃 및 터치 최적화 UI 구현</li>
+                    <li>학교별·기기 유형별 자산 현황 조회 및 통계 기능 개발</li>
+                    <li>Linux 서버 배포 및 SVN 기반 형상관리</li>
+                </ul>
+                <div class="img-gallery cols-1">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/asst.png" alt="ASST 화면" onclick="openLightbox('asst',0)" />
+                </div>
+                <div class="proj-tags">
+                    <span class="chip c-violet">Java</span>
+                    <span class="chip c-slate">JSP</span>
+                    <span class="chip c-teal">MariaDB / MySQL</span>
+                    <span class="chip c-slate">Linux</span>
+                    <span class="chip c-slate">Eclipse / SVN</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">교육청 스마트단말 관리 시스템</div>
+                        <div class="proj-meta-text">2023.08 – 2025.05 · 유지보수 · TGS</div>
+                    </div>
+                    <span class="proj-type t-maint">유지보수</span>
+                </div>
+                <p class="proj-desc">교육청 스마트단말기의 A/S 접수부터 수리 완료까지 전 과정을 관리하는 시스템 유지보수 및 운영.</p>
+                <ul class="proj-works">
+                    <li>A/S 접수 → 수리 진행 → 완료 → 반납 단계별 상태 워크플로우 관리</li>
+                    <li>WebSquare 5 기반 담당자 배정, 수리 이력 조회, 현황 통계 화면 개선</li>
+                    <li>현장 담당자 요구사항 수집 및 기능 수정·배포 반복 수행</li>
+                    <li>Linux 서버 운영 및 SVN 기반 형상관리</li>
+                </ul>
+                <div class="img-gallery cols-2">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/tsms/tsms1.png" alt="TSMS 화면 1" onclick="openLightbox('tsms',0)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/tsms/tsms2.png" alt="TSMS 화면 2" onclick="openLightbox('tsms',1)" />
+                </div>
+                <div class="proj-tags">
+                    <span class="chip c-violet">Java</span>
+                    <span class="chip c-violet">WebSquare</span>
+                    <span class="chip c-teal">MariaDB / MySQL</span>
+                    <span class="chip c-slate">Linux</span>
+                    <span class="chip c-slate">Eclipse / SVN</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">StorePay — 상점관리 시스템 구축</div>
+                        <div class="proj-meta-text">2024.11 – 2024.12 · 신규 개발 · 상점페이</div>
+                    </div>
+                    <span class="proj-type t-new">신규 개발</span>
+                </div>
+                <p class="proj-desc">상점페이 서비스의 가맹점 관리 및 결제·정산 처리 시스템 신규 구축. Linux 서버 환경에서 Java 백엔드 및 JSP 화면을 개발.</p>
+                <ul class="proj-works">
+                    <li>가맹점 등록·수정·조회 관리 화면 및 백엔드 API 신규 개발</li>
+                    <li>본사–가맹점 간 결제 요청/응답 API 연동 구현</li>
+                    <li>가맹점별 매출 집계 및 정산 내역 조회 쿼리 개발</li>
+                    <li>Linux 서버 배포 및 Eclipse 기반 개발 환경 구성</li>
+                </ul>
+                <div class="img-gallery cols-2">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/storepay/storepay1.png" alt="StorePay 화면 1" onclick="openLightbox('storepay',0)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/storepay/storepay2.png" alt="StorePay 화면 2" onclick="openLightbox('storepay',1)" />
+                </div>
+                <div class="proj-tags">
+                    <span class="chip c-violet">Java</span>
+                    <span class="chip c-slate">JSP</span>
+                    <span class="chip c-teal">MariaDB / MySQL</span>
+                    <span class="chip c-slate">Linux</span>
+                    <span class="chip c-slate">Eclipse</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">BXT 고객서비스 지원 — CSR 관리시스템 구축</div>
+                        <div class="proj-meta-text">2024.06 – 2024.11 · 개발 / 운영 / 유지보수 · BXT</div>
+                    </div>
+                    <span class="proj-type t-new">개발 · 운영</span>
+                </div>
+                <p class="proj-desc">고객지원 요청(CSR)을 접수부터 완료까지 통합 관리하는 시스템 신규 구축 및 운영. Java 백엔드와 JSP 화면을 개발.</p>
+                <ul class="proj-works">
+                    <li>CSR 접수·처리·완료 단계별 상태 관리 로직 설계 및 구현</li>
+                    <li>담당자 배정 및 처리 기한 알림 자동화 기능 개발</li>
+                    <li>고객사별 CSR 처리 현황 조회 및 통계 화면 개발</li>
+                    <li>운영 후 버그 수정 및 기능 추가 요청 대응 (유지보수)</li>
+                </ul>
+                <div class="img-gallery cols-2">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/bxt/bxt1.png" alt="BXT CSR 화면 1" onclick="openLightbox('bxt',0)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/bxt/bxt2.png" alt="BXT CSR 화면 2" onclick="openLightbox('bxt',1)" />
+                </div>
+                <div class="proj-tags">
+                    <span class="chip c-violet">Java</span>
+                    <span class="chip c-slate">JSP</span>
+                    <span class="chip c-teal">MariaDB / MySQL</span>
+                    <span class="chip c-slate">Linux</span>
+                    <span class="chip c-slate">Eclipse / SVN</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">경기도교육청 스마트단말 관리 시스템 구축</div>
+                        <div class="proj-meta-text">2024.01 – 2024.06 · 개발 / 운영 / 유지보수 · TGS</div>
+                    </div>
+                    <span class="proj-type t-new">개발 · 운영</span>
+                </div>
+                <p class="proj-desc">경기도교육청 관내 학교 스마트단말기 현황과 상태를 통합 관리하는 시스템. WebSquare 기반 화면 개발과 Java 백엔드 구축 담당.</p>
+                <ul class="proj-works">
+                    <li>스마트단말기 등록·배정·반납·폐기 관리 화면 및 API 개발 (WebSquare)</li>
+                    <li>기관별·학교별 현황 집계 및 통계 리포트 대시보드 구현</li>
+                    <li>대량 단말기 데이터 처리를 위한 MariaDB 쿼리 최적화</li>
+                    <li>운영 중 발생하는 현장 요구사항 반영 및 기능 수정 대응</li>
+                </ul>
+                <div class="img-gallery cols-2">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/gsms/gsms1.png" alt="GSMS 화면 1" onclick="openLightbox('gsms',0)" />
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/gsms/gsms2.png" alt="GSMS 화면 2" onclick="openLightbox('gsms',1)" />
+                </div>
+                <div class="proj-tags">
+                    <span class="chip c-violet">Java</span>
+                    <span class="chip c-violet">WebSquare</span>
+                    <span class="chip c-teal">MariaDB / MySQL</span>
+                    <span class="chip c-slate">Linux</span>
+                    <span class="chip c-slate">Eclipse / SVN</span>
+                </div>
+            </div>
+
+            <div class="proj-card">
+                <div class="proj-head">
+                    <div>
+                        <div class="proj-title">교육청포털 — 스마트단말 A/S 접수</div>
+                        <div class="proj-meta-text">2023.08 – 2025.05 · 유지보수 · TGS</div>
+                    </div>
+                    <span class="proj-type t-maint">유지보수</span>
+                </div>
+                <p class="proj-desc">17개시도 교육청 학교 사용자용 A/S 접수 포털. JSP와 jQuery 기반의 직관적인 UI 제공.</p>
+                <ul class="proj-works">
+                    <li>A/S 접수 및 상담 예약 기능 개발</li>
+                    <li>SVN 기반 형상관리</li>
+                </ul>
+                <div class="img-gallery cols-2">
+                    <img class="img-thumb" src="https://taetae0715.github.io/img/tsms/tsms3.png" alt="교육청 포털 화면" onclick="openLightbox('tsms',2)" />
+                </div>
+                <div class="proj-tags">
+                    <span class="chip c-violet">Java</span>
+                    <span class="chip c-slate">JSP / jQuery</span>
+                    <span class="chip c-teal">MariaDB</span>
+                    <span class="chip c-slate">Linux</span>
+                    <span class="chip c-slate">Eclipse / SVN</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
+
 <footer>
-    ⓒ 2025 조태정. All Rights Reserved.
-  </footer>
+    <div class="fn">JO TAE JEONG</div>
+    <div class="fs">Java · PHP · Spring Boot · Laravel · WebSquare · React · TypeScript · MySQL · PostgreSQL · MariaDB</div>
+</footer>
 
-<div id="modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);z-index:10000;justify-content:center;align-items:center;overflow:hidden;">
-  <div style="max-width:90vw; max-height:90vh; background:#000; position:relative; display:flex; flex-direction: column; justify-content:center; align-items:center;">
-    <div id="modalSlider" style="display: flex; width: 100%; height: 100%; overflow: hidden; position: relative;">
-  <img id="modalImg1" src="" style="flex: 0 0 100%; object-fit: contain; max-height: 100%; max-width: 100%; transition: transform 0.5s ease; display: block;" />
-  <img id="modalImg2" src="" style="flex: 0 0 100%; object-fit: contain; max-height: 100%; max-width: 100%; transition: transform 0.5s ease; display: none;" />
-  <button id="prevSlide" onclick="showSlide(1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:48px;background:none;border:none;color:white;cursor:pointer;z-index:10001;">❮</button>
-  <button id="nextSlide" onclick="showSlide(2)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:48px;background:none;border:none;color:white;cursor:pointer;z-index:10001;">❯</button>
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+    <div class="lb-wrap">
+        <img class="lb-img" id="lbImg" src="" alt="" />
+    </div>
+    <button class="lb-close" onclick="closeLightbox()">✖</button>
+    <button class="lb-prev" onclick="shiftSlide(-1)">&#10094;</button>
+    <button class="lb-next" onclick="shiftSlide(1)">&#10095;</button>
+    <div class="lb-caption" id="lbCaption"></div>
 </div>
-    <button onclick="closeModal()" style="position:absolute;top:20px;right:20px;background:#fff;color:#000;font-size:24px;font-weight:bold;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;z-index:10001;">✖</button>
-  </div>
-</div>
-</div>
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+    const BASE = 'https://taetae0715.github.io/img/';
+    const galleries = {
+        sims: [
+            { src: BASE + 'sims/1.로그인.png', label: '로그인' },
+            { src: BASE + 'sims/2.메인.png', label: '메인 대시보드' },
+            { src: BASE + 'sims/3.통합검색.png', label: '통합 검색' },
+            { src: BASE + 'sims/4-1.시스템관리-사용자관리.png', label: '사용자 관리' },
+            { src: BASE + 'sims/5-2.제품정보관리-제품정보등록.png', label: '제품정보 등록' },
+            { src: BASE + 'sims/6.게시판등록.png', label: '게시판 등록' },
+        ],
+        bxt: [
+            { src: BASE + 'bxt/bxt1.png', label: 'BXT CSR 화면 1' },
+            { src: BASE + 'bxt/bxt2.png', label: 'BXT CSR 화면 2' },
+        ],
+        tsms: [
+            { src: BASE + 'tsms/tsms1.png', label: 'A/S 관리 화면 1' },
+            { src: BASE + 'tsms/tsms2.png', label: 'A/S 관리 화면 2' },
+            { src: BASE + 'tsms/tsms3.png', label: '교육청포털' },
+        ],
+        asst: [
+            { src: BASE + 'asst.png', label: 'ASST 자산관리 화면' },
+        ],
+        gsms: [
+            { src: BASE + 'gsms/gsms1.png', label: 'GSMS 화면 1' },
+            { src: BASE + 'gsms/gsms2.png', label: 'GSMS 화면 2' },
+        ],
+        storepay: [
+            { src: BASE + 'storepay/storepay1.png', label: 'StorePay 화면 1' },
+            { src: BASE + 'storepay/storepay2.png', label: 'StorePay 화면 2' },
+        ],
+        ksi: [
+            { src: BASE + 'ksi/논문투고 로직 흐름.drawio.png', label: '논문투고 로직 흐름' },
+            { src: BASE + 'ksi/자원식물1.png', label: '자원식물 학회 1' },
+            { src: BASE + 'ksi/자원식물2.png', label: '자원식물 학회 2' },
+            { src: BASE + 'ksi/데모1.png', label: '서비스 데모 1' },
+            { src: BASE + 'ksi/데모2.png', label: '서비스 데모 2' },
+            { src: BASE + 'ksi/데모3.png', label: '서비스 데모 3' },
+        ],
+    };
 
-  document.querySelectorAll("section").forEach(section => {
-    observer.observe(section);
-  });
-});
+    let currentGallery = [];
+    let currentIdx = 0;
 
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (scrollTop / scrollHeight) * 100;
-  document.getElementById("progress").style.width = scrolled + "%";
-
-  const topBtn = document.getElementById("topBtn");
-  const bottomBtn = document.getElementById("bottomBtn");
-  const windowHeight = window.innerHeight;
-  const docHeight = document.documentElement.scrollHeight;
-
-  if (scrollTop > 100) {
-    topBtn.style.display = "block";
-    bottomBtn.style.display = "none";
-  } else if (scrollTop + windowHeight >= docHeight - 10) {
-    topBtn.style.display = "none";
-    bottomBtn.style.display = "none";
-  } else {
-    topBtn.style.display = "none";
-    bottomBtn.style.display = "block";
-  }
-});
-  const topBtn = document.getElementById("topBtn");
-  const bottomBtn = document.getElementById("bottomBtn");
-
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY || window.pageYOffset;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-
-    if (scrollY > 100) {
-      topBtn.style.display = "block";
-      bottomBtn.style.display = "none";
-    } else if (scrollY + windowHeight >= docHeight - 10) {
-      topBtn.style.display = "none";
-      bottomBtn.style.display = "none";
-    } else {
-      topBtn.style.display = "none";
-      bottomBtn.style.display = "block";
+    function openLightbox(galleryKey, idx) {
+        currentGallery = galleries[galleryKey];
+        currentIdx = idx;
+        updateLightbox();
+        document.getElementById('lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        const hasMult = currentGallery.length > 1;
+        document.querySelector('.lb-prev').style.display = hasMult ? 'block' : 'none';
+        document.querySelector('.lb-next').style.display = hasMult ? 'block' : 'none';
     }
-  });
-function openModal(url) {
-  const modal = document.getElementById('modal');
-  const iframe = document.getElementById('modalFrame');
-  iframe.src = url;
-  modal.style.display = 'flex';
-}
-function closeModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'none';
-}
-function openImage(imgSrc1, imgSrc2) {
-  const modal = document.getElementById('modal');
-  const img1 = document.getElementById('modalImg1');
-  const img2 = document.getElementById('modalImg2');
-  img1.src = imgSrc1;
-  if (imgSrc2) {
-    img2.src = imgSrc2;
-    img1.style.display = 'block';
-    img2.style.display = 'none';
-    document.getElementById('prevSlide').style.display = 'block';
-    document.getElementById('nextSlide').style.display = 'block';
-  } else {
-    img2.src = '';
-    img1.style.display = 'block';
-    img2.style.display = 'none';
-    document.getElementById('prevSlide').style.display = 'none';
-    document.getElementById('nextSlide').style.display = 'none';
-  }
-  modal.style.display = 'flex';
-}
-function closeModal() {
-  const modal = document.getElementById('modal');
-  const iframe = document.getElementById('modalFrame');
-  modal.style.display = 'none';
-  iframe.src = '';
-}
-function showSlide(n) {
-  const img1 = document.getElementById('modalImg1');
-  const img2 = document.getElementById('modalImg2');
-  if (n === 1) {
-    img1.style.display = 'block';
-    img2.style.display = 'none';
-  } else {
-    img1.style.display = 'none';
-    img2.style.display = 'block';
-  }
-}
-document.addEventListener('keydown', function(e) {
-  const modal = document.getElementById('modal');
-  if (modal.style.display === 'flex') {
-    if (e.key === 'ArrowRight') showSlide(2);
-    else if (e.key === 'ArrowLeft') showSlide(1);
-    else if (e.key === 'Escape') closeModal();
-  }
-});
-// 우클릭 방지
-window.addEventListener("contextmenu", e => e.preventDefault());
-
-// F12, Ctrl+Shift+I, Ctrl+U 등 방지
-window.addEventListener("keydown", function (e) {
-  if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) ||
-    (e.ctrlKey && (e.key === "U" || e.key === "u"))
-  ) {
-    e.preventDefault();
-    alert("개발자 도구 사용이 제한되었습니다.");
-  }
-});
-</script><a id="topBtn" href="#" style="position: fixed; bottom: 80px; right: 20px; background: #38bdf8; color: white; padding: 10px 16px; border-radius: 50px; font-weight: bold; text-decoration: none; display: none; z-index: 999;">↑ TOP</a>
-<a id="bottomBtn" href="#details" style="position: fixed; bottom: 20px; right: 20px; background: #38bdf8; color: white; padding: 10px 16px; border-radius: 50px; font-weight: bold; text-decoration: none; display: block; z-index: 999;">↓ BOTTOM</a>
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    function closeLightboxOutside(e) {
+        if (e.target === document.getElementById('lightbox')) closeLightbox();
+    }
+    function shiftSlide(dir) {
+        currentIdx = (currentIdx + dir + currentGallery.length) % currentGallery.length;
+        updateLightbox();
+    }
+    function updateLightbox() {
+        const item = currentGallery[currentIdx];
+        document.getElementById('lbImg').src = item.src;
+        document.getElementById('lbImg').alt = item.label;
+        document.getElementById('lbCaption').textContent =
+            item.label + (currentGallery.length > 1 ? ' (' + (currentIdx + 1) + ' / ' + currentGallery.length + ')' : '');
+    }
+    document.addEventListener('keydown', function(e) {
+        const lb = document.getElementById('lightbox');
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'ArrowRight') shiftSlide(1);
+        else if (e.key === 'ArrowLeft') shiftSlide(-1);
+        else if (e.key === 'Escape') closeLightbox();
+    });
+</script>
 </body>
 </html>
